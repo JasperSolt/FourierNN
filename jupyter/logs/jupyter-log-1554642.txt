@@ -1,0 +1,39 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 1554642
+##  Job Name : tunnel
+##  Nodelist : node1320
+##      CPUs : 
+##   Mem/CPU : 5120 MB
+## Directory : /gpfs/home/jsolt/FourierNN/jupyter
+##   Started : Fri Jun 18 12:26:54 EDT 2021
+###############################################################################
+module: loading 'anaconda/3-5.2.0'
+module: anaconda: "See https://docs.ccv.brown.edu/oscar/software/anaconda for potential issues on VNC and batch jobs"
+[I 12:26:55.614 NotebookApp] JupyterLab beta preview extension loaded from /gpfs/runtime/opt/anaconda/3-5.2.0/lib/python3.6/site-packages/jupyterlab
+[I 12:26:55.614 NotebookApp] JupyterLab application directory is /gpfs/rt/7.2/opt/anaconda/3-5.2.0/share/jupyter/lab
+[I 12:26:55.624 NotebookApp] Serving notebooks from local directory: /gpfs/home/jsolt
+[I 12:26:55.624 NotebookApp] 0 active kernels
+[I 12:26:55.624 NotebookApp] The Jupyter Notebook is running at:
+[I 12:26:55.624 NotebookApp] http://172.20.209.20:9619/
+[I 12:26:55.624 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 12:27:44.595 NotebookApp] 302 GET / (172.20.3.203) 0.48ms
+[I 12:27:44.622 NotebookApp] 302 GET /tree? (172.20.3.203) 0.53ms
+[W 12:29:02.756 NotebookApp] 401 POST /login?next=%2Ftree%3F (172.20.3.203) 1.29ms referer=http://localhost:9619/login?next=%2Ftree%3F
+[I 12:29:09.166 NotebookApp] 302 POST /login?next=%2Ftree%3F (172.20.3.203) 0.87ms
+[I 12:36:46.363 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:37:20.195 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:38:12.506 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:42:39.334 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:44:18.421 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:45:23.067 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:45:40.997 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:50:00.785 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:51:10.157 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:51:41.503 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:54:45.026 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:59:05.415 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:59:49.019 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:01:18.321 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:02:37.467 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:04:30.945 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:04:46.890 NotebookApp] Saving file at /FourierNN/model.py
