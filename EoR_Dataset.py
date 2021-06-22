@@ -1,10 +1,7 @@
 import torch
-from torch import nn
-from torch.utils.data import DataLoader
 from torch.utils.data import Dataset
 import h5py
-
-KSZ_CONSTANT = 2.7255 * 1e6
+from hyperparams import Model_Hyperparameters as hp
 
 '''
 A custom dataset loader specifically for our LaPlanteSim files. This can be changed later if/when we use new sims.
@@ -20,8 +17,7 @@ class EORImageDataset_LaPlante(Dataset):
     '''
     Load data at initialization. Override from Dataset superclass
     '''
-    def __init__(self, path="../data/shared/LaPlanteSims/v10/t21_snapshots_wedge_transposed.hdf5", \
-                 train=True, train_percent=0.8, limit_len=None, fourier=False):
+    def __init__(self, path=hp.DATA_PATH, train=True, fourier=False, train_percent=hp.TRAIN_PERCENT, limit_len=None):
         #load data
         if not fourier:
             with h5py.File(path,"r") as h5f:
@@ -45,7 +41,7 @@ class EORImageDataset_LaPlante(Dataset):
                 self.redshifts = torch.tensor(h5f['Data/layer_redshifts'])
                 '''
                 
-        #else: LOAD FOURIER IMAGES
+        #else: LOAD FOURIER IMAGES TODO
         
         #Confirm shape
         assert(len(self.labels) == len(self._21cm))

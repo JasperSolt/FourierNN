@@ -52,3 +52,58 @@ module: anaconda: "See https://docs.ccv.brown.edu/oscar/software/anaconda for po
 [I 13:28:36.928 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
 [I 13:28:53.538 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
 [I 13:29:06.249 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 13:30:30.252 NotebookApp] Creating new file in /FourierNN
+[W 13:30:48.730 NotebookApp] delete /FourierNN/jupyter/intro.ipynb
+[I 13:30:51.601 NotebookApp] Kernel started: 73ecd20e-940a-4e6d-b9f3-1e9b04191954
+[I 13:30:52.232 NotebookApp] Adapting to protocol v5.1 for kernel 73ecd20e-940a-4e6d-b9f3-1e9b04191954
+[I 13:32:50.202 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:32:52.607 NotebookApp] Saving file at /FourierNN/jupyter/model_experimentation.ipynb
+[I 13:33:27.950 NotebookApp] Creating new file in /FourierNN
+[I 13:34:52.539 NotebookApp] Saving file at /FourierNN/jupyter/model_experimentation.ipynb
+[I 13:35:33.504 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:37:44.015 NotebookApp] Starting buffering for 73ecd20e-940a-4e6d-b9f3-1e9b04191954:c49450cf30a04d878be1bb427690102e
+[I 13:38:09.997 NotebookApp] Creating new file in /FourierNN
+[I 13:39:47.175 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 13:39:47.968 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:42:25.594 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:44:25.938 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:45:42.909 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:48:30.568 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:49:54.208 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:49:59.120 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:50:33.814 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:51:14.632 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:51:41.799 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:55:48.657 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:56:20.837 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:56:34.098 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:56:58.218 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:57:09.467 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 13:58:45.874 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 14:00:29.945 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 14:01:50.799 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:02:00.032 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:02:48.630 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:02:55.277 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:02:58.497 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 14:03:34.035 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 14:03:54.971 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 14:04:06.559 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 14:05:09.820 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 14:05:23.027 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 14:06:21.047 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:12:04.917 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 14:12:48.690 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:14:52.944 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:15:24.828 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:15:34.994 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:15:48.876 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 14:16:02.968 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 14:16:48.495 NotebookApp] Saving file at /FourierNN/model.py
+[I 14:19:57.342 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:20:01.881 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:20:22.134 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 14:23:33.345 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 14:27:11.927 NotebookApp] Saving file at /FourierNN/model.py
+[I 15:21:09.737 NotebookApp] Saving file at /FourierNN/model.py
+slurmstepd: error: *** JOB 1554642 ON node1320 CANCELLED AT 2021-06-18T20:27:14 DUE TO TIME LIMIT ***
