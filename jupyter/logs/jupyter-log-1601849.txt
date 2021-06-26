@@ -1,0 +1,24 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 1601849
+##  Job Name : tunnel
+##  Nodelist : node1131
+##      CPUs : 
+##   Mem/CPU : 5120 MB
+## Directory : /gpfs/home/jsolt/FourierNN/jupyter
+##   Started : Thu Jun 24 11:21:08 EDT 2021
+###############################################################################
+module: loading 'anaconda/3-5.2.0'
+module: anaconda: "See https://docs.ccv.brown.edu/oscar/software/anaconda for potential issues on VNC and batch jobs"
+[I 11:21:11.088 NotebookApp] JupyterLab beta preview extension loaded from /gpfs/runtime/opt/anaconda/3-5.2.0/lib/python3.6/site-packages/jupyterlab
+[I 11:21:11.088 NotebookApp] JupyterLab application directory is /gpfs/rt/7.2/opt/anaconda/3-5.2.0/share/jupyter/lab
+[I 11:21:11.106 NotebookApp] Serving notebooks from local directory: /gpfs/home/jsolt
+[I 11:21:11.106 NotebookApp] 0 active kernels
+[I 11:21:11.106 NotebookApp] The Jupyter Notebook is running at:
+[I 11:21:11.106 NotebookApp] http://172.20.207.31:8866/
+[I 11:21:11.106 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 11:22:53.647 NotebookApp] 302 GET / (172.20.3.203) 0.49ms
+[I 11:22:53.668 NotebookApp] 302 GET /tree? (172.20.3.203) 0.61ms
+[I 11:23:02.113 NotebookApp] 302 POST /login?next=%2Ftree%3F (172.20.3.203) 0.99ms
+[I 11:41:30.568 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:07:56.677 NotebookApp] Saving file at /FourierNN/model.py
+slurmstepd: error: *** JOB 1601849 ON node1131 CANCELLED AT 2021-06-24T19:21:00 DUE TO TIME LIMIT ***

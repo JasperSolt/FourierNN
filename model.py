@@ -8,13 +8,46 @@ class Fourier_NN(nn.Module):
     def __init__(self):
         super(Fourier_NN, self).__init__()
         
+        self.input_channels = 30
         #TODO
-        #self.input_layer = <layer>
+        
+        self.layer_dict = OrderedDict([
+          ('conv1', nn.Conv2d(self.input_channels, 16, 3)),
+          ('relu1', nn.ReLU()),
+          ('batch1', nn.BatchNorm1d(16)),
+        ]) 
+        
+        ''' LaPlante 2019:
+        
+        model = Sequential()
+        model.add(Conv2D(16, kernel_size=(3, 3), input_shape=input_shape, activation='relu'))
+        model.add(BatchNormalization())
+        model.add(MaxPooling2D(pool_size=(2, 2)))
+        model.add(Conv2D(32, kernel_size=(3, 3), activation='relu'))
+        model.add(BatchNormalization())
+        model.add(MaxPooling2D(pool_size=(2, 2)))
+        model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
+        model.add(BatchNormalization())
+        model.add(MaxPooling2D(pool_size=(2, 2)))
+        
+        model.add(GlobalAveragePooling2D())
+            
+        model.add(Dropout(0.2))
+        model.add(Dense(200, activation='relu'))
+        model.add(Dropout(0.2))
+        model.add(Dense(100, activation='relu'))
+        model.add(Dropout(0.2))
+        model.add(Dense(20, activation='relu'))
+        model.add(Dense(Nregressparams))
+        print(model.summary())
+        return model
+        '''
+        
         #self.stack = nn.Sequential(<list of layers>)
         
     # Forward propagation of some batch x. called by model(x)
     def forward(self, x):
-        return self.stack(self.input_layer(x))
+        return self.stack(self.l1(x))
     
     
 
