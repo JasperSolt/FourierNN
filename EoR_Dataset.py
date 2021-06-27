@@ -1,6 +1,7 @@
+import numpy as np
+import h5py
 import torch
 from torch.utils.data import Dataset
-import h5py
 from hyperparams import Model_Hyperparameters as hp
 
 '''
@@ -16,8 +17,6 @@ class EORImageDataset_LaPlante(Dataset):
 
     '''
     Load data at initialization. Override from Dataset superclass
-
-    TODO: make it so data shape = (num_samples, channels, height, width)
     '''
     def __init__(self, train, fourier=False, path=hp.DATA_PATH, train_percent=hp.TRAIN_PERCENT, limit_len=None):
         #load data
@@ -26,13 +25,13 @@ class EORImageDataset_LaPlante(Dataset):
                 size = len(h5f["Data/snapshot_labels"][:limit_len,:3])
                 train_size = int(train_percent * size)
 
-                #<train_percent> fraction of samples = training set.
+                # train_percent fraction of samples = training set.
                 begin, end = 0, train_size
-                #Remaining samples = testing set
+                # remaining samples = testing set
                 if not train:
                     begin, end = train_size, size
 
-                self._21cm = torch.tensor(h5f['Data/t21_snapshots_transposed'][begin:end])
+                self._21cm = torch.tensor(np.transpose(h5f['Data/t21_snapshots_transposed'][begin:end], axes=[0,3,1,2]))
                 self.labels = torch.tensor(h5f["Data/snapshot_labels"][begin:end,:3]) #First three labels: dur, mdpt, meanz
                 '''
                 self.ksz = torch.tensor(h5f["Data/ksz_snapshots"][begin:end]) * KSZ_CONSTANT
@@ -59,16 +58,16 @@ class EORImageDataset_LaPlante(Dataset):
         return self._21cm[idx], self.labels[idx]
 
 if __name__ == "__main__":
-    print("Training set:")
+    print("___ Training set: ___")
     data = EORImageDataset_LaPlante(limit_len=10, train=True)
     print("Length: {}".format(data.__len__()))
-    for i in range(data.__len__()):
-        print(data.__getitem__(i)[0].shape)
-        print(data.__getitem__(i)[1].shape)
+    #for i in range(data.__len__()):
+    #    print(data.__getitem__(i)[0].shape)
+    #    print(data.__getitem__(i)[1].shape)
 
-    print("Testing set")
+    print("___ Testing set: ___")
     data = EORImageDataset_LaPlante(limit_len=10, train=False)
     print("Length: {}".format(data.__len__()))
-    for i in range(data.__len__()):
-        print(data.__getitem__(i)[0].shape)
-        print(data.__getitem__(i)[1].shape)
+    #for i in range(data.__len__()):
+    #    print(data.__getitem__(i)[0].shape)
+    #    print(data.__getitem__(i)[1].shape)

@@ -1,0 +1,64 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 1617713
+##  Job Name : tunnel
+##  Nodelist : node1327
+##      CPUs : 
+##   Mem/CPU : 5120 MB
+## Directory : /gpfs/home/jsolt/FourierNN/jupyter
+##   Started : Sun Jun 27 11:08:47 EDT 2021
+###############################################################################
+module: loading 'anaconda/3-5.2.0'
+module: anaconda: "See https://docs.ccv.brown.edu/oscar/software/anaconda for potential issues on VNC and batch jobs"
+[I 11:08:52.614 NotebookApp] JupyterLab beta preview extension loaded from /gpfs/runtime/opt/anaconda/3-5.2.0/lib/python3.6/site-packages/jupyterlab
+[I 11:08:52.614 NotebookApp] JupyterLab application directory is /gpfs/rt/7.2/opt/anaconda/3-5.2.0/share/jupyter/lab
+[I 11:08:52.624 NotebookApp] Serving notebooks from local directory: /gpfs/home/jsolt
+[I 11:08:52.624 NotebookApp] 0 active kernels
+[I 11:08:52.624 NotebookApp] The Jupyter Notebook is running at:
+[I 11:08:52.624 NotebookApp] http://172.20.209.27:8935/
+[I 11:08:52.624 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 11:10:16.697 NotebookApp] 302 GET / (172.20.3.203) 0.48ms
+[I 11:10:16.717 NotebookApp] 302 GET /tree? (172.20.3.203) 0.64ms
+[I 11:10:35.124 NotebookApp] 302 POST /login?next=%2Ftree%3F (172.20.3.203) 0.99ms
+[I 11:12:33.818 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 11:13:47.334 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:17:47.324 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:17:56.272 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:18:05.839 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:18:20.960 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:18:50.912 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 11:22:53.840 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:46:49.887 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:49:40.917 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:49:59.397 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:50:55.740 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:51:23.993 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:52:19.402 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:52:31.050 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:53:03.483 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:53:09.319 NotebookApp] Saving file at /FourierNN/EoR_Dataset.py
+[I 11:53:43.955 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 11:54:37.613 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 11:54:45.940 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 11:59:22.964 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:01:56.578 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:02:53.813 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:04:22.306 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:04:32.394 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:04:50.431 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:51:42.313 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:57:47.424 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:58:55.613 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:59:00.820 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:59:20.274 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:59:56.631 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:00:27.525 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:02:07.887 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:04:01.969 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:04:14.306 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:07:40.306 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:07:47.305 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:08:35.411 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:08:48.638 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:08:59.550 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:10:34.057 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:11:04.326 NotebookApp] Saving file at /FourierNN/hyperparams.py

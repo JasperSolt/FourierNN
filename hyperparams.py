@@ -1,14 +1,17 @@
+import os
+from collections import OrderedDict
+import json
+import jsonpickle
+from datetime import datetime
 import torch
 from torch import nn
-import json
-from datetime import datetime
 
 '''
 Hyperparameters for the model. You should only have to edit this file between runs.
 '''
 class Model_Hyperparameters():
     # model metadata
-    MODEL_ID = datetime.timestamp(datetime.now())
+    MODEL_ID = str(datetime.timestamp(datetime.now())).replace(".","")
     MODEL_NAME = "test" + "_" + MODEL_ID
     MODEL_PATH = MODEL_NAME
     MODEL_FILENAME = MODEL_PATH + "/" + MODEL_NAME + ".pth"
@@ -28,7 +31,7 @@ class Model_Hyperparameters():
     # Loss function & optimizer
     LOSS_FN = None #nn.CrossEntropyLoss()
     OPTIMIZER = None #torch.optim.SGD(model.parameters(), lr=1e-3)
-
+    
     #model architecture
     layer_dict = OrderedDict([
       # batch_size x input_channels x 512 x 512
@@ -107,13 +110,20 @@ class Model_Hyperparameters():
     KSZ_CONSTANT = 2.7255 * 1e6
 
     @classmethod
-    def save_hyparam_summary(cls, report_path=HP_JSON_FILENAME):
-        print("Generating hyperparameter summary at {}".format(report_path))
-        with open(report_path, 'w') as file:
-            json.dump(Model_Hyperparameters.__dict__.copy(), file)
+    def save_hyparam_summary(cls, path=MODEL_PATH, report_name=HP_JSON_FILENAME):
+        if not os.path.isdir(path):
+            os.mkdir(path)
+        print("Generating hyperparameter summary at {}".format(report_name))
+        with open(report_name, 'w') as file:
+            json_encode = jsonpickle.encode(cls.__dict__.copy(), unpicklable=False)
+            json.dump(json_encode, file)
 
         '''
         from torchsummary import summary
 
         summary(<model extending nn.Module>, (3, 224, 224))
         '''
+
+if __name__ == "__main__":
+
+    Model_Hyperparameters.save_hyparam_summary()
