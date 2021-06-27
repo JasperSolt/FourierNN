@@ -5,55 +5,17 @@ from torch.utils.data import Dataset
 from hyperparams import Model_Hyperparameters as hp
 
 class Fourier_NN(nn.Module):
-    def __init__(self):
+    def __init__(self, input_channels=hp.INPUT_CHANNELS):
         super(Fourier_NN, self).__init__()
-        
-        self.input_channels = 30
-        #TODO
-        
-        self.layer_dict = OrderedDict([
-          ('conv1', nn.Conv2d(self.input_channels, 16, 3)),
-          ('relu1', nn.ReLU()),
-          ('batch1', nn.BatchNorm1d(16)),
-        ]) 
-        
-        ''' LaPlante 2019:
-        
-        model = Sequential()
-        model.add(Conv2D(16, kernel_size=(3, 3), input_shape=input_shape, activation='relu'))
-        model.add(BatchNormalization())
-        model.add(MaxPooling2D(pool_size=(2, 2)))
-        model.add(Conv2D(32, kernel_size=(3, 3), activation='relu'))
-        model.add(BatchNormalization())
-        model.add(MaxPooling2D(pool_size=(2, 2)))
-        model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
-        model.add(BatchNormalization())
-        model.add(MaxPooling2D(pool_size=(2, 2)))
-        
-        model.add(GlobalAveragePooling2D())
-            
-        model.add(Dropout(0.2))
-        model.add(Dense(200, activation='relu'))
-        model.add(Dropout(0.2))
-        model.add(Dense(100, activation='relu'))
-        model.add(Dropout(0.2))
-        model.add(Dense(20, activation='relu'))
-        model.add(Dense(Nregressparams))
-        print(model.summary())
-        return model
-        '''
-        
-        #self.stack = nn.Sequential(<list of layers>)
-        
+        self.model = nn.Sequential(hp.layer_dict)
+        self.input_channels = input_channels
+
     # Forward propagation of some batch x. called by model(x)
     def forward(self, x):
-        return self.stack(self.l1(x))
-    
-    
+        return self.model(x)
 
-    
 #train func
-def train(dataloader, model, loss_fn, optimizer):
+def train(dataloader, model, loss_fn=hp.LOSS_FN, optimizer=hp.OPTIMIZER):
     size = len(dataloader.dataset)
     for batch, (X, y) in enumerate(dataloader):
         X, y = X.to(device), y.to(device)
@@ -86,10 +48,12 @@ def test(dataloader, model, loss_fn):
     correct /= size
     print(f"Test Error: \n Accuracy: {(100*correct):>0.1f}%, Avg loss: {test_loss:>8f} \n")
 
-    
-    
-'''
-from torchsummary import summary
+def save(model, model_save_path=hp.MODEL_FILENAME):
+    # save trained model
+    print("Saving PyTorch Model State to {}...".format(model_save_path))
+    torch.save(model.state_dict(), model_save_path)
+    print("Model Saved.")
 
-summary(<model extending nn.Module>, (3, 224, 224))
-'''
+def load(model, model_load_path=hp.MODEL_FILENAME):
+    print("Loading PyTorch Model State from {}".format(model_load_path))
+    return model.load_state_dict(torch.load())

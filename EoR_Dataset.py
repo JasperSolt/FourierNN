@@ -8,41 +8,39 @@ A custom dataset loader specifically for our LaPlanteSim files. This can be chan
 
 Initializing loads all 21cm data from an h5py file into a tensor of size (limit_len,512,512,30) and loads labels into tensor of size (limit_len,3). Also stores the redshift range as a tensor.
 
-Currently, I'm loading all images into memory simultaneously, for speed. 
-This uses a ton of memory but shouldn't be a problem considering Oscar's resources? I can request jobs up to 190G, 
+Currently, I'm loading all images into memory simultaneously, for speed.
+This uses a ton of memory but shouldn't be a problem considering Oscar's resources? I can request jobs up to 190G,
 and a dataset like this needs approx. 150G in memory. If our datasets get bigger I will implement some sort of cache.
 '''
 class EORImageDataset_LaPlante(Dataset):
-    
+
     '''
     Load data at initialization. Override from Dataset superclass
+
+    TODO: make it so data shape = (num_samples, channels, height, width)
     '''
-    def __init__(self, path=hp.DATA_PATH, train=True, fourier=False, train_percent=hp.TRAIN_PERCENT, limit_len=None):
+    def __init__(self, train, fourier=False, path=hp.DATA_PATH, train_percent=hp.TRAIN_PERCENT, limit_len=None):
         #load data
         if not fourier:
             with h5py.File(path,"r") as h5f:
                 size = len(h5f["Data/snapshot_labels"][:limit_len,:3])
                 train_size = int(train_percent * size)
 
-                #First <train_percent> fraction of samples = training set
+                #<train_percent> fraction of samples = training set.
+                begin, end = 0, train_size
                 #Remaining samples = testing set
-                begin, end = 0, 0
-                if train:
-                    begin = 0
-                    end = train_size
                 if not train:
-                    begin = train_size
-                    end = size
-                
+                    begin, end = train_size, size
+
                 self._21cm = torch.tensor(h5f['Data/t21_snapshots_transposed'][begin:end])
                 self.labels = torch.tensor(h5f["Data/snapshot_labels"][begin:end,:3]) #First three labels: dur, mdpt, meanz
                 '''
                 self.ksz = torch.tensor(h5f["Data/ksz_snapshots"][begin:end]) * KSZ_CONSTANT
                 self.redshifts = torch.tensor(h5f['Data/layer_redshifts'])
                 '''
-                
+
         #else: LOAD FOURIER IMAGES TODO
-        
+
         #Confirm shape
         assert(len(self.labels) == len(self._21cm))
         print("Data Tensor shape: {}".format(list(self._21cm.shape)))
@@ -60,16 +58,14 @@ class EORImageDataset_LaPlante(Dataset):
     def __getitem__(self, idx):
         return self._21cm[idx], self.labels[idx]
 
-    
-    
 if __name__ == "__main__":
     print("Training set:")
-    data = EORImageDataset_LaPlante(limit_len=10)
+    data = EORImageDataset_LaPlante(limit_len=10, train=True)
     print("Length: {}".format(data.__len__()))
     for i in range(data.__len__()):
         print(data.__getitem__(i)[0].shape)
         print(data.__getitem__(i)[1].shape)
-        
+
     print("Testing set")
     data = EORImageDataset_LaPlante(limit_len=10, train=False)
     print("Length: {}".format(data.__len__()))
