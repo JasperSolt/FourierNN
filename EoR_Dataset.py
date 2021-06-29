@@ -22,7 +22,8 @@ class EORImageDataset_LaPlante(Dataset):
         #load data
         if not fourier:
             with h5py.File(path,"r") as h5f:
-                size = len(h5f["Data/snapshot_labels"][:limit_len,:3])
+                print("Loading data from {}...".format(path))
+                size = len(h5f["Data/snapshot_labels"][:limit_len,0])
                 train_size = int(train_percent * size)
 
                 # train_percent fraction of samples = training set.
@@ -32,7 +33,7 @@ class EORImageDataset_LaPlante(Dataset):
                     begin, end = train_size, size
 
                 self._21cm = torch.tensor(np.transpose(h5f['Data/t21_snapshots_transposed'][begin:end], axes=[0,3,1,2]))
-                self.labels = torch.tensor(h5f["Data/snapshot_labels"][begin:end,:3]) #First three labels: dur, mdpt, meanz
+                self.labels = torch.tensor(h5f["Data/snapshot_labels"][begin:end,:hp.N_PARAMS]) #First three labels: dur, mdpt, meanz
                 '''
                 self.ksz = torch.tensor(h5f["Data/ksz_snapshots"][begin:end]) * KSZ_CONSTANT
                 self.redshifts = torch.tensor(h5f['Data/layer_redshifts'])
@@ -71,3 +72,4 @@ if __name__ == "__main__":
     #for i in range(data.__len__()):
     #    print(data.__getitem__(i)[0].shape)
     #    print(data.__getitem__(i)[1].shape)
+
