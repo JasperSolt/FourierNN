@@ -22,7 +22,7 @@ Hyperparameters for the model. You should only have to edit this class between r
 class Model_Hyperparameters():
     # model metadata
     MODEL_ID = str(datetime.timestamp(datetime.now())).replace(".","")
-    MODEL_NAME = "test"
+    MODEL_NAME = "test2"
     MODEL_PATH = MODEL_NAME
     MODEL_FILENAME = MODEL_NAME + ".pth"
     HP_JSON_FILENAME = "hp_" + MODEL_NAME + ".json"

@@ -60,14 +60,17 @@ def predict(dataloader, model, device, loss_fn=hp.LOSS_FN, pred_save_path=hp.MOD
     size = len(dataloader.dataset)
     model.eval()
     pred, labels = torch.tensor([]).to(device), torch.tensor([]).to(device)
+    print("Predicting on {} samples...".format(size))
     with torch.no_grad():
         for X, y in dataloader:
             X, y = X.to(device), y.to(device)
-            pred = torch.cat((pred, model(X)),dim=1)
-            labels = torch.cat((labels, y),dim=1)
-            print(pred.shape)
+            pred = torch.cat((pred, model(X)), 0)
+            labels = torch.cat((labels, y), 0)
+    pred = np.array(pred.cpu())
+    labels = np.array(labels.cpu())
     f = pred_save_path + "/pred_" + pred_save_name
-    np.savez('{}.npz'.format(f),targets=labels.cpu().numpy(),predictions=pred.cpu().numpy())
+    np.savez('{}.npz'.format(f),targets=labels,predictions=pred)
+    print("Prediction saved to {}.npz".format(f))
 
     
 def save(model, model_save_path=hp.MODEL_PATH, model_save_name=hp.MODEL_FILENAME):

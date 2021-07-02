@@ -7,6 +7,8 @@ from EoR_Dataset import EORImageDataset_LaPlante
 from model import Fourier_NN, train, test, save
 from hyperparams import Model_Hyperparameters as hp
 
+print("Model: {}".format(hp.MODEL_NAME))
+
 #make sure we aren't overwriting
 if os.path.isdir(hp.MODEL_PATH):
     print("Attempting to overwrite existing model. Please rename current model or delete old model directory.")
