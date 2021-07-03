@@ -101,3 +101,8 @@ module: anaconda: "See https://docs.ccv.brown.edu/oscar/software/anaconda for po
 [I 19:26:39.009 NotebookApp] Saving file at /FourierNN/hyperparams.py
 [I 19:27:34.128 NotebookApp] Saving file at /FourierNN/plot_model_results.py
 [I 19:37:19.383 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 19:38:38.680 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 19:38:56.534 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 19:40:35.948 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 19:40:44.575 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 19:41:02.880 NotebookApp] Saving file at /FourierNN/plot_model_results.py

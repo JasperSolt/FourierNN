@@ -22,7 +22,7 @@ Hyperparameters for the model. You should only have to edit this class between r
 class Model_Hyperparameters():
     # model metadata
     MODEL_ID = str(datetime.timestamp(datetime.now())).replace(".","")
-    MODEL_NAME = "test2"
+    MODEL_NAME = "test_3params"
     MODEL_PATH = MODEL_NAME
     MODEL_FILENAME = MODEL_NAME + ".pth"
     HP_JSON_FILENAME = "hp_" + MODEL_NAME + ".json"
@@ -36,7 +36,7 @@ class Model_Hyperparameters():
 
     #from dataset
     INPUT_CHANNELS = 30
-    N_PARAMS = 1
+    N_PARAMS = 3
 
     # Loss function
     LOSS_FN = torch.nn.MSELoss()

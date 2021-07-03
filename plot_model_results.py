@@ -81,9 +81,9 @@ def plot_model_predictions(modelnames=["test", "test2"], modellabels=None):
         for name in modelnames:
             fname += "_" + name
         
-        pl.savefig('{}.png'.format("blah_test"),dpi=300)
+        pl.savefig('{}.png'.format(fname),dpi=300)
         pl.close()
         
 
 if __name__ == "__main__":
-    plot_model_predictions()
+    plot_model_predictions([hp.MODEL_NAME])
