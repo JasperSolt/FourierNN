@@ -22,24 +22,25 @@ Hyperparameters for the model. You should only have to edit this class between r
 class Model_Hyperparameters():
     # model metadata
     MODEL_ID = str(datetime.timestamp(datetime.now())).replace(".","")
-    MODEL_NAME = "test_3params"
-    MODEL_PATH = MODEL_NAME
-    MODEL_FILENAME = MODEL_NAME + ".pth"
+    MODEL_NAME = "LaPlante2019_test"
+    MODEL_DIR = "models/" + MODEL_NAME
     HP_JSON_FILENAME = "hp_" + MODEL_NAME + ".json"
     DATA_PATH = "../data/shared/LaPlanteSims/v10/t21_snapshots_wedge_transposed.hdf5"
-    DESC = "I am a model description"
+    DESC = "As close to Paul's 2019 paper as possible"
 
     # training hyperparameters
-    BATCHSIZE = 5
+    BATCHSIZE = 32
     EPOCHS = 5
     TRAIN_PERCENT = 0.8 #fraction of dataset used in training
+    INITIAL_LR = 0.1 #static learning rate if LR_DECAY = False, or initial learning rate if LR_DECAY = True
+    LR_DECAY = True
 
     #from dataset
     INPUT_CHANNELS = 30
     N_PARAMS = 3
 
     # Loss function
-    LOSS_FN = torch.nn.MSELoss()
+    loss_fn = torch.nn.MSELoss()
 
     #model architecture
     LAYER_DICT = OrderedDict([
@@ -86,51 +87,27 @@ class Model_Hyperparameters():
       ('output', nn.Linear(20, N_PARAMS))
     ])
 
-    ''' Based on LaPlante 2019:
-
-    model = Sequential()
-    model.add(Conv2D(16, kernel_size=(3, 3), input_shape=input_shape, activation='relu'))
-    model.add(BatchNormalization())
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-
-    model.add(Conv2D(32, kernel_size=(3, 3), activation='relu'))
-    model.add(BatchNormalization())
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-
-    model.add(Conv2D(64, kernel_size=(3, 3), activation='relu'))
-    model.add(BatchNormalization())
-    model.add(MaxPooling2D(pool_size=(2, 2)))
-
-    model.add(GlobalAveragePooling2D())
-
-    model.add(Dropout(0.2))
-    model.add(Dense(200, activation='relu'))
-
-    model.add(Dropout(0.2))
-    model.add(Dense(100, activation='relu'))
-
-    model.add(Dropout(0.2))
-    model.add(Dense(20, activation='relu'))
-
-    model.add(Dense(Nregressparams))
-    print(model.summary())
-    return model
-    '''
-
-
     @classmethod
-    def save_hyparam_summary(cls, path=MODEL_PATH, report_name=HP_JSON_FILENAME):
-        if not os.path.isdir(path):
-            os.mkdir(path)
-        print("Generating hyperparameter summary at {}...".format(path + "/" + report_name))
-        with open(path + "/" + report_name, 'w') as file:
+    def save_hyparam_summary(cls, dirr=MODEL_DIR, report_name=HP_JSON_FILENAME):
+        if not os.path.isdir(dirr):
+            os.mkdir(dirr)
+        print("Generating hyperparameter summary at {}...".format(dirr + "/" + report_name))
+        with open(dirr + "/" + report_name, 'w') as file:
             json_encode = jsonpickle.encode(cls.__dict__.copy(), unpicklable=False, indent=4, max_depth=2)
             json.dump(json_encode, file)
         print("Hyperparameter summary saved.")
     
     @classmethod
     def optimizer(cls, model):
-        return torch.optim.Adam(model.parameters())
+        return torch.optim.Adam(model.parameters(), lr=cls.INITIAL_LR)
+    
+    @classmethod
+    def scheduler(cls, opt):
+        if cls.LR_DECAY:
+            lam = lambda epoch: (1-epoch/cls.EPOCHS)
+            scheduler = torch.optim.lr_scheduler.LambdaLR(opt, lr_lambda=[lam])
+            return scheduler
+        return None
 
         
 if __name__ == "__main__":

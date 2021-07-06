@@ -1,0 +1,191 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 1678618
+##  Job Name : tunnel
+##  Nodelist : node1326
+##      CPUs : 
+##   Mem/CPU : 5120 MB
+## Directory : /gpfs/home/jsolt/FourierNN/jupyter
+##   Started : Mon Jul  5 10:08:56 EDT 2021
+###############################################################################
+module: loading 'anaconda/3-5.2.0'
+module: anaconda: "See https://docs.ccv.brown.edu/oscar/software/anaconda for potential issues on VNC and batch jobs"
+[I 10:08:59.811 NotebookApp] JupyterLab beta preview extension loaded from /gpfs/runtime/opt/anaconda/3-5.2.0/lib/python3.6/site-packages/jupyterlab
+[I 10:08:59.811 NotebookApp] JupyterLab application directory is /gpfs/rt/7.2/opt/anaconda/3-5.2.0/share/jupyter/lab
+[I 10:08:59.830 NotebookApp] Serving notebooks from local directory: /gpfs/home/jsolt
+[I 10:08:59.830 NotebookApp] 0 active kernels
+[I 10:08:59.830 NotebookApp] The Jupyter Notebook is running at:
+[I 10:08:59.830 NotebookApp] http://172.20.209.26:9309/
+[I 10:08:59.830 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 10:10:06.521 NotebookApp] 302 GET / (172.20.3.203) 0.52ms
+[I 10:10:06.546 NotebookApp] 302 GET /tree? (172.20.3.203) 0.72ms
+[I 10:10:18.141 NotebookApp] 302 POST /login?next=%2Ftree%3F (172.20.3.203) 1.06ms
+[I 10:35:38.429 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 10:38:44.512 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 10:40:37.603 NotebookApp] Saving file at /FourierNN/model.py
+[I 10:43:49.942 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 10:45:14.265 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[W 10:46:10.619 NotebookApp] delete /FourierNN/test_3params
+[W 10:46:10.657 NotebookApp] delete /FourierNN/test2
+[W 10:46:10.670 NotebookApp] delete /FourierNN/test
+[W 10:46:10.684 NotebookApp] delete /FourierNN/duration_test_3params.png
+[W 10:46:10.698 NotebookApp] delete /FourierNN/meanz_test_3params.png
+[W 10:46:10.701 NotebookApp] delete /FourierNN/midpoint_test_3params.png
+[W 10:46:10.705 NotebookApp] delete /FourierNN/blah_test.png
+[I 10:46:35.297 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 10:47:28.570 NotebookApp] Creating new file in /FourierNN
+[I 10:49:02.399 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 10:49:40.587 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 10:50:57.772 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 10:51:14.792 NotebookApp] Saving file at /FourierNN/train_predict_plot.sh
+[I 10:53:22.338 NotebookApp] Saving file at /FourierNN/train_predict_plot.sh
+[W 10:55:17.570 NotebookApp] delete /FourierNN/LaPlante2019_canon
+[I 10:55:54.743 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 10:56:03.841 NotebookApp] Saving file at /FourierNN/predict_Fourier_NN.py
+[I 10:56:33.595 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 11:02:51.673 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[W 11:03:02.960 NotebookApp] delete /FourierNN/LaPlante2019_canon
+[I 11:03:54.423 NotebookApp] Creating new directory in /FourierNN
+[I 11:04:16.959 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 11:05:56.220 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 11:06:31.742 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 11:06:53.907 NotebookApp] Creating new directory in /FourierNN
+[W 11:07:27.084 NotebookApp] delete /FourierNN/scripts
+[I 11:12:18.551 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:13:07.043 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 11:16:03.313 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 11:26:07.784 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 11:26:36.098 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 11:31:04.174 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 11:32:54.061 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 11:33:09.776 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 11:33:17.447 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 11:34:38.034 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 11:34:40.138 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:35:12.826 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:35:55.799 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:36:29.522 NotebookApp] Saving file at /CosmoFCN/model.py
+[I 11:39:00.581 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:39:33.285 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:40:50.688 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:45:08.862 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:45:38.572 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:45:43.493 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:48:55.359 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 11:52:23.073 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 11:52:40.590 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 11:55:04.546 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:57:46.117 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:58:03.412 NotebookApp] Saving file at /FourierNN/model.py
+[I 11:58:17.037 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 11:58:32.790 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 11:59:35.632 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[W 11:59:56.142 NotebookApp] delete /FourierNN/models/LaPlante2019_canon
+[I 12:03:42.402 NotebookApp] Saving file at /FourierNN/model.py
+[W 12:03:56.998 NotebookApp] delete /FourierNN/models/LaPlante2019_canon
+[I 12:05:59.378 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:06:05.163 NotebookApp] Saving file at /FourierNN/model.py
+[W 12:06:18.323 NotebookApp] delete /FourierNN/models/LaPlante2019_canon
+[I 12:08:27.541 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:08:37.787 NotebookApp] Saving file at /FourierNN/model.py
+[W 12:08:54.288 NotebookApp] delete /FourierNN/models/LaPlante2019_canon
+[I 12:09:28.383 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 12:10:46.828 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:11:02.929 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:12:22.970 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:13:12.893 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 12:16:26.156 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:16:59.178 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:18:53.976 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:19:27.189 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:19:34.386 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:19:59.928 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:21:07.339 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:23:12.461 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:24:09.898 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:24:25.018 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:26:48.979 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:27:02.876 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:28:56.975 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:30:38.517 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:31:07.185 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:31:29.205 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:31:55.582 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:33:53.511 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:34:27.532 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[W 12:34:33.802 NotebookApp] delete /FourierNN/models/LaPlante2019_test
+[I 12:35:46.759 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:35:58.854 NotebookApp] Creating new file in /FourierNN
+[I 12:36:33.861 NotebookApp] Saving file at /FourierNN/submit_job.sh
+[I 12:36:59.537 NotebookApp] Saving file at /FourierNN/submit_job.sh
+[I 12:37:39.107 NotebookApp] Saving file at /FourierNN/submit_job.sh
+[I 12:40:36.029 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 12:41:03.799 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:41:15.706 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:42:14.105 NotebookApp] Saving file at /FourierNN/submit_job.sh
+[W 12:42:27.238 NotebookApp] delete /FourierNN/models/LaPlante2019_test
+[I 12:46:28.922 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:47:28.507 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:47:31.132 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:48:46.262 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:48:58.697 NotebookApp] Saving file at /FourierNN/model.py
+[I 12:49:15.653 NotebookApp] Saving file at /FourierNN/model.py
+[W 12:50:15.061 NotebookApp] delete /FourierNN/models/LaPlante2019_test
+[I 12:51:36.137 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 12:51:44.914 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 12:52:18.772 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 12:52:33.405 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 12:52:51.265 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 12:53:26.373 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 12:55:04.442 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[W 12:55:17.007 NotebookApp] delete /FourierNN/models/LaPlante2019_test
+[I 12:57:28.908 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[W 12:57:40.097 NotebookApp] delete /FourierNN/models/LaPlante2019_test
+[W 12:58:20.771 NotebookApp] delete /FourierNN/models/LaPlante2019_test
+[I 12:58:41.270 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 12:59:01.281 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 13:00:53.370 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 13:01:06.634 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 13:01:16.112 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 13:02:32.711 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:02:50.451 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+[I 13:02:57.150 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:15:07.753 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:21:41.931 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:22:26.102 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:22:29.255 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:23:06.291 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:23:13.190 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:23:43.897 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:24:32.952 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:24:49.572 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[W 13:25:07.665 NotebookApp] delete /FourierNN/models/LaPlante2019_test
+[I 13:25:36.504 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:26:28.561 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:27:04.939 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:27:22.838 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:27:49.620 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:32:11.170 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:32:41.918 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:33:11.245 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:33:42.389 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:34:13.817 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:34:30.065 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:35:17.681 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:35:27.150 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:35:35.529 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:36:29.460 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:36:35.979 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:36:51.680 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:37:17.930 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:40:51.993 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:41:39.961 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:42:00.163 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:42:07.722 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:42:15.709 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:42:48.478 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[W 13:43:36.730 NotebookApp] delete /FourierNN/models/LaPlante2019_test
+[I 13:43:45.217 NotebookApp] Saving file at /FourierNN/model.py
+[I 13:43:46.789 NotebookApp] Saving file at /FourierNN/train_Fourier_NN.py
+[I 13:43:48.697 NotebookApp] Saving file at /FourierNN/hyperparams.py
+[I 13:43:50.397 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+slurmstepd: error: *** JOB 1678618 ON node1326 CANCELLED AT 2021-07-05T18:09:16 DUE TO TIME LIMIT ***

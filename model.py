@@ -22,72 +22,84 @@ class Fourier_NN(nn.Module):
             layer_output = layer(layer_output)
         return layer_output
 
-#train func
-def train(dataloader, model, device, loss_fn=hp.LOSS_FN):
-    #set optimizer
-    optimizer = hp.optimizer(model)
-    
-    size = len(dataloader.dataset)
+def train(dataloader, model, device, optimizer):
+    tot_loss = 0
     for batch, (X, y) in enumerate(dataloader):
+        #feed batch through model
         X, y = X.to(device), y.to(device)
-        # Compute prediction error
         pred = model(X)
-
-        predflat = torch.flatten(pred)
-        yflat = torch.flatten(y)
-        loss = loss_fn(predflat, yflat)
+        
+        # Compute prediction error
+        loss = hp.loss_fn(pred, y)
 
         # Backpropagation
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
+        tot_loss += loss.item()
+        
+    #return the average epoch training loss
+    avg_loss = tot_loss / len(dataloader)
+    return avg_loss
 
-#test func
-def test(dataloader, model, device, loss_fn=hp.LOSS_FN):
-    size = len(dataloader.dataset)
+def test(dataloader, model, device):
     model.eval()
-    test_loss, total_error = 0, 0
+    tot_loss = 0
     with torch.no_grad():
         for X, y in dataloader:
             X, y = X.to(device), y.to(device)
             pred = model(X)
-            test_loss += loss_fn(pred, y).item()
-            total_error += torch.sum(torch.abs(pred - y))
-    print("Average loss: {}".format(test_loss / size))
-    print("Average error: {}".format(total_error / size))
+            tot_loss += hp.loss_fn(pred, y).item()
+    avg_loss = tot_loss / len(dataloader)
+    print("Average loss: {}".format(avg_loss))
+    return avg_loss
     
-def predict(dataloader, model, device, loss_fn=hp.LOSS_FN, pred_save_path=hp.MODEL_PATH, pred_save_name=hp.MODEL_NAME):
-    size = len(dataloader.dataset)
+def predict(dataloader, model, device, pred_save_dir=hp.MODEL_DIR, pred_save_name=hp.MODEL_NAME):
+    #init
     model.eval()
     pred, labels = torch.tensor([]).to(device), torch.tensor([]).to(device)
-    print("Predicting on {} samples...".format(size))
+    
+    #predict
+    print("Predicting on {} samples...".format(len(dataloader.dataset)))
     with torch.no_grad():
         for X, y in dataloader:
             X, y = X.to(device), y.to(device)
             pred = torch.cat((pred, model(X)), 0)
             labels = torch.cat((labels, y), 0)
+            
+    #save as npz
     pred = np.array(pred.cpu())
     labels = np.array(labels.cpu())
-    f = pred_save_path + "/pred_" + pred_save_name
+    f = pred_save_dir + "/pred_" + pred_save_name
+    print("Saving prediction to {}.npz...".format(f))
     np.savez('{}.npz'.format(f),targets=labels,predictions=pred)
-    print("Prediction saved to {}.npz".format(f))
+    print("Prediction saved.")
 
     
-def save(model, model_save_path=hp.MODEL_PATH, model_save_name=hp.MODEL_FILENAME):
+def save(model, loss=None, model_save_dir=hp.MODEL_DIR, model_save_name=hp.MODEL_NAME):
     # save trained model
-    if not os.path.isdir(model_save_path):
-        os.mkdir(model_save_path)
-    f = model_save_path + "/" + model_save_name
-    print("Saving PyTorch Model State to {}...".format(f))
+    if not os.path.isdir(model_save_dir):
+        os.mkdir(model_save_dir)
+    f = model_save_dir + "/" + model_save_name + ".pth"
+    print("Saving PyTorch Model State to {}.pth...".format(f))
     torch.save(model.state_dict(), f)
     print("Model Saved.")
+    
+    #save loss to npz
+    if loss:
+        fl = model_save_dir + "/loss_" + model_save_name + ".npz"
+        print("Saving loss data to {}...".format(fl))
+        np.savez(fl, train=loss["train"], test=loss["test"])
+        print("Loss data saved.")
 
-def load(model, model_load_path=hp.MODEL_PATH, model_load_name=hp.MODEL_FILENAME):
-    f = model_load_path + "/" + model_load_name
+def load(model, model_load_dir=hp.MODEL_DIR, model_load_name=hp.MODEL_NAME):
+    f = model_load_dir + "/" + model_load_name + ".pth"
     if os.path.isfile(f):
         print("Loading model state from {}".format(f))
         model.load_state_dict(torch.load(f))
         print("Model loaded.")
     else:
         print("Cannot find model path!")
+        
+
 

@@ -6,19 +6,17 @@ from torch.utils.data import Dataset
 from EoR_Dataset import EORImageDataset_LaPlante
 from model import Fourier_NN, train, test, save
 from hyperparams import Model_Hyperparameters as hp
+from plot_model_results import plot_loss
 
 print("Model: {}".format(hp.MODEL_NAME))
 
 #make sure we aren't overwriting
-if os.path.isdir(hp.MODEL_PATH):
+if os.path.isdir(hp.MODEL_DIR):
     print("Attempting to overwrite existing model. Please rename current model or delete old model directory.")
 else:
-    #make our model's directory
-    os.mkdir(hp.MODEL_PATH)
-
     # training & testing datasets
-    train_data = EORImageDataset_LaPlante(train=True, limit_len=128)
-    test_data = EORImageDataset_LaPlante(train=False, limit_len=128)
+    train_data = EORImageDataset_LaPlante(train=True, limit_len=100)
+    test_data = EORImageDataset_LaPlante(train=False, limit_len=100)
 
     # training & testing dataloaders
     train_dataloader = DataLoader(train_data, batch_size=hp.BATCHSIZE, shuffle=True)
@@ -30,11 +28,21 @@ else:
 
     # train loop
     model = Fourier_NN().to(device)
+    optim = hp.optimizer(model)
+    scheduler = hp.scheduler(optim)
+    loss = { "train" : [], "test" : [] }
+    
     for t in range(hp.EPOCHS):
         print(f"Epoch {t+1}\n-------------------------------")
-        train(train_dataloader, model, device)
-        test(test_dataloader, model, device)
-    print("Done!")
-
-    save(model)
+        loss["train"].append(train(train_dataloader, model, device, optim))
+        loss["test"].append(test(test_dataloader, model, device))
+        if hp.LR_DECAY:
+            scheduler.step()
+            print(optimizer.param_groups[0]["lr"])
+    
+    #save model state dict, loss history, and hp summary
+    save(model, loss)
     hp.save_hyparam_summary()
+    
+    plot_loss(loss)
+    

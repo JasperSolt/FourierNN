@@ -106,3 +106,4 @@ module: anaconda: "See https://docs.ccv.brown.edu/oscar/software/anaconda for po
 [I 19:40:35.948 NotebookApp] Saving file at /FourierNN/plot_model_results.py
 [I 19:40:44.575 NotebookApp] Saving file at /FourierNN/plot_model_results.py
 [I 19:41:02.880 NotebookApp] Saving file at /FourierNN/plot_model_results.py
+slurmstepd: error: *** JOB 1663361 ON node1736 CANCELLED AT 2021-07-03T01:41:17 DUE TO TIME LIMIT ***

@@ -1,0 +1,18 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 1685984
+##  Job Name : tunnel
+##  Nodelist : node1159
+##      CPUs : 
+##   Mem/CPU : 5120 MB
+## Directory : /gpfs/home/jsolt/FourierNN/jupyter
+##   Started : Mon Jul  5 20:20:57 EDT 2021
+###############################################################################
+module: loading 'anaconda/3-5.2.0'
+module: anaconda: "See https://docs.ccv.brown.edu/oscar/software/anaconda for potential issues on VNC and batch jobs"
+[I 20:21:02.027 NotebookApp] JupyterLab beta preview extension loaded from /gpfs/runtime/opt/anaconda/3-5.2.0/lib/python3.6/site-packages/jupyterlab
+[I 20:21:02.027 NotebookApp] JupyterLab application directory is /gpfs/rt/7.2/opt/anaconda/3-5.2.0/share/jupyter/lab
+[I 20:21:02.049 NotebookApp] Serving notebooks from local directory: /gpfs/home/jsolt
+[I 20:21:02.049 NotebookApp] 0 active kernels
+[I 20:21:02.049 NotebookApp] The Jupyter Notebook is running at:
+[I 20:21:02.049 NotebookApp] http://172.20.207.59:9441/
+[I 20:21:02.049 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).

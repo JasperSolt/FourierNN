@@ -1,5 +1,5 @@
 import matplotlib
-import matplotlib.pyplot as pl
+import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import matplotlib.patches as mpatches
 matplotlib.use('AGG')
@@ -7,13 +7,24 @@ import numpy as np
 import os
 from hyperparams import Model_Hyperparameters as hp, Constant as con
 
-def plot_model_predictions(modelnames=["test", "test2"], modellabels=None):
-    npz_f = hp.MODEL_PATH + "/pred_" + hp.MODEL_NAME
+def plot_loss(loss, epochs=hp.EPOCHS, model_name=hp.MODEL_NAME, model_dir=hp.MODEL_DIR):
+    f = model_dir + "/" + model_name + "_loss.png"
+    print("Saving loss plot to {}...".format(f))
+    
+    train_loss, val_loss = loss["train"], loss["test"]
+    assert(len(train_loss) == epochs)
+    assert(len(val_loss) == epochs)
+    plt.plot(np.arange(1, epochs+1), np.log10(train_loss), label='Training loss')
+    plt.plot(np.arange(1, epochs+1), np.log10(val_loss), label='Evaluation loss')
+    plt.xlabel('Epochs')
+    plt.ylabel('Log MSE Loss')
+    plt.legend()
+    plt.savefig(model_dir + "/loss_" + model_name + ".png", dpi=300)
+    plt.clf()
+    print("Loss plot saved.")
 
-    #puts results in their own directory
-    if not os.path.isdir(hp.MODEL_PATH):
-        os.mkdir(hp.MODEL_PATH)
-        
+def plot_model_predictions(modelnames=[hp.MODEL_NAME], modellabels=None):
+    #if you want custom model names on the plots
     if not modellabels:
         modellabels = modelnames
     n_models = len(modelnames)
@@ -25,7 +36,7 @@ def plot_model_predictions(modelnames=["test", "test2"], modellabels=None):
         print("Plotting results for parameter: {}...".format(con.PARAM_DICT[p]))
         
         #layout
-        fig = pl.figure()
+        fig = plt.figure()
         gs1 = gridspec.GridSpec(3,1)
         ax1, ax2 = fig.add_subplot(gs1[:2]), fig.add_subplot(gs1[2])
         
@@ -46,6 +57,7 @@ def plot_model_predictions(modelnames=["test", "test2"], modellabels=None):
         ax2.set_ylabel(r'% error')
         ax2.set_xlabel(r'True {}'.format(param))
         
+        #load and plot the parameter prediction data for each model
         targets, pred, err = np.array([]), np.array([]), np.array([])
         for i, name in enumerate(modelnames):
             result = np.load('{}/pred_{}.npz'.format(name, name))
@@ -76,13 +88,23 @@ def plot_model_predictions(modelnames=["test", "test2"], modellabels=None):
         ax2.set_xlim(0.95*mintargets,1.05*maxtargets)
         
         #save
-        pl.tight_layout()
-        fname = param
-        for name in modelnames:
-            fname += "_" + name
+        plt.tight_layout()
         
-        pl.savefig('{}.png'.format(fname),dpi=300)
-        pl.close()
+        fname = ""
+        #if we're plotting 1 model, save the results in that model's directory
+        if len(modelnames) == 1:
+            fname = hp.MODEL_DIR + "/" + param + "_" + modelnames[0]
+        #if we're plotting multiple models, create a new directory
+        else:
+            suffix = ""
+            for name in modelnames:
+                suffix += "_" + name
+            plt_dir = "compare_" + suffix
+            if not os.path.isdir(plt_dir):
+                os.mkdir(plt_dir)
+            fname = plt_dir + "/" + param + suffix
+        plt.savefig('{}.png'.format(fname),dpi=300)
+        plt.close()
         
 
 if __name__ == "__main__":
