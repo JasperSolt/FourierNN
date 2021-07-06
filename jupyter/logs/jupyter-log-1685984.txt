@@ -16,3 +16,4 @@ module: anaconda: "See https://docs.ccv.brown.edu/oscar/software/anaconda for po
 [I 20:21:02.049 NotebookApp] The Jupyter Notebook is running at:
 [I 20:21:02.049 NotebookApp] http://172.20.207.59:9441/
 [I 20:21:02.049 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+slurmstepd: error: *** JOB 1685984 ON node1159 CANCELLED AT 2021-07-06T04:21:22 DUE TO TIME LIMIT ***
