@@ -60,7 +60,7 @@ def plot_model_predictions(modelnames=[hp.MODEL_NAME], modellabels=None):
         #load and plot the parameter prediction data for each model
         targets, pred, err = np.array([]), np.array([]), np.array([])
         for i, name in enumerate(modelnames):
-            result = np.load('{}/pred_{}.npz'.format(name, name))
+            result = np.load('models/{}/pred_{}.npz'.format(name, name))
             
             model_targets = np.array(result['targets'][:,p])
             model_pred = np.array(result['predictions'][:,p])

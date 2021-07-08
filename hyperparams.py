@@ -29,11 +29,11 @@ class Model_Hyperparameters():
     DESC = "As close to Paul's 2019 paper as possible"
 
     # training hyperparameters
-    BATCHSIZE = 32
+    BATCHSIZE = 8
     EPOCHS = 5
     TRAIN_PERCENT = 0.8 #fraction of dataset used in training
-    INITIAL_LR = 0.1 #static learning rate if LR_DECAY = False, or initial learning rate if LR_DECAY = True
-    LR_DECAY = True
+    INITIAL_LR = 0.001 #static learning rate if LR_DECAY = False, or initial learning rate if LR_DECAY = True
+    LR_DECAY = False
 
     #from dataset
     INPUT_CHANNELS = 30
