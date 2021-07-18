@@ -62,12 +62,12 @@ def plot_model_predictions(modelnames=[hp.MODEL_NAME], modellabels=None):
         for i, name in enumerate(modelnames):
             result = np.load('models/{}/pred_{}.npz'.format(name, name))
             
-            model_targets = np.array(result['targets'][:,p])
-            model_pred = np.array(result['predictions'][:,p])
+            model_targets = np.array(result['targets'][:, p])
+            model_pred = np.array(result['predictions'][:, p])
             model_err = 100.0*(1-model_pred/model_targets)
             
-            ax1.scatter(model_targets, model_pred,alpha=0.7, s=1.5, c=model_colors[i])
-            ax2.scatter(model_targets, model_err,alpha=0.7, s=1.5, c=model_colors[i])
+            ax1.scatter(model_targets, model_pred, alpha=0.7, s=1.5, c=model_colors[i])
+            ax2.scatter(model_targets, model_err, alpha=0.7, s=1.5, c=model_colors[i])
             
             targets = np.append(targets,model_targets)
             pred = np.append(pred, model_pred)

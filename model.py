@@ -31,7 +31,6 @@ def train(dataloader, model, device, optimizer):
         
         # Compute prediction error
         loss = hp.loss_fn(pred, y)
-
         # Backpropagation
         optimizer.zero_grad()
         loss.backward()
@@ -72,7 +71,8 @@ def predict(dataloader, model, device, pred_save_dir=hp.MODEL_DIR, pred_save_nam
     labels = np.array(labels.cpu())
     f = pred_save_dir + "/pred_" + pred_save_name
     print("Saving prediction to {}.npz...".format(f))
-    np.savez('{}.npz'.format(f),targets=labels,predictions=pred)
+    print(pred.shape)
+    np.savez('{}.npz'.format(f),targets=labels, predictions=pred)
     print("Prediction saved.")
 
     

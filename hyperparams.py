@@ -22,22 +22,24 @@ Hyperparameters for the model. You should only have to edit this class between r
 class Model_Hyperparameters():
     # model metadata
     MODEL_ID = str(datetime.timestamp(datetime.now())).replace(".","")
-    MODEL_NAME = "LaPlante2019_test"
+    MODEL_NAME = "LaPlante2019_base_decay_nowedge"
     MODEL_DIR = "models/" + MODEL_NAME
     HP_JSON_FILENAME = "hp_" + MODEL_NAME + ".json"
-    DATA_PATH = "../data/shared/LaPlanteSims/v10/t21_snapshots_wedge_transposed.hdf5"
-    DESC = "As close to Paul's 2019 paper as possible"
+    DATA_PATH = "../data/shared/LaPlanteSims/v10/t21_snapshots_nowedge.hdf5"
+    DESC = "As close to Paul's 2019 paper as possible + decaying lr + no wedge filtering"
 
     # training hyperparameters
-    BATCHSIZE = 8
-    EPOCHS = 5
+    BATCHSIZE = 32
+    EPOCHS = 400
     TRAIN_PERCENT = 0.8 #fraction of dataset used in training
-    INITIAL_LR = 0.001 #static learning rate if LR_DECAY = False, or initial learning rate if LR_DECAY = True
-    LR_DECAY = False
+    INITIAL_LR = 0.1 #static learning rate if LR_DECAY = False, or initial learning rate if LR_DECAY = True
+    LR_DECAY = True
+    DECAY_RT = 1
 
     #from dataset
     INPUT_CHANNELS = 30
     N_PARAMS = 3
+    N_SAMPLES = 1000
 
     # Loss function
     loss_fn = torch.nn.MSELoss()
@@ -104,7 +106,9 @@ class Model_Hyperparameters():
     @classmethod
     def scheduler(cls, opt):
         if cls.LR_DECAY:
-            lam = lambda epoch: (1-epoch/cls.EPOCHS)
+            #batches_per_epoch = (cls.N_SAMPLES * cls.TRAIN_PERCENT) / cls.BATCHSIZE
+            #lam = lambda epoch: 1 / (1 + cls.DECAY_RT * batches_per_epoch * epoch)
+            lam = lambda epoch: 1 / (1 + cls.DECAY_RT * epoch)
             scheduler = torch.optim.lr_scheduler.LambdaLR(opt, lr_lambda=[lam])
             return scheduler
         return None

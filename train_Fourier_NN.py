@@ -15,8 +15,8 @@ if os.path.isdir(hp.MODEL_DIR):
     print("Attempting to overwrite existing model. Please rename current model or delete old model directory.")
 else:
     # training & testing datasets
-    train_data = EORImageDataset_LaPlante(train=True, limit_len=100)
-    test_data = EORImageDataset_LaPlante(train=False, limit_len=100)
+    train_data = EORImageDataset_LaPlante(train=True, limit_len=hp.N_SAMPLES)
+    test_data = EORImageDataset_LaPlante(train=False, limit_len=hp.N_SAMPLES)
 
     # training & testing dataloaders
     train_dataloader = DataLoader(train_data, batch_size=hp.BATCHSIZE, shuffle=True)
@@ -38,7 +38,7 @@ else:
         loss["test"].append(test(test_dataloader, model, device))
         if hp.LR_DECAY:
             scheduler.step()
-            print(optimizer.param_groups[0]["lr"])
+            print(optim.param_groups[0]["lr"])
     
     #save model state dict, loss history, and hp summary
     save(model, loss)

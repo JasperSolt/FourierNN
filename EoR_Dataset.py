@@ -32,7 +32,7 @@ class EORImageDataset_LaPlante(Dataset):
                 if not train:
                     begin, end = train_size, size
 
-                self._21cm = torch.tensor(np.transpose(h5f['Data/t21_snapshots_transposed'][begin:end], axes=[0,3,1,2]))
+                self._21cm = torch.tensor(h5f['Data/t21_snapshots'][begin:end])
                 self.labels = torch.tensor(h5f["Data/snapshot_labels"][begin:end,:hp.N_PARAMS]) #First three labels: dur, mdpt, meanz
                 '''
                 self.ksz = torch.tensor(h5f["Data/ksz_snapshots"][begin:end]) * KSZ_CONSTANT
