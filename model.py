@@ -4,6 +4,7 @@ from torch import nn
 from torch.utils.data import DataLoader
 from torch.utils.data import Dataset
 import numpy as np
+from accelerate import Accelerator
 from hyperparams import Model_Hyperparameters as hp
 
 class Fourier_NN(nn.Module):
@@ -22,18 +23,19 @@ class Fourier_NN(nn.Module):
             layer_output = layer(layer_output)
         return layer_output
 
-def train(dataloader, model, device, optimizer):
+def train(dataloader, model, optimizer, accelerator):
     tot_loss = 0
     for batch, (X, y) in enumerate(dataloader):
         #feed batch through model
-        X, y = X.to(device), y.to(device)
+        #X, y = X.to(device), y.to(device)
         pred = model(X)
         
         # Compute prediction error
         loss = hp.loss_fn(pred, y)
+        
         # Backpropagation
         optimizer.zero_grad()
-        loss.backward()
+        accelerator.backward(loss) #loss.backward()
         optimizer.step()
         tot_loss += loss.item()
         
@@ -41,16 +43,16 @@ def train(dataloader, model, device, optimizer):
     avg_loss = tot_loss / len(dataloader)
     return avg_loss
 
-def test(dataloader, model, device):
+def test(dataloader, model, accelerator):
     model.eval()
     tot_loss = 0
     with torch.no_grad():
         for X, y in dataloader:
-            X, y = X.to(device), y.to(device)
+            #X, y = X.to(device), y.to(device)
             pred = model(X)
             tot_loss += hp.loss_fn(pred, y).item()
     avg_loss = tot_loss / len(dataloader)
-    print("Average loss: {}".format(avg_loss))
+    accelerator.print("Average loss: {}".format(avg_loss))
     return avg_loss
     
 def predict(dataloader, model, device, pred_save_dir=hp.MODEL_DIR, pred_save_name=hp.MODEL_NAME):
@@ -76,13 +78,14 @@ def predict(dataloader, model, device, pred_save_dir=hp.MODEL_DIR, pred_save_nam
     print("Prediction saved.")
 
     
-def save(model, loss=None, model_save_dir=hp.MODEL_DIR, model_save_name=hp.MODEL_NAME):
+def save(model, accelerator, loss=None, model_save_dir=hp.MODEL_DIR, model_save_name=hp.MODEL_NAME):
     # save trained model
     if not os.path.isdir(model_save_dir):
         os.mkdir(model_save_dir)
     f = model_save_dir + "/" + model_save_name + ".pth"
-    print("Saving PyTorch Model State to {}.pth...".format(f))
-    torch.save(model.state_dict(), f)
+    accelerator.print("Saving PyTorch Model State to {}.pth...".format(f))
+    model = accelerator.unwrap_model(model)
+    accelerator.save(model.state_dict(), f)
     print("Model Saved.")
     
     #save loss to npz
