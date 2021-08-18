@@ -1,6 +1,9 @@
-#jsolt: my specific venv for oscar
+#my specific venv for oscar
 torchenv/
 
-#jsolt: bash scripts for Oscar workflow + jupyter batch job log files
+#bash scripts for Oscar workflow + jupyter batch job log files
 jupyter/*.sh
 jupyter/*.txt
+
+#module for complex numbers
+cplxmodule/
