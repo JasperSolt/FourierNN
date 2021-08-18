@@ -1,182 +1,225 @@
 ## SLURM PROLOG ###############################################################
-##    Job ID : 1870474
+##    Job ID : 1976681
 ##  Job Name : Fourier_NN
-##  Nodelist : gpu2004
+##  Nodelist : gpu1402
 ##      CPUs : 
-##  Mem/Node : 153600 MB
+##  Mem/Node : 194560 MB
 ## Directory : /gpfs/home/jsolt/FourierNN
-##   Started : Thu Jul 29 14:58:49 EDT 2021
+##   Started : Tue Aug 10 11:57:18 EDT 2021
 ###############################################################################
-stderr: /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/distributed/launch.py:164: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
-stderr:   "The module torch.distributed.launch is deprecated "
-stderr: The module torch.distributed.launch is deprecated and going to be removed in future.Migrate to torch.distributed.run
-stderr: INFO:torch.distributed.launcher.api:Starting elastic_operator with launch configs:
-stderr:   entrypoint       : /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/accelerate/test_utils/test_script.py
-stderr:   min_nodes        : 1
-stderr:   max_nodes        : 1
-stderr:   nproc_per_node   : 4
-stderr:   run_id           : none
-stderr:   rdzv_backend     : static
-stderr:   rdzv_endpoint    : 127.0.0.1:29500
-stderr:   rdzv_configs     : {'rank': 0, 'timeout': 900}
-stderr:   max_restarts     : 3
-stderr:   monitor_interval : 5
-stderr:   log_dir          : None
-stderr:   metrics_cfg      : {}
-stderr: 
-stderr: INFO:torch.distributed.elastic.agent.server.local_elastic_agent:log directory set to: /tmp/torchelastic_hqci49x8/none_273htobb
-stderr: INFO:torch.distributed.elastic.agent.server.api:[default] starting workers for entrypoint: python3
-stderr: INFO:torch.distributed.elastic.agent.server.api:[default] Rendezvous'ing worker group
-stderr: /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/distributed/elastic/utils/store.py:53: FutureWarning: This is an experimental API and will be changed in future.
-stderr:   "This is an experimental API and will be changed in future.", FutureWarning
-stderr: INFO:torch.distributed.elastic.agent.server.api:[default] Rendezvous complete for workers. Result:
-stderr:   restart_count=0
-stderr:   master_addr=127.0.0.1
-stderr:   master_port=29500
-stderr:   group_rank=0
-stderr:   group_world_size=1
-stderr:   local_ranks=[0, 1, 2, 3]
-stderr:   role_ranks=[0, 1, 2, 3]
-stderr:   global_ranks=[0, 1, 2, 3]
-stderr:   role_world_sizes=[4, 4, 4, 4]
-stderr:   global_world_sizes=[4, 4, 4, 4]
-stderr: 
-stderr: INFO:torch.distributed.elastic.agent.server.api:[default] Starting worker group
-stderr: INFO:torch.distributed.elastic.multiprocessing:Setting worker0 reply file to: /tmp/torchelastic_hqci49x8/none_273htobb/attempt_0/0/error.json
-stderr: INFO:torch.distributed.elastic.multiprocessing:Setting worker1 reply file to: /tmp/torchelastic_hqci49x8/none_273htobb/attempt_0/1/error.json
-stderr: INFO:torch.distributed.elastic.multiprocessing:Setting worker2 reply file to: /tmp/torchelastic_hqci49x8/none_273htobb/attempt_0/2/error.json
-stderr: INFO:torch.distributed.elastic.multiprocessing:Setting worker3 reply file to: /tmp/torchelastic_hqci49x8/none_273htobb/attempt_0/3/error.json
-stderr: INFO:torch.distributed.elastic.agent.server.api:[default] worker group successfully finished. Waiting 300 seconds for other agents to finish.
-stderr: INFO:torch.distributed.elastic.agent.server.api:Local worker group finished (SUCCEEDED). Waiting 300 seconds for other agents to finish
-stderr: /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/distributed/elastic/utils/store.py:71: FutureWarning: This is an experimental API and will be changed in future.
-stderr:   "This is an experimental API and will be changed in future.", FutureWarning
-stderr: INFO:torch.distributed.elastic.agent.server.api:Done waiting for other agents. Elapsed: 0.0003952980041503906 seconds
-stderr: {"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 0, "group_rank": 0, "worker_id": "9917", "role": "default", "hostname": "gpu2004.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 25, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [0], \"role_rank\": [0], \"role_world_size\": [4]}", "agent_restarts": 0}}
-stderr: {"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 1, "group_rank": 0, "worker_id": "9918", "role": "default", "hostname": "gpu2004.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 25, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [1], \"role_rank\": [1], \"role_world_size\": [4]}", "agent_restarts": 0}}
-stderr: {"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 2, "group_rank": 0, "worker_id": "9919", "role": "default", "hostname": "gpu2004.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 25, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [2], \"role_rank\": [2], \"role_world_size\": [4]}", "agent_restarts": 0}}
-stderr: {"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 3, "group_rank": 0, "worker_id": "9922", "role": "default", "hostname": "gpu2004.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 25, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [3], \"role_rank\": [3], \"role_world_size\": [4]}", "agent_restarts": 0}}
-stderr: {"name": "torchelastic.worker.status.SUCCEEDED", "source": "AGENT", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": null, "group_rank": 0, "worker_id": null, "role": "default", "hostname": "gpu2004.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 25, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\"}", "agent_restarts": 0}}
+/gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/distributed/launch.py:164: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
+  "The module torch.distributed.launch is deprecated "
+The module torch.distributed.launch is deprecated and going to be removed in future.Migrate to torch.distributed.run
+INFO:torch.distributed.launcher.api:Starting elastic_operator with launch configs:
+  entrypoint       : train_Fourier_NN.py
+  min_nodes        : 1
+  max_nodes        : 1
+  nproc_per_node   : 4
+  run_id           : none
+  rdzv_backend     : static
+  rdzv_endpoint    : 127.0.0.1:29500
+  rdzv_configs     : {'rank': 0, 'timeout': 900}
+  max_restarts     : 3
+  monitor_interval : 5
+  log_dir          : None
+  metrics_cfg      : {}
 
-Running:  accelerate-launch --config_file=/users/jsolt/.cache/huggingface/accelerate/default_config.yaml /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/accelerate/test_utils/test_script.py
-stdout: **Initialization**
-stdout: Testing, testing. 1, 2, 3.
-stdout: Distributed environment: MULTI_GPU
-stdout: Num processes: 4
-stdout: Process index: 0
-stdout: Local process index: 0
-stdout: Device: cuda:0
-stdout: Use FP16 precision: False
-stdout: 
-stdout: 
-stdout: **Test random number generator synchronization**
-stdout: Distributed environment: MULTI_GPU
-stdout: Num processes: 4
-stdout: Process index: 3
-stdout: Local process index: 3
-stdout: Device: cuda:3
-stdout: Use FP16 precision: False
-stdout: 
-stdout: Distributed environment: MULTI_GPU
-stdout: Num processes: 4
-stdout: Process index: 1
-stdout: Local process index: 1
-stdout: Device: cuda:1
-stdout: Use FP16 precision: False
-stdout: 
-stdout: Distributed environment: MULTI_GPU
-stdout: Num processes: 4
-stdout: Process index: 2
-stdout: Local process index: 2
-stdout: Device: cuda:2
-stdout: Use FP16 precision: False
-stdout: 
-stdout: All rng are properly synched.
-stdout: 
-stdout: **DataLoader integration test**
-stdout: Non-shuffled dataloader passing.
-stdout: Shuffled dataloader passing.
-stdout: 
-stdout: **Training integration test**
-stdout: Training yielded the same results on one CPU or distributed setup with no batch split.
-stdout: Training yielded the same results on one CPU or distributes setup with batch split.
-stdout: *****************************************
-stdout: Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed.
-stdout: *****************************************
-Test is a success! You are ready for your distributed training!
-Model: multithread_test_4_gpus
-Loading data from ../data/shared/LaPlanteSims/v10/t21_snapshots_nowedge.hdf5...
-Data Tensor shape: [160, 30, 512, 512]
-Labels Tensor shape: [160, 2]
-Loading data from ../data/shared/LaPlanteSims/v10/t21_snapshots_nowedge.hdf5...
-Data Tensor shape: [40, 30, 512, 512]
-Labels Tensor shape: [40, 2]
-Using cuda device
+INFO:torch.distributed.elastic.agent.server.local_elastic_agent:log directory set to: /tmp/torchelastic_5m_q8tyw/none_i98f3jlt
+INFO:torch.distributed.elastic.agent.server.api:[default] starting workers for entrypoint: python3
+INFO:torch.distributed.elastic.agent.server.api:[default] Rendezvous'ing worker group
+/gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/distributed/elastic/utils/store.py:53: FutureWarning: This is an experimental API and will be changed in future.
+  "This is an experimental API and will be changed in future.", FutureWarning
+INFO:torch.distributed.elastic.agent.server.api:[default] Rendezvous complete for workers. Result:
+  restart_count=0
+  master_addr=127.0.0.1
+  master_port=29500
+  group_rank=0
+  group_world_size=1
+  local_ranks=[0, 1, 2, 3]
+  role_ranks=[0, 1, 2, 3]
+  global_ranks=[0, 1, 2, 3]
+  role_world_sizes=[4, 4, 4, 4]
+  global_world_sizes=[4, 4, 4, 4]
+
+INFO:torch.distributed.elastic.agent.server.api:[default] Starting worker group
+INFO:torch.distributed.elastic.multiprocessing:Setting worker0 reply file to: /tmp/torchelastic_5m_q8tyw/none_i98f3jlt/attempt_0/0/error.json
+INFO:torch.distributed.elastic.multiprocessing:Setting worker1 reply file to: /tmp/torchelastic_5m_q8tyw/none_i98f3jlt/attempt_0/1/error.json
+INFO:torch.distributed.elastic.multiprocessing:Setting worker2 reply file to: /tmp/torchelastic_5m_q8tyw/none_i98f3jlt/attempt_0/2/error.json
+INFO:torch.distributed.elastic.multiprocessing:Setting worker3 reply file to: /tmp/torchelastic_5m_q8tyw/none_i98f3jlt/attempt_0/3/error.json
+Using cuda:0 device
+Model: test
+Loading data...
 Epoch 1
 -------------------------------
 /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
   return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
-Average loss: 11.562568283081054
+/gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+/gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+/gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+Average train loss: 3153.6158986091614
+Average test loss: 1.219700574874878
 0.05
 Epoch 2
 -------------------------------
-Average loss: 10.217938232421876
+Average train loss: 1.2687721252441406
+Average test loss: 1.311490535736084
 0.03333333333333333
 Epoch 3
 -------------------------------
-Average loss: 1.3582291543483733
+Average train loss: 1.3502137660980225
+Average test loss: 1.3566229343414307
 0.025
 Epoch 4
 -------------------------------
-Average loss: 0.17868733182549476
+Average train loss: 1.3690280119578044
+Average test loss: 1.383405327796936
 0.020000000000000004
 Epoch 5
 -------------------------------
-Average loss: 0.05191709790378809
+Average train loss: 1.3840343554814656
+Average test loss: 1.402338981628418
 0.016666666666666666
 Epoch 6
 -------------------------------
-Average loss: 0.05599275194108486
+Average train loss: 1.3843725522359211
+Average test loss: 1.3884166479110718
 0.014285714285714285
 Epoch 7
 -------------------------------
-Average loss: 0.03632122976705432
+Average train loss: 1.4058306614557903
+Average test loss: 1.376953363418579
 0.0125
 Epoch 8
 -------------------------------
-Average loss: 0.03606199435889721
+Average train loss: 1.3928244908650715
+Average test loss: 1.3529448509216309
 0.011111111111111112
 Epoch 9
 -------------------------------
-Average loss: 0.04326795488595962
+Average train loss: 1.362897555033366
+Average test loss: 1.3977363109588623
 0.010000000000000002
 Epoch 10
 -------------------------------
-Average loss: 0.032316235918551685
+Average train loss: 1.3797861337661743
+Average test loss: 1.3837049007415771
 0.009090909090909092
-Saving PyTorch Model State to models/multithread_test_4_gpus/multithread_test_4_gpus.pth.pth...
+Epoch 11
+-------------------------------
+Average train loss: 1.3797857761383057
+Average test loss: 1.355762243270874
+0.008333333333333333
+Epoch 12
+-------------------------------
+Average train loss: 1.3776321013768513
+Average test loss: 1.3828333616256714
+0.007692307692307693
+Epoch 13
+-------------------------------
+Average train loss: 1.3690561056137085
+Average test loss: 1.3773618936538696
+0.007142857142857143
+Epoch 14
+-------------------------------
+Average train loss: 1.3815157016118367
+Average test loss: 1.3815146684646606
+0.006666666666666667
+Epoch 15
+-------------------------------
+Average train loss: 1.343755801518758
+Average test loss: 1.3674461841583252
+0.00625
+Epoch 16
+-------------------------------
+Average train loss: 1.3552895387013753
+Average test loss: 1.3724570274353027
+0.0058823529411764705
+Epoch 17
+-------------------------------
+Average train loss: 1.3686425685882568
+Average test loss: 1.317474603652954
+0.005555555555555556
+Epoch 18
+-------------------------------
+Average train loss: 1.3401639858881633
+Average test loss: 1.3592013120651245
+0.005263157894736842
+Epoch 19
+-------------------------------
+Average train loss: 1.3276106516520183
+Average test loss: 1.3515965938568115
+0.005000000000000001
+Epoch 20
+-------------------------------
+Average train loss: 1.3371767203013103
+Average test loss: 1.32338285446167
+0.004761904761904762
+Saving PyTorch Model State to models/test/test.pth.pth...
 Model Saved.
-Saving loss data to models/multithread_test_4_gpus/loss_multithread_test_4_gpus.npz...
-Loss data saved.
-Generating hyperparameter summary at models/multithread_test_4_gpus/hp_multithread_test_4_gpus.json...
+Generating hyperparameter summary at models/test/hp_test.json...
 Hyperparameter summary saved.
 
 * * * * * * * *
-PROCESS TIME: 0:00:53.815885
+PROCESS TIME: 0:01:13.394260
 * * * * * * * *
-Saving loss plot to models/multithread_test_4_gpus/multithread_test_4_gpus_loss.png...
+Saving loss plot to models/test/test_loss.png...
 Loss plot saved.
-
-Loading data from ../data/shared/LaPlanteSims/v10/t21_snapshots_nowedge.hdf5...
-Data Tensor shape: [40, 30, 512, 512]
-Labels Tensor shape: [40, 2]
-Using cuda device
-Loading model state from models/multithread_test_4_gpus/multithread_test_4_gpus.pth
-Model loaded.
-Predicting on 40 samples...
-/gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
-  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
-Saving prediction to models/multithread_test_4_gpus/pred_multithread_test_4_gpus.npz...
-(40, 2)
+Predicting on 20 samples...
+[[ 0.21760215 -0.32176507]
+ [ 0.21760215 -0.32176507]
+ [ 0.21760215 -0.32176507]
+ [ 0.21760215 -0.32176507]
+ [ 0.21760215 -0.32176507]
+ [ 0.21760215 -0.32176507]
+ [ 0.21760215 -0.32176507]
+ [ 0.21760215 -0.32176507]
+ [ 0.          0.        ]
+ [ 0.          0.        ]
+ [ 0.          0.        ]
+ [ 0.          0.        ]
+ [ 0.          0.        ]
+ [ 0.          0.        ]
+ [ 0.          0.        ]
+ [ 0.          0.        ]
+ [ 0.          0.        ]
+ [ 0.          0.        ]
+ [ 0.          0.        ]
+ [ 0.          0.        ]]
+[[8.80191135 1.00335228]
+ [7.31442213 0.98874313]
+ [8.23067379 0.95495868]
+ [8.3940382  1.23924708]
+ [7.08963156 0.95420402]
+ [8.25846958 1.29027379]
+ [8.44044399 1.25522149]
+ [7.64392805 0.89558935]
+ [0.         0.        ]
+ [0.         0.        ]
+ [0.         0.        ]
+ [0.         0.        ]
+ [0.         0.        ]
+ [0.         0.        ]
+ [0.         0.        ]
+ [0.         0.        ]
+ [0.         0.        ]
+ [0.         0.        ]
+ [0.         0.        ]
+ [0.         0.        ]]
+Saving prediction to models/test/pred_test.npz...
 Prediction saved.
-Plotting results for parameter: midpoint...
-Plotting results for parameter: duration...
+INFO:torch.distributed.elastic.agent.server.api:[default] worker group successfully finished. Waiting 300 seconds for other agents to finish.
+INFO:torch.distributed.elastic.agent.server.api:Local worker group finished (SUCCEEDED). Waiting 300 seconds for other agents to finish
+/gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/distributed/elastic/utils/store.py:71: FutureWarning: This is an experimental API and will be changed in future.
+  "This is an experimental API and will be changed in future.", FutureWarning
+INFO:torch.distributed.elastic.agent.server.api:Done waiting for other agents. Elapsed: 0.00026035308837890625 seconds
+{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 0, "group_rank": 0, "worker_id": "26727", "role": "default", "hostname": "gpu1402.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 85, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [0], \"role_rank\": [0], \"role_world_size\": [4]}", "agent_restarts": 0}}
+{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 1, "group_rank": 0, "worker_id": "26728", "role": "default", "hostname": "gpu1402.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 85, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [1], \"role_rank\": [1], \"role_world_size\": [4]}", "agent_restarts": 0}}
+{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 2, "group_rank": 0, "worker_id": "26729", "role": "default", "hostname": "gpu1402.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 85, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [2], \"role_rank\": [2], \"role_world_size\": [4]}", "agent_restarts": 0}}
+{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 3, "group_rank": 0, "worker_id": "26730", "role": "default", "hostname": "gpu1402.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 85, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [3], \"role_rank\": [3], \"role_world_size\": [4]}", "agent_restarts": 0}}
+{"name": "torchelastic.worker.status.SUCCEEDED", "source": "AGENT", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": null, "group_rank": 0, "worker_id": null, "role": "default", "hostname": "gpu1402.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 85, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\"}", "agent_restarts": 0}}
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************

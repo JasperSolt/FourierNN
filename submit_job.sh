@@ -7,7 +7,7 @@
 ##SBATCH --constraint=p100
 
 #SBATCH -p gpu --gres=gpu:4
-#SBATCH --mem=150G
+#SBATCH --mem=190G
 
 #SBATCH -J Fourier_NN
 
@@ -16,9 +16,12 @@
 
 source torchenv/bin/activate
 
-accelerate test --config_file ~/.cache/huggingface/accelerate/default_config.yaml 
+##accelerate test --config_file ~/FourierNN/accelerate/default_config.yaml 
 
-python -u train_Fourier_NN.py
-python -u predict_Fourier_NN.py
-python -u plot_model_results.py
+accelerate launch --config_file ~/FourierNN/accelerate/default_config.yaml train_Fourier_NN.py  
+##python -u train_Fourier_NN.py
+
+##python -u predict_Fourier_NN.py
+
+##python -u plot_model_results.py
 

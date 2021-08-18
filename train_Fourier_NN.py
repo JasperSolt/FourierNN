@@ -6,7 +6,7 @@ from torch.utils.data import Dataset
 from EoR_Dataset import EORImageDataset_LaPlante
 from model import Fourier_NN, train, test, save, predict
 from hyperparams import Model_Hyperparameters as hp
-from plot_model_results import plot_loss
+from plot_model_results import plot_loss, plot_model_predictions
 from accelerate import Accelerator
 from datetime import datetime
 
@@ -34,7 +34,6 @@ else:
     # training & testing dataloaders
     train_dataloader = DataLoader(train_data, batch_size=hp.BATCHSIZE, shuffle=True)
     test_dataloader = DataLoader(test_data, batch_size=hp.BATCHSIZE, shuffle=True)
-    accelerator.print("Data loaded.")
 
     # initialize model, optimizer
     model = Fourier_NN() #model = Fourier_NN().to(device)
@@ -47,23 +46,32 @@ else:
     scheduler = hp.scheduler(optim)
 
     #train / test loop
-    #loss = { "train" : [], "test" : [] }
+    loss = { "train" : [], "test" : [] }
     for t in range(hp.EPOCHS):
         accelerator.print(f"Epoch {t+1}\n-------------------------------")
-        #loss["train"].append(train(train_dataloader, model, optim, accelerator))
-        #loss["test"].append(test(test_dataloader, model, accelerator))        
-        train(train_dataloader, model, optim, accelerator)
-        test(test_dataloader, model, accelerator)
-        if hp.LR_DECAY: scheduler.step()
+        loss["train"].append(train(train_dataloader, model, optim, accelerator))
+        loss["test"].append(test(test_dataloader, model, accelerator))
+        if hp.LR_DECAY:
+            scheduler.step()
+            accelerator.print(optim.param_groups[0]['lr'])
     
     accelerator.wait_for_everyone()
+
+    # save trained model
+    model_save_dir=hp.MODEL_DIR
+    model_save_name=hp.MODEL_NAME
+    if accelerator.is_main_process and not os.path.isdir(model_save_dir):
+        os.mkdir(model_save_dir)
+    f = model_save_dir + "/" + model_save_name + ".pth"
+    accelerator.print("Saving PyTorch Model State to {}.pth...".format(f))
+    #model = accelerator.unwrap_model(model)
+    accelerator.save(model.state_dict(), f)
+    accelerator.print("Model Saved.")
     
-    #save model state dict, loss history, and hp summary
+    
     if accelerator.is_main_process:
-        save(model, accelerator)#, loss)
         hp.save_hyparam_summary()
         hp.save_time(start_time)
-        #plot_loss(loss)
-    
-    predict(test_dataloader, model, "cuda")
-
+        plot_loss(loss)
+        predict(test_dataloader, model, accelerator.device)
+        #plot_model_predictions([hp.MODEL_NAME])

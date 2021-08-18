@@ -6,6 +6,10 @@ from datetime import datetime
 import torch
 from torch import nn
 
+def MSELossNorm(output, target):
+    loss = torch.mean(((target - output) / target)**2)
+    return loss
+
 '''
 These should literally never change
 '''
@@ -22,30 +26,32 @@ Hyperparameters for the model. You should only have to edit this class between r
 class Model_Hyperparameters():
     # model metadata
     MODEL_ID = str(datetime.timestamp(datetime.now())).replace(".","")
-    MODEL_NAME = "multithread_test_1_gpus"
+    MODEL_NAME = "test"
     MODEL_DIR = "models/" + MODEL_NAME
     HP_JSON_FILENAME = "hp_" + MODEL_NAME + ".json"
     DATA_PATH = "../data/shared/LaPlanteSims/v10/t21_snapshots_nowedge.hdf5"
-    DESC = "huggingface accelerate test 1 gpus"
+    DESC = ""
 
     #Multithreading
-    N_GPU = 1
+    N_GPU = 4
     
     # training hyperparameters 
-    BATCHSIZE = 32
-    EPOCHS = 10
+    BATCHSIZE = 8
+    EPOCHS = 20
     TRAIN_PERCENT = 0.8 #fraction of dataset used in training
     INITIAL_LR = 0.1 #static learning rate if LR_DECAY = False, or initial learning rate if LR_DECAY = True
-    LR_DECAY = False
+    LR_DECAY = True
     DECAY_RT = 1
 
     #from dataset
     INPUT_CHANNELS = 30
     N_PARAMS = 2
-    N_SAMPLES = 200
+    N_SAMPLES = 100
 
     # Loss function
-    loss_fn = torch.nn.MSELoss()
+    loss_fn = MSELossNorm
+    #arbitrary loss normalization constant
+    LOSS_NORM_CONST = 10
 
     #model architecture
     LAYER_DICT = OrderedDict([

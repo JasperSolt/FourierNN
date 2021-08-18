@@ -41,6 +41,7 @@ def train(dataloader, model, optimizer, accelerator):
         
     #return the average epoch training loss
     avg_loss = tot_loss / len(dataloader)
+    accelerator.print("Average train loss: {}".format(avg_loss))
     return avg_loss
 
 def test(dataloader, model, accelerator):
@@ -52,31 +53,31 @@ def test(dataloader, model, accelerator):
             pred = model(X)
             tot_loss += hp.loss_fn(pred, y).item()
     avg_loss = tot_loss / len(dataloader)
-    accelerator.print("Average loss: {}".format(avg_loss))
+    accelerator.print("Average test loss: {}".format(avg_loss))
     return avg_loss
     
 def predict(dataloader, model, device, pred_save_dir=hp.MODEL_DIR, pred_save_name=hp.MODEL_NAME):
-    #init
     model.eval()
-    pred, labels = torch.tensor([]).to(device), torch.tensor([]).to(device)
+    shape = (dataloader.dataset.__len__(), hp.N_PARAMS)
+    predictions, labels = np.zeros(shape), np.zeros(shape)
     
     #predict
     print("Predicting on {} samples...".format(len(dataloader.dataset)))
     with torch.no_grad():
+        i = 0
         for X, y in dataloader:
             X, y = X.to(device), y.to(device)
-            pred = torch.cat((pred, model(X)), 0)
-            labels = torch.cat((labels, y), 0)
-            
-    #save as npz
-    pred = np.array(pred.cpu())
-    labels = np.array(labels.cpu())
+            batch_size = len(X)
+            predictions[i : (i + batch_size)] = model(X).cpu()
+            labels[i : (i + batch_size)] = y.cpu()
+            i += batch_size
+    print(predictions)
+    print(labels)
+    #save prediction
     f = pred_save_dir + "/pred_" + pred_save_name
     print("Saving prediction to {}.npz...".format(f))
-    print(pred.shape)
-    np.savez('{}.npz'.format(f),targets=labels, predictions=pred)
+    np.savez('{}.npz'.format(f), targets=labels, predictions=predictions)
     print("Prediction saved.")
-
     
 def save(model, accelerator, loss=None, model_save_dir=hp.MODEL_DIR, model_save_name=hp.MODEL_NAME):
     # save trained model
@@ -84,7 +85,7 @@ def save(model, accelerator, loss=None, model_save_dir=hp.MODEL_DIR, model_save_
         os.mkdir(model_save_dir)
     f = model_save_dir + "/" + model_save_name + ".pth"
     accelerator.print("Saving PyTorch Model State to {}.pth...".format(f))
-    model = accelerator.unwrap_model(model)
+    #model = accelerator.unwrap_model(model)
     accelerator.save(model.state_dict(), f)
     print("Model Saved.")
     
