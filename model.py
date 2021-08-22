@@ -7,6 +7,9 @@ import numpy as np
 from accelerate import Accelerator
 from hyperparams import Model_Hyperparameters as hp
 
+'''
+model class
+'''
 class Fourier_NN(nn.Module):
     def __init__(self, input_channels=hp.INPUT_CHANNELS):
         super(Fourier_NN, self).__init__()
@@ -23,6 +26,9 @@ class Fourier_NN(nn.Module):
             layer_output = layer(layer_output)
         return layer_output
 
+'''
+Training function
+'''
 def train(dataloader, model, optimizer, accelerator):
     tot_loss = 0
     for batch, (X, y) in enumerate(dataloader):
@@ -44,6 +50,9 @@ def train(dataloader, model, optimizer, accelerator):
     accelerator.print("Average train loss: {}".format(avg_loss))
     return avg_loss
 
+'''
+Validation function
+'''
 def test(dataloader, model, accelerator):
     model.eval()
     tot_loss = 0
@@ -56,54 +65,72 @@ def test(dataloader, model, accelerator):
     accelerator.print("Average test loss: {}".format(avg_loss))
     return avg_loss
     
-def predict(dataloader, model, device, pred_save_dir=hp.MODEL_DIR, pred_save_name=hp.MODEL_NAME):
+'''
+Prediction + save prediction 
+'''
+def predict(dataloader, model, accelerator, pred_save_dir=hp.MODEL_DIR, pred_save_name=hp.MODEL_NAME):
     model.eval()
     shape = (dataloader.dataset.__len__(), hp.N_PARAMS)
     predictions, labels = np.zeros(shape), np.zeros(shape)
+    i = 0
     
     #predict
-    print("Predicting on {} samples...".format(len(dataloader.dataset)))
+    accelerator.print("Predicting on {} samples...".format(len(dataloader.dataset)))
     with torch.no_grad():
-        i = 0
         for X, y in dataloader:
-            X, y = X.to(device), y.to(device)
-            batch_size = len(X)
-            predictions[i : (i + batch_size)] = model(X).cpu()
-            labels[i : (i + batch_size)] = y.cpu()
+            #gather threads
+            batch_pred = model(X)
+            all_batch_pred = accelerator.gather(batch_pred)
+            all_batch_labels = accelerator.gather(y)
+            
+            #store
+            predictions[i : (i + len(all_batch_pred)] = all_batch_pred.cpu()
+            labels[i : (i + len(all_batch_labels)] = all_batch_labels.cpu()
             i += batch_size
-    print(predictions)
-    print(labels)
+
     #save prediction
     f = pred_save_dir + "/pred_" + pred_save_name
     print("Saving prediction to {}.npz...".format(f))
     np.savez('{}.npz'.format(f), targets=labels, predictions=predictions)
     print("Prediction saved.")
     
-def save(model, accelerator, loss=None, model_save_dir=hp.MODEL_DIR, model_save_name=hp.MODEL_NAME):
+'''
+Save model
+'''
+def save(model, accelerator, model_save_dir=hp.MODEL_DIR, model_save_name=hp.MODEL_NAME):
     # save trained model
-    if not os.path.isdir(model_save_dir):
+    if accelerator.is_main_process and not os.path.isdir(model_save_dir):
         os.mkdir(model_save_dir)
+    
     f = model_save_dir + "/" + model_save_name + ".pth"
     accelerator.print("Saving PyTorch Model State to {}.pth...".format(f))
-    #model = accelerator.unwrap_model(model)
-    accelerator.save(model.state_dict(), f)
-    print("Model Saved.")
     
-    #save loss to npz
-    if loss:
-        fl = model_save_dir + "/loss_" + model_save_name + ".npz"
-        print("Saving loss data to {}...".format(fl))
-        np.savez(fl, train=loss["train"], test=loss["test"])
-        print("Loss data saved.")
+    accelerator.wait_for_everyone()
+    unwrapped_model = accelerator.unwrap_model(model)
+    accelerator.save(unwrapped_model.state_dict(), f)
+    
+    accelerator.print("Model Saved.")
 
-def load(model, model_load_dir=hp.MODEL_DIR, model_load_name=hp.MODEL_NAME):
+'''
+Save loss
+'''
+def save_loss(loss, model_save_dir=hp.MODEL_DIR, model_save_name=hp.MODEL_NAME):
+    fl = model_save_dir + "/loss_" + model_save_name + ".npz"
+    print("Saving loss data to {}...".format(fl))
+    np.savez(fl, train=loss["train"], test=loss["test"])
+    print("Loss data saved.")
+    
+'''
+load model
+'''
+def load(model, accelerator, model_load_dir=hp.MODEL_DIR, model_load_name=hp.MODEL_NAME):
     f = model_load_dir + "/" + model_load_name + ".pth"
     if os.path.isfile(f):
-        print("Loading model state from {}".format(f))
+        accelerator.print("Loading model state from {}".format(f))
         model.load_state_dict(torch.load(f))
-        print("Model loaded.")
+        accelerator.print("Model loaded.")
     else:
-        print("Cannot find model path!")
+        accelerator.print("Cannot find model path!")
         
 
 

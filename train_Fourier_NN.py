@@ -4,18 +4,13 @@ from torch import nn
 from torch.utils.data import DataLoader
 from torch.utils.data import Dataset
 from EoR_Dataset import EORImageDataset_LaPlante
-from model import Fourier_NN, train, test, save, predict
+from model import Fourier_NN, train, test, save, predict, save_loss
 from hyperparams import Model_Hyperparameters as hp
 from plot_model_results import plot_loss, plot_model_predictions
 from accelerate import Accelerator
 from datetime import datetime
 
-
-# find our device and link to accelerator
 accelerator = Accelerator()
-device = accelerator.device #device = "cuda" if torch.cuda.is_available() else "cpu"
-accelerator.print("Using {} device".format(device))
-
 accelerator.print("Model: {}".format(hp.MODEL_NAME))
 
 #make sure we aren't overwriting
@@ -54,24 +49,14 @@ else:
         if hp.LR_DECAY:
             scheduler.step()
             accelerator.print(optim.param_groups[0]['lr'])
-    
-    accelerator.wait_for_everyone()
 
-    # save trained model
-    model_save_dir=hp.MODEL_DIR
-    model_save_name=hp.MODEL_NAME
-    if accelerator.is_main_process and not os.path.isdir(model_save_dir):
-        os.mkdir(model_save_dir)
-    f = model_save_dir + "/" + model_save_name + ".pth"
-    accelerator.print("Saving PyTorch Model State to {}.pth...".format(f))
-    #model = accelerator.unwrap_model(model)
-    accelerator.save(model.state_dict(), f)
-    accelerator.print("Model Saved.")
-    
-    
+    save(model, accelerator)
+
+    #none of these save multithreaded components
     if accelerator.is_main_process:
         hp.save_hyparam_summary()
         hp.save_time(start_time)
+        save_loss(loss)
         plot_loss(loss)
-        predict(test_dataloader, model, accelerator.device)
-        #plot_model_predictions([hp.MODEL_NAME])
+
+

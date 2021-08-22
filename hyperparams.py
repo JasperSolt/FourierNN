@@ -1,10 +1,21 @@
 import os
+import sys
 from collections import OrderedDict
 import json
 import jsonpickle
 from datetime import datetime
 import torch
 from torch import nn
+
+#cplx stuff
+'''
+from cplxmodule.cplxmodule.nn.modules.conv import CplxConv2d
+from cplxmodule.cplxmodule.nn.modules.activation import CplxModReLU
+from cplxmodule.cplxmodule.nn.modules.batchnorm import CplxBatchNorm2d
+from cplxmodule.cplxmodule.nn.modules.pooling import CplxMaxPool2d
+from cplxmodule.cplxmodule.nn.modules.extra import CplxDropout
+from cplxmodule.cplxmodule.nn.modules.linear import CplxLinear
+'''
 
 def MSELossNorm(output, target):
     loss = torch.mean(((target - output) / target)**2)
@@ -50,10 +61,8 @@ class Model_Hyperparameters():
 
     # Loss function
     loss_fn = MSELossNorm
-    #arbitrary loss normalization constant
-    LOSS_NORM_CONST = 10
 
-    #model architecture
+    #Basic model architecture
     LAYER_DICT = OrderedDict([
       # batch_size x input_channels x 512 x 512
       ('conv1', nn.Conv2d(INPUT_CHANNELS, 16, 3, padding='same')),
@@ -97,6 +106,57 @@ class Model_Hyperparameters():
       # batch_size x 100 x 1 x 1
       ('output', nn.Linear(20, N_PARAMS))
     ])
+    
+    '''
+    #complex model architecture
+    #There are several options for complex relu-- do more research here
+    LAYER_DICT = OrderedDict([
+      # batch_size x input_channels x 512 x 512
+      
+      ('conv1', CplxConv2d(INPUT_CHANNELS, 16, 3, padding='same')),
+      ('relu1_1', CplxModReLU()),
+      ('batch1', CplxBatchNorm2d(16)),
+      ('maxpool1', CplxMaxPool2d(2)),
+
+      # batch_size x 16 x 256 x 256
+      ('conv2', CplxConv2d(16, 32, 3, padding='same')),
+      ('relu1_2', CplxModReLU()),
+      ('batch2', CplxBatchNorm2d(32)),
+      ('maxpool2', CplxMaxPool2d(2)),
+
+      # batch_size x 32 x 128 x 128
+      ('conv3', CplxConv2d(32, 64, 3, padding='same')),
+      ('relu1_3', CplxModReLU()),
+      ('batch3', CplxBatchNorm2d(64)),
+      ('maxpool3', CplxMaxPool2d(2)),
+      
+      # batch_size x 64 x 64 x 64
+      # pytorch doesn't have global pooling layers, so I made the kernel the
+      # same dimensions as the input
+      
+      #I'll need to implement a complex global pooling myself
+      #('global_avgpool', nn.AvgPool2d(64)),
+      ('flat1', nn.Flatten()),
+
+      # batch_size x 64 x 1 x 1
+      ('drop1', CplxDropout(0.2)),
+      ('dense1', CplxLinear(64, 200)),
+      ('relu2_1', CplxModReLU()),
+
+      # batch_size x 200 x 1 x 1
+      ('drop2', CplxDropout(0.2)),
+      ('dense2', CplxLinear(200, 100)),
+      ('relu2_2', CplxModReLU()),
+
+      # batch_size x 100 x 1 x 1
+      ('drop3', CplxDropout(0.2)),
+      ('dense3', CplxLinear(100, 20)),
+      ('relu2_3', CplxModReLU()),
+
+      # batch_size x 100 x 1 x 1
+      ('output', CplxLinear(20, N_PARAMS))
+    ])
+    '''
 
     @classmethod
     def save_hyparam_summary(cls, dirr=MODEL_DIR, report_name=HP_JSON_FILENAME):
