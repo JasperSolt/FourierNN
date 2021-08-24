@@ -16,12 +16,13 @@
 
 source torchenv/bin/activate
 
-##accelerate test --config_file ~/FourierNN/accelerate/default_config.yaml 
+#accelerate test --config_file ~/FourierNN/accelerate/default_config.yaml 
 
 accelerate launch --config_file ~/FourierNN/accelerate/default_config.yaml train_Fourier_NN.py  
-##python -u train_Fourier_NN.py
+#python -u train_Fourier_NN.py
 
-##python -u predict_Fourier_NN.py
+#accelerate launch --config_file ~/FourierNN/accelerate/default_config.yaml predict_Fourier_NN.py  
+python -u predict_Fourier_NN.py
 
-##python -u plot_model_results.py
+python -u plot_model_results.py
 

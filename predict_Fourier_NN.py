@@ -12,9 +12,9 @@ accelerator = Accelerator()
 test_data = EORImageDataset_LaPlante(train=False, limit_len=hp.N_SAMPLES)
 test_dataloader = DataLoader(test_data, batch_size=hp.BATCHSIZE, shuffle=True)
 
-model = Fourier_NN()
+model = Fourier_NN().to("cuda")
 load(model, accelerator)
 
-model, test_dataloader = accelerator.prepare(model, test_dataloader)
+#model, test_dataloader = accelerator.prepare(model, test_dataloader)
 
 predict(test_dataloader, model, accelerator)

@@ -72,27 +72,37 @@ def predict(dataloader, model, accelerator, pred_save_dir=hp.MODEL_DIR, pred_sav
     model.eval()
     shape = (dataloader.dataset.__len__(), hp.N_PARAMS)
     predictions, labels = np.zeros(shape), np.zeros(shape)
+    #predictions, labels = np.array((0,2)), np.array((0,2))
     i = 0
     
     #predict
     accelerator.print("Predicting on {} samples...".format(len(dataloader.dataset)))
     with torch.no_grad():
         for X, y in dataloader:
-            #gather threads
+            X, y = X.to("cuda"), y.to("cuda")
             batch_pred = model(X)
-            all_batch_pred = accelerator.gather(batch_pred)
-            all_batch_labels = accelerator.gather(y)
+            batch_size = len(batch_pred)
             
+            #gather threads
+            #all_batch_pred = accelerator.gather(batch_pred)
+            #all_batch_labels = accelerator.gather(y)
+            #batch_size, _ = all_batch_pred.shape
+
             #store
-            predictions[i : (i + len(all_batch_pred)] = all_batch_pred.cpu()
-            labels[i : (i + len(all_batch_labels)] = all_batch_labels.cpu()
-            i += batch_size
+            if accelerator.is_main_process:
+                #predictions = np.concatenate((predictions, all_batch_pred.cpu().numpy()), axis=0)
+                #labels = np.concatenate((labels, all_batch_labels.cpu().numpy()), axis=0)
+                predictions[i : i + batch_size] = batch_pred.cpu()
+                labels[i : i + batch_size] = y.cpu()
+                i += batch_size
+    accelerator.print(predictions.shape)
 
     #save prediction
-    f = pred_save_dir + "/pred_" + pred_save_name
-    print("Saving prediction to {}.npz...".format(f))
-    np.savez('{}.npz'.format(f), targets=labels, predictions=predictions)
-    print("Prediction saved.")
+    if accelerator.is_main_process:
+        f = pred_save_dir + "/pred_" + pred_save_name
+        print("Saving prediction to {}.npz...".format(f))
+        np.savez('{}.npz'.format(f), targets=labels, predictions=predictions)
+        print("Prediction saved.")
     
 '''
 Save model

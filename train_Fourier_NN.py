@@ -3,12 +3,12 @@ import torch
 from torch import nn
 from torch.utils.data import DataLoader
 from torch.utils.data import Dataset
+from accelerate import Accelerator
+from datetime import datetime
 from EoR_Dataset import EORImageDataset_LaPlante
 from model import Fourier_NN, train, test, save, predict, save_loss
 from hyperparams import Model_Hyperparameters as hp
 from plot_model_results import plot_loss, plot_model_predictions
-from accelerate import Accelerator
-from datetime import datetime
 
 accelerator = Accelerator()
 accelerator.print("Model: {}".format(hp.MODEL_NAME))
@@ -48,7 +48,7 @@ else:
         loss["test"].append(test(test_dataloader, model, accelerator))
         if hp.LR_DECAY:
             scheduler.step()
-            accelerator.print(optim.param_groups[0]['lr'])
+            accelerator.print("Learning Rate: {}".format(optim.param_groups[0]['lr']))
 
     save(model, accelerator)
 
