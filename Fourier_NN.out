@@ -1,11 +1,11 @@
 ## SLURM PROLOG ###############################################################
-##    Job ID : 2164327
+##    Job ID : 2282486
 ##  Job Name : Fourier_NN
-##  Nodelist : gpu2010
+##  Nodelist : gpu2006
 ##      CPUs : 
 ##  Mem/Node : 194560 MB
 ## Directory : /gpfs/home/jsolt/FourierNN
-##   Started : Mon Aug 23 20:31:09 EDT 2021
+##   Started : Sat Aug 28 16:07:03 EDT 2021
 ###############################################################################
 /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/distributed/launch.py:164: DeprecationWarning: The 'warn' method is deprecated, use 'warning' instead
   "The module torch.distributed.launch is deprecated "
@@ -24,7 +24,7 @@ INFO:torch.distributed.launcher.api:Starting elastic_operator with launch config
   log_dir          : None
   metrics_cfg      : {}
 
-INFO:torch.distributed.elastic.agent.server.local_elastic_agent:log directory set to: /tmp/torchelastic_xfkimfor/none_q3vv3lrb
+INFO:torch.distributed.elastic.agent.server.local_elastic_agent:log directory set to: /tmp/torchelastic_5spxlfwi/none_lb13e0fm
 INFO:torch.distributed.elastic.agent.server.api:[default] starting workers for entrypoint: python3
 INFO:torch.distributed.elastic.agent.server.api:[default] Rendezvous'ing worker group
 /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/distributed/elastic/utils/store.py:53: FutureWarning: This is an experimental API and will be changed in future.
@@ -42,11 +42,11 @@ INFO:torch.distributed.elastic.agent.server.api:[default] Rendezvous complete fo
   global_world_sizes=[4, 4, 4, 4]
 
 INFO:torch.distributed.elastic.agent.server.api:[default] Starting worker group
-INFO:torch.distributed.elastic.multiprocessing:Setting worker0 reply file to: /tmp/torchelastic_xfkimfor/none_q3vv3lrb/attempt_0/0/error.json
-INFO:torch.distributed.elastic.multiprocessing:Setting worker1 reply file to: /tmp/torchelastic_xfkimfor/none_q3vv3lrb/attempt_0/1/error.json
-INFO:torch.distributed.elastic.multiprocessing:Setting worker2 reply file to: /tmp/torchelastic_xfkimfor/none_q3vv3lrb/attempt_0/2/error.json
-INFO:torch.distributed.elastic.multiprocessing:Setting worker3 reply file to: /tmp/torchelastic_xfkimfor/none_q3vv3lrb/attempt_0/3/error.json
-Model: base_model
+INFO:torch.distributed.elastic.multiprocessing:Setting worker0 reply file to: /tmp/torchelastic_5spxlfwi/none_lb13e0fm/attempt_0/0/error.json
+INFO:torch.distributed.elastic.multiprocessing:Setting worker1 reply file to: /tmp/torchelastic_5spxlfwi/none_lb13e0fm/attempt_0/1/error.json
+INFO:torch.distributed.elastic.multiprocessing:Setting worker2 reply file to: /tmp/torchelastic_5spxlfwi/none_lb13e0fm/attempt_0/2/error.json
+INFO:torch.distributed.elastic.multiprocessing:Setting worker3 reply file to: /tmp/torchelastic_5spxlfwi/none_lb13e0fm/attempt_0/3/error.json
+Model: base_model_2_0
 Loading data...
 Epoch 1
 -------------------------------
@@ -58,1636 +58,4036 @@ Epoch 1
   return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
 /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
   return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
-Average train loss: 1.145284686088562
-Average test loss: 1.1002664055143083
+Average train loss: 1.1482954812049866
+Average test loss: 1.0423379795891898
 Epoch 2
 -------------------------------
-Average train loss: 0.7879751563072205
-Average test loss: 0.5437606573104858
+Average train loss: 0.7636348128318786
+Average test loss: 0.45991907375199453
 Epoch 3
 -------------------------------
-Average train loss: 0.44976558566093444
-Average test loss: 0.3289616107940674
+Average train loss: 0.46103498101234436
+Average test loss: 0.41594815254211426
 Epoch 4
 -------------------------------
-Average train loss: 0.20212826177477836
-Average test loss: 0.027504308947495053
+Average train loss: 0.3575394713878632
+Average test loss: 0.30987136704581125
 Epoch 5
 -------------------------------
-Average train loss: 0.04653323952108621
-Average test loss: 0.04745415811027799
+Average train loss: 0.27540658712387084
+Average test loss: 0.23959538766316005
 Epoch 6
 -------------------------------
-Average train loss: 0.037706020288169384
-Average test loss: 0.043138835046972544
+Average train loss: 0.18603137612342835
+Average test loss: 0.11691809232745852
 Epoch 7
 -------------------------------
-Average train loss: 0.029634448923170565
-Average test loss: 0.0290142936365945
+Average train loss: 0.06794913910329342
+Average test loss: 0.036639935070914884
 Epoch 8
 -------------------------------
-Average train loss: 0.02787810269743204
-Average test loss: 0.017032596415707042
+Average train loss: 0.032333658225834366
+Average test loss: 0.02229546755552292
 Epoch 9
 -------------------------------
-Average train loss: 0.02386042386293411
-Average test loss: 0.01891694251181824
+Average train loss: 0.021839550919830798
+Average test loss: 0.018699714647872106
 Epoch 10
 -------------------------------
-Average train loss: 0.017398418970406056
-Average test loss: 0.010635132502232279
+Average train loss: 0.01521238975226879
+Average test loss: 0.009316128612096821
 Epoch 11
 -------------------------------
-Average train loss: 0.011963509209454059
-Average test loss: 0.006692647002637386
+Average train loss: 0.013253073003143072
+Average test loss: 0.006718742062470743
 Epoch 12
 -------------------------------
-Average train loss: 0.006385671533644199
-Average test loss: 0.007230604799198253
+Average train loss: 0.006744658853858709
+Average test loss: 0.005480891093611717
 Epoch 13
 -------------------------------
-Average train loss: 0.006601888705044984
-Average test loss: 0.006928853989977922
+Average train loss: 0.00699179170653224
+Average test loss: 0.004711783358028957
 Epoch 14
 -------------------------------
-Average train loss: 0.007230344293639064
-Average test loss: 0.009656721958890557
+Average train loss: 0.004196685492061079
+Average test loss: 0.0037379222423104303
 Epoch 15
 -------------------------------
-Average train loss: 0.006137197678908706
-Average test loss: 0.003305351478047669
+Average train loss: 0.003517297222279012
+Average test loss: 0.0026022172532975674
 Epoch 16
 -------------------------------
-Average train loss: 0.0068010397395119075
-Average test loss: 0.004196107121450561
+Average train loss: 0.0031500279344618323
+Average test loss: 0.004607159744149872
 Epoch 17
 -------------------------------
-Average train loss: 0.005030320854857564
-Average test loss: 0.006384911880429302
+Average train loss: 0.003044178959680721
+Average test loss: 0.004383454564958811
 Epoch 18
 -------------------------------
-Average train loss: 0.004908631858415902
-Average test loss: 0.0050600555592349595
+Average train loss: 0.002674738735659048
+Average test loss: 0.0017026060793016637
 Epoch 19
 -------------------------------
-Average train loss: 0.0031305704033002257
-Average test loss: 0.003624566032418183
+Average train loss: 0.0023683314374648035
+Average test loss: 0.0011504323171850825
 Epoch 20
 -------------------------------
-Average train loss: 0.004470699774101377
-Average test loss: 0.0026316378664757523
+Average train loss: 0.0018978139851242304
+Average test loss: 0.0015745019980905844
 Epoch 21
 -------------------------------
-Average train loss: 0.004029987594112754
-Average test loss: 0.003422160865738988
+Average train loss: 0.0015793309011496604
+Average test loss: 0.001246401308370488
 Epoch 22
 -------------------------------
-Average train loss: 0.003601629394106567
-Average test loss: 0.002637693762413359
+Average train loss: 0.001497006011195481
+Average test loss: 0.00174672225589997
 Epoch 23
 -------------------------------
-Average train loss: 0.003964161472395062
-Average test loss: 0.0023386723062555704
+Average train loss: 0.0013399214239325375
+Average test loss: 0.0011507947014511696
 Epoch 24
 -------------------------------
-Average train loss: 0.002733208085410297
-Average test loss: 0.002303068825442876
+Average train loss: 0.0017305331048555672
+Average test loss: 0.0018967551129337931
 Epoch 25
 -------------------------------
-Average train loss: 0.0026674009254202247
-Average test loss: 0.002377894806808659
+Average train loss: 0.001326538777211681
+Average test loss: 0.0009836353960313968
 Epoch 26
 -------------------------------
-Average train loss: 0.0020888700021896513
-Average test loss: 0.0025182913065821466
+Average train loss: 0.0012771924992557614
+Average test loss: 0.001323198267657842
 Epoch 27
 -------------------------------
-Average train loss: 0.0029182007862254976
-Average test loss: 0.0024292391525315388
+Average train loss: 0.0015611867560073732
+Average test loss: 0.0022882885033530848
 Epoch 28
 -------------------------------
-Average train loss: 0.002243371973745525
-Average test loss: 0.0017029676736066385
+Average train loss: 0.0024504247237928213
+Average test loss: 0.0022741639321403845
 Epoch 29
 -------------------------------
-Average train loss: 0.002202916103415191
-Average test loss: 0.0016211661318915763
+Average train loss: 0.00169265704927966
+Average test loss: 0.0018720236507111362
 Epoch 30
 -------------------------------
-Average train loss: 0.0021152384672313927
-Average test loss: 0.004283523885533214
+Average train loss: 0.0011324658885132522
+Average test loss: 0.0012812265194952488
 Epoch 31
 -------------------------------
-Average train loss: 0.002801822168985382
-Average test loss: 0.0016837591704513346
+Average train loss: 0.0012168439594097435
+Average test loss: 0.0009366759539781404
 Epoch 32
 -------------------------------
-Average train loss: 0.001845578079810366
-Average test loss: 0.0016796453440162753
+Average train loss: 0.0012570891447830944
+Average test loss: 0.0013884795646715378
 Epoch 33
 -------------------------------
-Average train loss: 0.002582960119470954
-Average test loss: 0.0015362361279715384
+Average train loss: 0.0011582031892612577
+Average test loss: 0.0010571376769803464
 Epoch 34
 -------------------------------
-Average train loss: 0.0015422743826638908
-Average test loss: 0.0009564544847567699
+Average train loss: 0.0009702413278864697
+Average test loss: 0.0013831804057450167
 Epoch 35
 -------------------------------
-Average train loss: 0.001163329107221216
-Average test loss: 0.0013887947674707643
+Average train loss: 0.0014284500805661082
+Average test loss: 0.0011131818173453212
 Epoch 36
 -------------------------------
-Average train loss: 0.0012033386225812138
-Average test loss: 0.0013665193276080703
+Average train loss: 0.0014374081697314978
+Average test loss: 0.0016697493764305754
 Epoch 37
 -------------------------------
-Average train loss: 0.0011920926201855764
-Average test loss: 0.000886941553160016
+Average train loss: 0.0018068790959659964
+Average test loss: 0.0023170264570840766
 Epoch 38
 -------------------------------
-Average train loss: 0.001595331024727784
-Average test loss: 0.0007768752028433872
+Average train loss: 0.0016441889689303934
+Average test loss: 0.0013017638786030667
 Epoch 39
 -------------------------------
-Average train loss: 0.00140677580377087
-Average test loss: 0.00044022090982512703
+Average train loss: 0.001084272469743155
+Average test loss: 0.0009245708060916513
 Epoch 40
 -------------------------------
-Average train loss: 0.000762633293052204
-Average test loss: 0.0010293400098037506
+Average train loss: 0.0010759479703847318
+Average test loss: 0.002751259964757732
 Epoch 41
 -------------------------------
-Average train loss: 0.0012298491795081645
-Average test loss: 0.0010753660296489085
+Average train loss: 0.0016477414616383613
+Average test loss: 0.0010106251491898938
 Epoch 42
 -------------------------------
-Average train loss: 0.0008098769630305469
-Average test loss: 0.0008269513990463955
+Average train loss: 0.00135665537789464
+Average test loss: 0.0009421355747950397
 Epoch 43
 -------------------------------
-Average train loss: 0.0006345035151753109
-Average test loss: 0.0007706194342712738
+Average train loss: 0.0009988983866060152
+Average test loss: 0.0009760008043875652
 Epoch 44
 -------------------------------
-Average train loss: 0.0011316809628624468
-Average test loss: 0.0008918821071607194
+Average train loss: 0.001197922397404909
+Average test loss: 0.00082941006569724
 Epoch 45
 -------------------------------
-Average train loss: 0.0005558355391258374
-Average test loss: 0.0008179876105194646
+Average train loss: 0.001058647765312344
+Average test loss: 0.0014314275301460708
 Epoch 46
 -------------------------------
-Average train loss: 0.000607396150007844
-Average test loss: 0.0006967167469805904
+Average train loss: 0.0014239835925400257
+Average test loss: 0.001006716546336455
 Epoch 47
 -------------------------------
-Average train loss: 0.0007074872602242976
-Average test loss: 0.0010608218310933029
+Average train loss: 0.0010412236617412419
+Average test loss: 0.0011749261341589903
 Epoch 48
 -------------------------------
-Average train loss: 0.0008570776897249743
-Average test loss: 0.00097171901558925
+Average train loss: 0.0007763020554557443
+Average test loss: 0.001218465165168579
 Epoch 49
 -------------------------------
-Average train loss: 0.0007995095127262175
-Average test loss: 0.0003994518816138485
+Average train loss: 0.0009814752615056933
+Average test loss: 0.0009716352547651955
 Epoch 50
 -------------------------------
-Average train loss: 0.0005015929084038362
-Average test loss: 0.0005343609144412247
+Average train loss: 0.0012239376897923647
+Average test loss: 0.0011953093344345689
 Epoch 51
 -------------------------------
-Average train loss: 0.0004668630537344143
-Average test loss: 0.00042634626983531883
+Average train loss: 0.0010797678318340332
+Average test loss: 0.0012543736873859806
 Epoch 52
 -------------------------------
-Average train loss: 0.0009543920337455347
-Average test loss: 0.0005273649543856404
+Average train loss: 0.0008831942162942141
+Average test loss: 0.0010781758215411433
 Epoch 53
 -------------------------------
-Average train loss: 0.0008656007971148938
-Average test loss: 0.00035011734040121416
+Average train loss: 0.0007813490659464151
+Average test loss: 0.0006211754350390818
 Epoch 54
 -------------------------------
-Average train loss: 0.0006103827088372782
-Average test loss: 0.00036142629271905335
+Average train loss: 0.00161874896613881
+Average test loss: 0.0018458118179946073
 Epoch 55
 -------------------------------
-Average train loss: 0.000838572151842527
-Average test loss: 0.0006104105788316312
+Average train loss: 0.0011229644005652517
+Average test loss: 0.00133607373572886
 Epoch 56
 -------------------------------
-Average train loss: 0.0007599698059493676
-Average test loss: 0.0005678543342842854
+Average train loss: 0.0009401101316325367
+Average test loss: 0.0006397928539497245
 Epoch 57
 -------------------------------
-Average train loss: 0.0007860829573473893
-Average test loss: 0.00046411287205825957
+Average train loss: 0.0007708574208663777
+Average test loss: 0.0007130653788668237
 Epoch 58
 -------------------------------
-Average train loss: 0.0006884625076781959
-Average test loss: 0.0010680467572196253
+Average train loss: 0.0008237958454992622
+Average test loss: 0.0008017430081963539
 Epoch 59
 -------------------------------
-Average train loss: 0.000916102122864686
-Average test loss: 0.00023034831558886384
+Average train loss: 0.0005938664061250165
+Average test loss: 0.0006532511615660042
 Epoch 60
 -------------------------------
-Average train loss: 0.0005298605788266286
-Average test loss: 0.0006580243352800608
+Average train loss: 0.0007790974871022627
+Average test loss: 0.0006114300589875451
 Epoch 61
 -------------------------------
-Average train loss: 0.0005969340182491579
-Average test loss: 0.0009531694730477673
+Average train loss: 0.0006768992287106812
+Average test loss: 0.000916134549437889
 Epoch 62
 -------------------------------
-Average train loss: 0.0005142705654725432
-Average test loss: 0.0004242950609685587
+Average train loss: 0.0007008416741155088
+Average test loss: 0.0009699813464456904
 Epoch 63
 -------------------------------
-Average train loss: 0.0006359090242767706
-Average test loss: 0.0007090223121589848
+Average train loss: 0.0005796507990453392
+Average test loss: 0.0006973546447365411
 Epoch 64
 -------------------------------
-Average train loss: 0.0005481193074956536
-Average test loss: 0.0004961313388776034
+Average train loss: 0.0006319034448824823
+Average test loss: 0.0012974918187995041
 Epoch 65
 -------------------------------
-Average train loss: 0.0006783904420444742
-Average test loss: 0.0003843403163565589
+Average train loss: 0.0008939999889116734
+Average test loss: 0.000984987268956112
 Epoch 66
 -------------------------------
-Average train loss: 0.00046120153623633084
-Average test loss: 0.0005094518627239657
+Average train loss: 0.0006125166837591678
+Average test loss: 0.0007230103905645332
 Epoch 67
 -------------------------------
-Average train loss: 0.00046124718763167037
-Average test loss: 0.0004812535480596125
+Average train loss: 0.0008791713742539286
+Average test loss: 0.0019559545949700157
 Epoch 68
 -------------------------------
-Average train loss: 0.0006596718588843942
-Average test loss: 0.00037206839104848247
+Average train loss: 0.0006961117731407284
+Average test loss: 0.0008774101193661668
 Epoch 69
 -------------------------------
-Average train loss: 0.0005758035814506002
-Average test loss: 0.0006065210327506065
+Average train loss: 0.0007848184765316546
+Average test loss: 0.0015114241811845983
 Epoch 70
 -------------------------------
-Average train loss: 0.0008176616558921523
-Average test loss: 0.0003565238959189238
+Average train loss: 0.0008860033226665109
+Average test loss: 0.0009988759536229605
 Epoch 71
 -------------------------------
-Average train loss: 0.0010324874892830849
-Average test loss: 0.00047614413779228926
+Average train loss: 0.0014294167270418256
+Average test loss: 0.0017745191497462137
 Epoch 72
 -------------------------------
-Average train loss: 0.0006021597009385005
-Average test loss: 0.00026419947971589863
+Average train loss: 0.0007019028189824894
+Average test loss: 0.0008087882306426764
 Epoch 73
 -------------------------------
-Average train loss: 0.0005147604030207731
-Average test loss: 0.00025647210298172595
+Average train loss: 0.0006252348201815039
+Average test loss: 0.0006333556999119797
 Epoch 74
 -------------------------------
-Average train loss: 0.0003748443022777792
-Average test loss: 0.0006662919518670865
+Average train loss: 0.000606933906674385
+Average test loss: 0.001172551926824131
 Epoch 75
 -------------------------------
-Average train loss: 0.0007175164797808975
-Average test loss: 0.0002749120820746092
+Average train loss: 0.0007446854445151984
+Average test loss: 0.0004978346239243235
 Epoch 76
 -------------------------------
-Average train loss: 0.0005271228906349279
-Average test loss: 0.0007540824548673949
+Average train loss: 0.000552757567493245
+Average test loss: 0.0012037570871013617
 Epoch 77
 -------------------------------
-Average train loss: 0.0017699234915198759
-Average test loss: 0.0008935073357341545
+Average train loss: 0.0008578447415493428
+Average test loss: 0.0009185943386650511
 Epoch 78
 -------------------------------
-Average train loss: 0.0009346458621439524
-Average test loss: 0.0009141883264029664
+Average train loss: 0.0006374833703739569
+Average test loss: 0.0010573200582127487
 Epoch 79
 -------------------------------
-Average train loss: 0.0012840804806910455
-Average test loss: 0.0004295234123544235
+Average train loss: 0.0006826580816414207
+Average test loss: 0.0011044965524758612
 Epoch 80
 -------------------------------
-Average train loss: 0.0006281568680424243
-Average test loss: 0.00025826178586742444
+Average train loss: 0.0004973113292362541
+Average test loss: 0.0007222417708752411
 Epoch 81
 -------------------------------
-Average train loss: 0.0006816931764478796
-Average test loss: 0.0006265924145866718
+Average train loss: 0.0005109348188852891
+Average test loss: 0.0012670944311789104
 Epoch 82
 -------------------------------
-Average train loss: 0.0009379248064942658
-Average test loss: 0.0014492013308751797
+Average train loss: 0.0009762137522920966
+Average test loss: 0.0011969348415732384
 Epoch 83
 -------------------------------
-Average train loss: 0.0006558264885097742
-Average test loss: 0.0003737857997683542
+Average train loss: 0.0006452267686836422
+Average test loss: 0.000990656653552183
 Epoch 84
 -------------------------------
-Average train loss: 0.000528307476779446
-Average test loss: 0.0003815671869753195
+Average train loss: 0.0004845945059787482
+Average test loss: 0.0006082088969248746
 Epoch 85
 -------------------------------
-Average train loss: 0.0007325217517791315
-Average test loss: 0.00040251772069106143
+Average train loss: 0.0004845955036580563
+Average test loss: 0.0005851986892853997
 Epoch 86
 -------------------------------
-Average train loss: 0.00036761379276867957
-Average test loss: 0.0004989248409401625
+Average train loss: 0.00043513619049917907
+Average test loss: 0.0006394916812756232
 Epoch 87
 -------------------------------
-Average train loss: 0.0003832273423904553
-Average test loss: 0.00042391122510058006
+Average train loss: 0.00045787229435518385
+Average test loss: 0.0009968240296335093
 Epoch 88
 -------------------------------
-Average train loss: 0.00033234174363315104
-Average test loss: 0.0005832838256277942
+Average train loss: 0.0006391570292180404
+Average test loss: 0.0006221065663599543
 Epoch 89
 -------------------------------
-Average train loss: 0.0004739721986697987
-Average test loss: 0.00030991567057623925
+Average train loss: 0.0004583190818084404
+Average test loss: 0.0006679471074936113
 Epoch 90
 -------------------------------
-Average train loss: 0.0005250588129274547
-Average test loss: 0.00032727086259650866
+Average train loss: 0.0004607110255165026
+Average test loss: 0.0005965308456714931
 Epoch 91
 -------------------------------
-Average train loss: 0.0006835025252075866
-Average test loss: 0.0014422328427567013
+Average train loss: 0.0006056270492263139
+Average test loss: 0.0006569943590355771
 Epoch 92
 -------------------------------
-Average train loss: 0.0009116782015189529
-Average test loss: 0.0003614825628963964
+Average train loss: 0.0004887349205091596
+Average test loss: 0.0006540017160919628
 Epoch 93
 -------------------------------
-Average train loss: 0.000656016483262647
-Average test loss: 0.0021499795506575276
+Average train loss: 0.0005099497048649937
+Average test loss: 0.0007062414411588439
 Epoch 94
 -------------------------------
-Average train loss: 0.0008158185321372002
-Average test loss: 0.0005338732859984573
+Average train loss: 0.00045567420311272145
+Average test loss: 0.0005565170348355812
 Epoch 95
 -------------------------------
-Average train loss: 0.0003778247025911696
-Average test loss: 0.00026322054223523343
+Average train loss: 0.0005455059686210006
+Average test loss: 0.0008357408639442708
 Epoch 96
 -------------------------------
-Average train loss: 0.0003731499068089761
-Average test loss: 0.0009297717229596206
+Average train loss: 0.0005581097234971821
+Average test loss: 0.0007211053660804671
 Epoch 97
 -------------------------------
-Average train loss: 0.0004733260266948491
-Average test loss: 0.00028192041125813764
+Average train loss: 0.00038819822628283874
+Average test loss: 0.0008716483675276063
 Epoch 98
 -------------------------------
-Average train loss: 0.0003112732079898706
-Average test loss: 0.00044634238085044283
+Average train loss: 0.0004992210405180231
+Average test loss: 0.0006398428647246744
 Epoch 99
 -------------------------------
-Average train loss: 0.0003815690992632881
-Average test loss: 0.00024340327113999853
+Average train loss: 0.0005636933341156691
+Average test loss: 0.0005923334226411368
 Epoch 100
 -------------------------------
-Average train loss: 0.0003284018949489109
-Average test loss: 0.00017946625095126883
+Average train loss: 0.0005100390082225203
+Average test loss: 0.0005385000092376556
 Epoch 101
 -------------------------------
-Average train loss: 0.0003321411046636058
-Average test loss: 0.0004113967879675329
+Average train loss: 0.0006854630331508815
+Average test loss: 0.000723663077224046
 Epoch 102
 -------------------------------
-Average train loss: 0.0009369652299210429
-Average test loss: 0.000326158048535165
+Average train loss: 0.000532190054655075
+Average test loss: 0.0011653449078689196
 Epoch 103
 -------------------------------
-Average train loss: 0.00034734815009869637
-Average test loss: 0.00029125834199866015
+Average train loss: 0.0007430292002391071
+Average test loss: 0.0005152755017791476
 Epoch 104
 -------------------------------
-Average train loss: 0.00046759168821154163
-Average test loss: 0.00026505511570056636
+Average train loss: 0.000866941346321255
+Average test loss: 0.000780630630158287
 Epoch 105
 -------------------------------
-Average train loss: 0.0008587857062229887
-Average test loss: 0.0005423734047716218
+Average train loss: 0.0007410035788780079
+Average test loss: 0.0007746483565175108
 Epoch 106
 -------------------------------
-Average train loss: 0.0003725099831353873
-Average test loss: 0.00027181728676493676
+Average train loss: 0.0004747695504920557
+Average test loss: 0.0008947716768099261
 Epoch 107
 -------------------------------
-Average train loss: 0.0003274685287033208
-Average test loss: 0.00037788634758076763
+Average train loss: 0.0004013313545146957
+Average test loss: 0.0012612272652664355
 Epoch 108
 -------------------------------
-Average train loss: 0.0003370475419797003
-Average test loss: 0.00030068982388391826
+Average train loss: 0.0009519187896512448
+Average test loss: 0.0006024316951100316
 Epoch 109
 -------------------------------
-Average train loss: 0.0003335017655626871
-Average test loss: 0.0008818070595485292
+Average train loss: 0.00046817448746878655
+Average test loss: 0.0006110126788761201
 Epoch 110
 -------------------------------
-Average train loss: 0.0004893113439902664
-Average test loss: 0.0004995935721256371
+Average train loss: 0.0005385456624208018
+Average test loss: 0.0015886214511868144
 Epoch 111
 -------------------------------
-Average train loss: 0.0005785185733111575
-Average test loss: 0.0006624000130354293
+Average train loss: 0.0007690578186884523
+Average test loss: 0.0012962643522769213
 Epoch 112
 -------------------------------
-Average train loss: 0.0005429232382448391
-Average test loss: 0.00029878124561426897
+Average train loss: 0.0007331387302838266
+Average test loss: 0.0008515373712205994
 Epoch 113
 -------------------------------
-Average train loss: 0.00036448164377361536
-Average test loss: 0.00040607282841977267
+Average train loss: 0.00042981953418347985
+Average test loss: 0.0006321771860322249
 Epoch 114
 -------------------------------
-Average train loss: 0.0003681539493845776
-Average test loss: 0.0002618999673619068
+Average train loss: 0.0004243380459956825
+Average test loss: 0.0008048706929132875
 Epoch 115
 -------------------------------
-Average train loss: 0.00036063237552298234
-Average test loss: 0.0003294438148649143
+Average train loss: 0.0005267423065379262
+Average test loss: 0.0009155566887264806
 Epoch 116
 -------------------------------
-Average train loss: 0.000729037869896274
-Average test loss: 0.0011796125493544554
+Average train loss: 0.0007021999155404046
+Average test loss: 0.000847450050059706
 Epoch 117
 -------------------------------
-Average train loss: 0.0009648895906866528
-Average test loss: 0.00022392530497329841
+Average train loss: 0.0008860418287804351
+Average test loss: 0.0007404622322480593
 Epoch 118
 -------------------------------
-Average train loss: 0.0006627685212879441
-Average test loss: 0.00026481769704592546
+Average train loss: 0.00046462172933388503
+Average test loss: 0.0008135193742678634
 Epoch 119
 -------------------------------
-Average train loss: 0.0006481643207371235
-Average test loss: 0.0006075031664555094
+Average train loss: 0.00043110237282235176
+Average test loss: 0.0006933918214469616
 Epoch 120
 -------------------------------
-Average train loss: 0.0006559820217080414
-Average test loss: 0.0006510031567553856
+Average train loss: 0.000673165075131692
+Average test loss: 0.0004681876702566764
 Epoch 121
 -------------------------------
-Average train loss: 0.0005954677198315039
-Average test loss: 0.00026180222006847283
+Average train loss: 0.00044962897867662833
+Average test loss: 0.0007921860212393637
 Epoch 122
 -------------------------------
-Average train loss: 0.0005106605833861977
-Average test loss: 0.0001860236651347285
+Average train loss: 0.0003877796116285026
+Average test loss: 0.0007696777548907059
 Epoch 123
 -------------------------------
-Average train loss: 0.0004572264316084329
-Average test loss: 0.00016698591311329177
+Average train loss: 0.0004693582415347919
+Average test loss: 0.0005082734299191673
 Epoch 124
 -------------------------------
-Average train loss: 0.0002985126004205085
-Average test loss: 0.00021060436431850706
+Average train loss: 0.00045949193183332683
+Average test loss: 0.0006590137657310281
 Epoch 125
 -------------------------------
-Average train loss: 0.0006398616742808371
-Average test loss: 0.00033873499445949813
+Average train loss: 0.0003656019561458379
+Average test loss: 0.0006578187790832349
 Epoch 126
 -------------------------------
-Average train loss: 0.0006622098118532449
-Average test loss: 0.0005524157729398992
+Average train loss: 0.00038515975116752086
+Average test loss: 0.00045638944305080386
 Epoch 127
 -------------------------------
-Average train loss: 0.0005784703482640907
-Average test loss: 0.000499249090872971
+Average train loss: 0.000371813474339433
+Average test loss: 0.0006102356793625015
 Epoch 128
 -------------------------------
-Average train loss: 0.0005623985125566833
-Average test loss: 0.00017669966161650206
+Average train loss: 0.0003495257388567552
+Average test loss: 0.000484365487604269
 Epoch 129
 -------------------------------
-Average train loss: 0.0003800786193460226
-Average test loss: 0.0007145017235805946
+Average train loss: 0.0005082098208367825
+Average test loss: 0.0008313562721014023
 Epoch 130
 -------------------------------
-Average train loss: 0.00039271882036700845
-Average test loss: 0.0003015063069012415
+Average train loss: 0.00029057251987978815
+Average test loss: 0.0006464632627155099
 Epoch 131
 -------------------------------
-Average train loss: 0.0006513825990259647
-Average test loss: 0.0002530373562227136
+Average train loss: 0.00043986101110931485
+Average test loss: 0.0006293168553384021
 Epoch 132
 -------------------------------
-Average train loss: 0.0004568262028624304
-Average test loss: 0.00030885056185070425
+Average train loss: 0.000637379182735458
+Average test loss: 0.0027144067654652254
 Epoch 133
 -------------------------------
-Average train loss: 0.00030293037183582784
-Average test loss: 0.0002921475430152246
+Average train loss: 0.0008444072894053533
+Average test loss: 0.0008512767796803798
 Epoch 134
 -------------------------------
-Average train loss: 0.00040723707032157107
-Average test loss: 0.0007084556647376823
+Average train loss: 0.0004441488566226326
+Average test loss: 0.0004282608029565641
 Epoch 135
 -------------------------------
-Average train loss: 0.0005550647809286601
-Average test loss: 0.00040625231174219934
+Average train loss: 0.00046233783941715954
+Average test loss: 0.001218131510540843
 Epoch 136
 -------------------------------
-Average train loss: 0.00045746270043309776
-Average test loss: 0.00017421774412339021
+Average train loss: 0.00042777159716933966
+Average test loss: 0.0007601316361355462
 Epoch 137
 -------------------------------
-Average train loss: 0.00032143087039003147
-Average test loss: 0.0005489419688404139
+Average train loss: 0.00042665536573622376
+Average test loss: 0.000989861137765859
 Epoch 138
 -------------------------------
-Average train loss: 0.0004806471487972885
-Average test loss: 0.00042767971795651
+Average train loss: 0.0006749617081368342
+Average test loss: 0.0006405019583845777
 Epoch 139
 -------------------------------
-Average train loss: 0.0004109936213353649
-Average test loss: 0.0002593098948377052
+Average train loss: 0.0004935001177364029
+Average test loss: 0.0007816285859527332
 Epoch 140
 -------------------------------
-Average train loss: 0.0005635633578640409
-Average test loss: 0.00014512435986294543
+Average train loss: 0.0004786398634314537
+Average test loss: 0.0008501446469121479
 Epoch 141
 -------------------------------
-Average train loss: 0.0004668247555673588
-Average test loss: 0.00071994071393939
+Average train loss: 0.0005807542061666026
+Average test loss: 0.00044888624688610435
 Epoch 142
 -------------------------------
-Average train loss: 0.0005876718612853437
-Average test loss: 0.0005833946301468781
+Average train loss: 0.0005237020205822773
+Average test loss: 0.0005005855595559946
 Epoch 143
 -------------------------------
-Average train loss: 0.0009640869952272624
-Average test loss: 0.0007936453330330551
+Average train loss: 0.0004644314112374559
+Average test loss: 0.0007729362779563027
 Epoch 144
 -------------------------------
-Average train loss: 0.0008224448378314264
-Average test loss: 0.0005050959610213925
+Average train loss: 0.0004549638129537925
+Average test loss: 0.0009044021052042288
 Epoch 145
 -------------------------------
-Average train loss: 0.00025965360255213453
-Average test loss: 0.00038880777512011785
+Average train loss: 0.0003506915696198121
+Average test loss: 0.000622465117235801
 Epoch 146
 -------------------------------
-Average train loss: 0.00027484802441904324
-Average test loss: 0.00029388282772353184
+Average train loss: 0.00028108726313803346
+Average test loss: 0.0005320368821100731
 Epoch 147
 -------------------------------
-Average train loss: 0.00021127721076481974
-Average test loss: 0.0002793896585769419
+Average train loss: 0.00035424963163677603
+Average test loss: 0.0007596470906199622
 Epoch 148
 -------------------------------
-Average train loss: 0.00035645088471937926
-Average test loss: 0.00029383493529167026
+Average train loss: 0.000345182197925169
+Average test loss: 0.0005255913139470587
 Epoch 149
 -------------------------------
-Average train loss: 0.0003504943057487253
-Average test loss: 0.00020419895216556533
+Average train loss: 0.0011096442001871764
+Average test loss: 0.0009706634695508651
 Epoch 150
 -------------------------------
-Average train loss: 0.00027808663609903307
-Average test loss: 0.00020441270420893228
+Average train loss: 0.0006410171813331545
+Average test loss: 0.00035552697123161385
 Epoch 151
 -------------------------------
-Average train loss: 0.00031567336147418244
-Average test loss: 0.0002539247174614242
+Average train loss: 0.0003731320658698678
+Average test loss: 0.0008889616209281874
 Epoch 152
 -------------------------------
-Average train loss: 0.0004806289414409548
-Average test loss: 0.00018826176944587911
+Average train loss: 0.0003181860453332774
+Average test loss: 0.0006540151641404789
 Epoch 153
 -------------------------------
-Average train loss: 0.00039325731282588097
-Average test loss: 0.00013431314697040113
+Average train loss: 0.0002554441860411316
+Average test loss: 0.0004555249511862972
 Epoch 154
 -------------------------------
-Average train loss: 0.00020380169225973078
-Average test loss: 0.00027034546656068414
+Average train loss: 0.00039195114164613186
+Average test loss: 0.0005719590990338475
 Epoch 155
 -------------------------------
-Average train loss: 0.0003372767465771176
-Average test loss: 0.00038892682018091103
+Average train loss: 0.00027501354023115707
+Average test loss: 0.00043175931620810715
 Epoch 156
 -------------------------------
-Average train loss: 0.00027294409985188393
-Average test loss: 0.00038548928361186493
+Average train loss: 0.00040665204520337286
+Average test loss: 0.00042603293799662164
 Epoch 157
 -------------------------------
-Average train loss: 0.0002824034259538166
-Average test loss: 0.00031397323410991315
+Average train loss: 0.00027676862315274776
+Average test loss: 0.0003540260908526501
 Epoch 158
 -------------------------------
-Average train loss: 0.0005353164023836144
-Average test loss: 0.0003655643751179533
+Average train loss: 0.00027720435929950326
+Average test loss: 0.0007554571036182876
 Epoch 159
 -------------------------------
-Average train loss: 0.00045574213727377354
-Average test loss: 0.0019445738289505243
+Average train loss: 0.00043850442860275505
+Average test loss: 0.0005050011178744691
 Epoch 160
 -------------------------------
-Average train loss: 0.0011463406193070113
-Average test loss: 0.00013076575539473976
+Average train loss: 0.0003852709924103692
+Average test loss: 0.0006217895882270698
 Epoch 161
 -------------------------------
-Average train loss: 0.0006471083842916414
-Average test loss: 0.0002105358403891192
+Average train loss: 0.0002539887028979138
+Average test loss: 0.0005496070537317012
 Epoch 162
 -------------------------------
-Average train loss: 0.00035900692804716525
-Average test loss: 0.00013065410634486137
+Average train loss: 0.00025062885863007977
+Average test loss: 0.0005296574963722378
 Epoch 163
 -------------------------------
-Average train loss: 0.0001701093657175079
-Average test loss: 0.0006882954871148936
+Average train loss: 0.00023017270432319493
+Average test loss: 0.0007075534917281143
 Epoch 164
 -------------------------------
-Average train loss: 0.0003755877853836864
-Average test loss: 0.0003034479741472751
+Average train loss: 0.00021398551674792543
+Average test loss: 0.0006165461215589728
 Epoch 165
 -------------------------------
-Average train loss: 0.0002556477827602066
-Average test loss: 0.00021657024626620114
+Average train loss: 0.0002732375470804982
+Average test loss: 0.0006301888622277017
 Epoch 166
 -------------------------------
-Average train loss: 0.000473394060973078
-Average test loss: 0.00021632495294657668
+Average train loss: 0.00026796908670803535
+Average test loss: 0.0005902168819115364
 Epoch 167
 -------------------------------
-Average train loss: 0.0004744549377937801
-Average test loss: 0.00019312748814367557
+Average train loss: 0.00035190697817597536
+Average test loss: 0.0003876295564363578
 Epoch 168
 -------------------------------
-Average train loss: 0.0003170611604582518
-Average test loss: 0.00020200745867831365
+Average train loss: 0.00028996652603382247
+Average test loss: 0.0006236377521418035
 Epoch 169
 -------------------------------
-Average train loss: 0.00032766686752438545
-Average test loss: 0.0002614806123477008
+Average train loss: 0.0002681737462989986
+Average test loss: 0.0008176770456235058
 Epoch 170
 -------------------------------
-Average train loss: 0.0002676313667325303
-Average test loss: 0.00044810879834195864
+Average train loss: 0.0002821650030091405
+Average test loss: 0.000545077894847574
 Epoch 171
 -------------------------------
-Average train loss: 0.0002918994755600579
-Average test loss: 0.0001462518037962062
+Average train loss: 0.00029982769992784595
+Average test loss: 0.0007444228394888341
 Epoch 172
 -------------------------------
-Average train loss: 0.0005593932370538823
-Average test loss: 0.0003771338358222108
+Average train loss: 0.0002798747064662166
+Average test loss: 0.0005320003838278353
 Epoch 173
 -------------------------------
-Average train loss: 0.0006756454316200689
-Average test loss: 0.00024890069991150606
+Average train loss: 0.00022723704692907633
+Average test loss: 0.0004551725204302264
 Epoch 174
 -------------------------------
-Average train loss: 0.0003883501057862304
-Average test loss: 0.00033124864109725295
+Average train loss: 0.00022431911449530162
+Average test loss: 0.0006843353787969266
 Epoch 175
 -------------------------------
-Average train loss: 0.00030746657692361625
-Average test loss: 0.00024071084044408053
+Average train loss: 0.0002550667099421844
+Average test loss: 0.0003855208633467555
 Epoch 176
 -------------------------------
-Average train loss: 0.0003756377988611348
-Average test loss: 0.00016713979338029667
+Average train loss: 0.00020526759908534586
+Average test loss: 0.0005366569280990266
 Epoch 177
 -------------------------------
-Average train loss: 0.00042413487477460876
-Average test loss: 0.000705527191582535
+Average train loss: 0.00023793284577550367
+Average test loss: 0.0008338292162599308
 Epoch 178
 -------------------------------
-Average train loss: 0.0007238042796961963
-Average test loss: 0.0001471724930784798
+Average train loss: 0.000262923353293445
+Average test loss: 0.0009250479051843286
 Epoch 179
 -------------------------------
-Average train loss: 0.00017276282858802005
-Average test loss: 0.00019252523530407676
+Average train loss: 0.00034495874831918627
+Average test loss: 0.0004964919062331319
 Epoch 180
 -------------------------------
-Average train loss: 0.00029907633768743835
-Average test loss: 0.0004406120569910854
+Average train loss: 0.0003143065472249873
+Average test loss: 0.0011890256594467377
 Epoch 181
 -------------------------------
-Average train loss: 0.0006293191507575102
-Average test loss: 0.00043908803594864106
+Average train loss: 0.0004890180029906333
+Average test loss: 0.0004840117305450674
 Epoch 182
 -------------------------------
-Average train loss: 0.0005081478803185746
-Average test loss: 0.0006894559316736247
+Average train loss: 0.0002969380799913779
+Average test loss: 0.0006977923746619906
 Epoch 183
 -------------------------------
-Average train loss: 0.0008791410340927542
-Average test loss: 0.00029804037019078223
+Average train loss: 0.0002813095721649006
+Average test loss: 0.0009599672464121665
 Epoch 184
 -------------------------------
-Average train loss: 0.0002969944878714159
-Average test loss: 0.00028179409023973027
+Average train loss: 0.00047028862289153037
+Average test loss: 0.0006394423066272534
 Epoch 185
 -------------------------------
-Average train loss: 0.0002938288907171227
-Average test loss: 0.00032707499381753484
+Average train loss: 0.00042831091035623104
+Average test loss: 0.0006035576641027417
 Epoch 186
 -------------------------------
-Average train loss: 0.00033211580928764304
-Average test loss: 0.00015636295938747935
+Average train loss: 0.0002342167869210243
+Average test loss: 0.0007476814457082323
 Epoch 187
 -------------------------------
-Average train loss: 0.0003745951937162317
-Average test loss: 0.00023894308209751865
+Average train loss: 0.0005464395668241196
+Average test loss: 0.0007466594148094632
 Epoch 188
 -------------------------------
-Average train loss: 0.00021788113372167572
-Average test loss: 0.0002395869087195024
+Average train loss: 0.0003195091578527354
+Average test loss: 0.0009357277387087899
 Epoch 189
 -------------------------------
-Average train loss: 0.00034986607410246505
-Average test loss: 0.0004990701813117734
+Average train loss: 0.00022145554510643705
+Average test loss: 0.0007810210143881184
 Epoch 190
 -------------------------------
-Average train loss: 0.0002150843752315268
-Average test loss: 0.0003524728090269491
+Average train loss: 0.00032020441838540134
+Average test loss: 0.0003826942535982068
 Epoch 191
 -------------------------------
-Average train loss: 0.0002313685865374282
-Average test loss: 0.00026417142985987345
+Average train loss: 0.0003595743532059714
+Average test loss: 0.0009309705180515136
 Epoch 192
 -------------------------------
-Average train loss: 0.00030604304833104835
-Average test loss: 0.0007417334127239883
+Average train loss: 0.0004924490724806674
+Average test loss: 0.0006914230637318854
 Epoch 193
 -------------------------------
-Average train loss: 0.0005739848897792399
-Average test loss: 0.0002092265328558694
+Average train loss: 0.00022341789124766365
+Average test loss: 0.0006837312206958554
 Epoch 194
 -------------------------------
-Average train loss: 0.0002440633572405204
-Average test loss: 0.0005212921990148191
+Average train loss: 0.00022779979917686433
+Average test loss: 0.0004976881443456348
 Epoch 195
 -------------------------------
-Average train loss: 0.00019673740665894003
-Average test loss: 0.0005037288605568133
+Average train loss: 0.0002399966472876258
+Average test loss: 0.0008788679385491248
 Epoch 196
 -------------------------------
-Average train loss: 0.00019075078787864186
-Average test loss: 0.00017353493292050968
+Average train loss: 0.0002620766730979085
+Average test loss: 0.0005451306933537126
 Epoch 197
 -------------------------------
-Average train loss: 0.0002012539521092549
-Average test loss: 0.00023471597835720916
+Average train loss: 0.0003553174081025645
+Average test loss: 0.0007201983327312129
 Epoch 198
 -------------------------------
-Average train loss: 0.0005545567833178211
-Average test loss: 0.0002628405990045784
+Average train loss: 0.00018265760911162943
+Average test loss: 0.0007592797088104167
 Epoch 199
 -------------------------------
-Average train loss: 0.00046707310088095255
-Average test loss: 0.00026450645236764103
+Average train loss: 0.00020138995168963447
+Average test loss: 0.0004658055425222431
 Epoch 200
 -------------------------------
-Average train loss: 0.00025696459517348557
-Average test loss: 0.0001919120383848037
+Average train loss: 0.00017999044706812128
+Average test loss: 0.00037331301843680976
 Epoch 201
 -------------------------------
-Average train loss: 0.00015132063810597174
-Average test loss: 0.00013415019514338513
+Average train loss: 0.00017037369514582678
+Average test loss: 0.0006577757553064398
 Epoch 202
 -------------------------------
-Average train loss: 0.0003155278730264399
-Average test loss: 0.0003861976396625063
+Average train loss: 0.00015802001318661495
+Average test loss: 0.0008636576447835458
 Epoch 203
 -------------------------------
-Average train loss: 0.0003953718322736677
-Average test loss: 0.00011598032870097086
+Average train loss: 0.00022704395989421754
+Average test loss: 0.0005169449577806517
 Epoch 204
 -------------------------------
-Average train loss: 0.000316229892487172
-Average test loss: 0.0002808558794120992
+Average train loss: 0.00018571949272882192
+Average test loss: 0.000970774217941133
 Epoch 205
 -------------------------------
-Average train loss: 0.0003847854203195311
-Average test loss: 0.00031556520116282627
+Average train loss: 0.0004516802169382572
+Average test loss: 0.0006387688086501189
 Epoch 206
 -------------------------------
-Average train loss: 0.00019755870613153093
-Average test loss: 0.00018705615158458904
+Average train loss: 0.0003657829508301802
+Average test loss: 0.0005340633132228893
 Epoch 207
 -------------------------------
-Average train loss: 0.00027329329517669973
-Average test loss: 9.627548518307907e-05
+Average train loss: 0.0005631779175018891
+Average test loss: 0.0007265842328446784
 Epoch 208
 -------------------------------
-Average train loss: 0.0003129087359411642
-Average test loss: 0.00026716852568954764
+Average train loss: 0.0002983653756382409
+Average test loss: 0.0008529610017181507
 Epoch 209
 -------------------------------
-Average train loss: 0.00042410764828673566
-Average test loss: 0.001095432838025902
+Average train loss: 0.00018238841570564546
+Average test loss: 0.0005245133174217439
 Epoch 210
 -------------------------------
-Average train loss: 0.00037866814818698913
-Average test loss: 0.0002718237270268479
+Average train loss: 0.00014509763626847417
+Average test loss: 0.0005791911867813074
 Epoch 211
 -------------------------------
-Average train loss: 0.0002503033389803022
-Average test loss: 0.0002214556692966393
+Average train loss: 0.00019654491872643122
+Average test loss: 0.0005200004629192076
 Epoch 212
 -------------------------------
-Average train loss: 0.00023023000569082796
-Average test loss: 0.0002640554199128279
+Average train loss: 0.00017268174735363573
+Average test loss: 0.00033838289423978755
 Epoch 213
 -------------------------------
-Average train loss: 0.00032908492314163594
-Average test loss: 0.0001370895307835391
+Average train loss: 0.00034062358958180994
+Average test loss: 0.0005667226089696799
 Epoch 214
 -------------------------------
-Average train loss: 0.0003054110155790113
-Average test loss: 0.0002243805564441053
+Average train loss: 0.00020970919518731535
+Average test loss: 0.0004038875444426334
 Epoch 215
 -------------------------------
-Average train loss: 0.0007625484012532979
-Average test loss: 0.0007980400114320219
+Average train loss: 0.0004410691763041541
+Average test loss: 0.0009527314188224929
 Epoch 216
 -------------------------------
-Average train loss: 0.0003849215814261697
-Average test loss: 0.00038313906406983733
+Average train loss: 0.000547220638836734
+Average test loss: 0.000661168758857197
 Epoch 217
 -------------------------------
-Average train loss: 0.00020901218609651551
-Average test loss: 0.00021918248759383068
+Average train loss: 0.0002528414250991773
+Average test loss: 0.0004927137321958851
 Epoch 218
 -------------------------------
-Average train loss: 0.00023669522299314848
-Average test loss: 0.0001220347746441673
+Average train loss: 0.0002684529830003157
+Average test loss: 0.0007741474172299993
 Epoch 219
 -------------------------------
-Average train loss: 0.00027908335730899127
-Average test loss: 0.00013209663822116063
+Average train loss: 0.0003159205859992653
+Average test loss: 0.0006431435717136732
 Epoch 220
 -------------------------------
-Average train loss: 0.00018862255696149076
-Average test loss: 0.00018807827187369445
+Average train loss: 0.0002174588679918088
+Average test loss: 0.00039109550250161974
 Epoch 221
 -------------------------------
-Average train loss: 0.00022308021609205754
-Average test loss: 0.00017765557692785348
+Average train loss: 0.00017958620912395418
+Average test loss: 0.0004603251914626786
 Epoch 222
 -------------------------------
-Average train loss: 0.00027537403686437754
-Average test loss: 0.00010536494249078845
+Average train loss: 0.00019768068974372
+Average test loss: 0.00047484837705269456
 Epoch 223
 -------------------------------
-Average train loss: 0.00017756396409822627
-Average test loss: 0.0005340738903864153
+Average train loss: 0.00020091918675461785
+Average test loss: 0.0006650559371337295
 Epoch 224
 -------------------------------
-Average train loss: 0.00031028675017296336
-Average test loss: 0.00025191542746532444
+Average train loss: 0.00015849870251258836
+Average test loss: 0.0007645113073522225
 Epoch 225
 -------------------------------
-Average train loss: 0.0002680325812252704
-Average test loss: 0.00036509160002294393
+Average train loss: 0.00028485227929195387
+Average test loss: 0.0010894887590049101
 Epoch 226
 -------------------------------
-Average train loss: 0.0002987396388198249
-Average test loss: 0.0004809662184145834
+Average train loss: 0.0004116960690589622
+Average test loss: 0.0015828236189138676
 Epoch 227
 -------------------------------
-Average train loss: 0.00043774209858383985
-Average test loss: 0.00021493008950658674
+Average train loss: 0.00040913874923717233
+Average test loss: 0.0005804892571177334
 Epoch 228
 -------------------------------
-Average train loss: 0.00022948894526052754
-Average test loss: 0.0001673607267938288
+Average train loss: 0.00019939059755415655
+Average test loss: 0.0004337846559272813
 Epoch 229
 -------------------------------
-Average train loss: 0.00033656168379820884
-Average test loss: 0.00023873759034488882
+Average train loss: 0.0001404243891010992
+Average test loss: 0.00035670383450841267
 Epoch 230
 -------------------------------
-Average train loss: 0.00026958931208355354
-Average test loss: 0.00018852730759785378
+Average train loss: 0.0001350459665991366
+Average test loss: 0.000511184471958716
 Epoch 231
 -------------------------------
-Average train loss: 0.0004936172405723482
-Average test loss: 0.000385713842531134
+Average train loss: 0.0002221998643653933
+Average test loss: 0.0007949069341910737
 Epoch 232
 -------------------------------
-Average train loss: 0.0003540944485575892
-Average test loss: 0.0001432935886051772
+Average train loss: 0.00022219722683075816
+Average test loss: 0.0005907452474015632
 Epoch 233
 -------------------------------
-Average train loss: 0.00018743952765362337
-Average test loss: 0.0002038298750578958
+Average train loss: 0.00020099051092984155
+Average test loss: 0.000711468476635803
 Epoch 234
 -------------------------------
-Average train loss: 0.00028970743209356443
-Average test loss: 0.00016002060978540352
+Average train loss: 0.0003165550960693508
+Average test loss: 0.0006442441704816052
 Epoch 235
 -------------------------------
-Average train loss: 0.00017036047458532266
-Average test loss: 0.0003670409995330764
+Average train loss: 0.00018194239295553415
+Average test loss: 0.00045739111582016837
 Epoch 236
 -------------------------------
-Average train loss: 0.0001973815748351626
-Average test loss: 0.0002632671052456966
+Average train loss: 0.00029495111259166153
+Average test loss: 0.00048773354709347975
 Epoch 237
 -------------------------------
-Average train loss: 0.0003454246533510741
-Average test loss: 0.0001469205308239907
+Average train loss: 0.0001787624796270393
+Average test loss: 0.00039524245325342884
 Epoch 238
 -------------------------------
-Average train loss: 0.0003600094374269247
-Average test loss: 0.00018880578032362143
+Average train loss: 0.00015527098934398965
+Average test loss: 0.0004626130103133619
 Epoch 239
 -------------------------------
-Average train loss: 0.00016924010764341802
-Average test loss: 0.00022403861242180158
+Average train loss: 0.00024410802696365864
+Average test loss: 0.0005937105660060686
 Epoch 240
 -------------------------------
-Average train loss: 0.0002457773726200685
-Average test loss: 0.00016444135378281186
+Average train loss: 0.00025699971476569774
+Average test loss: 0.0005116435412284252
 Epoch 241
 -------------------------------
-Average train loss: 0.0003007125764270313
-Average test loss: 0.0001448829550229545
+Average train loss: 0.00018126276932889596
+Average test loss: 0.00041347425264705507
 Epoch 242
 -------------------------------
-Average train loss: 0.00025054376339539886
-Average test loss: 0.00018792491339679276
+Average train loss: 0.0001428426636266522
+Average test loss: 0.0004481017053227073
 Epoch 243
 -------------------------------
-Average train loss: 0.00025920329237123953
-Average test loss: 0.0001702344166655426
+Average train loss: 0.00032728880556533114
+Average test loss: 0.0005586899185021009
 Epoch 244
 -------------------------------
-Average train loss: 0.00012953651188581716
-Average test loss: 0.0001620646144147031
+Average train loss: 0.00035284504294395445
+Average test loss: 0.0004701515198186306
 Epoch 245
 -------------------------------
-Average train loss: 0.0001409244749811478
-Average test loss: 0.0001312028715411933
+Average train loss: 0.0006053569761570543
+Average test loss: 0.0009483993968128093
 Epoch 246
 -------------------------------
-Average train loss: 0.00012204672559164465
-Average test loss: 0.00011378164085077255
+Average train loss: 0.0002522922525531612
+Average test loss: 0.0007429725997748651
 Epoch 247
 -------------------------------
-Average train loss: 0.000157334218674805
-Average test loss: 0.0002679391182027757
+Average train loss: 0.0001651432779908646
+Average test loss: 0.000511829849399094
 Epoch 248
 -------------------------------
-Average train loss: 0.0004984131767560029
-Average test loss: 0.0003587549040925556
+Average train loss: 0.00014636306892498396
+Average test loss: 0.0005486574102958132
 Epoch 249
 -------------------------------
-Average train loss: 0.000319670682947617
-Average test loss: 0.0001247119383021657
+Average train loss: 0.00017922037892276421
+Average test loss: 0.0003906288184225559
 Epoch 250
 -------------------------------
-Average train loss: 0.00028696315333945674
-Average test loss: 0.00035714755566524606
+Average train loss: 0.0001430239842738956
+Average test loss: 0.0004302187475592031
 Epoch 251
 -------------------------------
-Average train loss: 0.0006495051321689971
-Average test loss: 0.00044455430595137713
+Average train loss: 0.0001698136287450325
+Average test loss: 0.0005535579257411882
 Epoch 252
 -------------------------------
-Average train loss: 0.0004163411830086261
-Average test loss: 0.00036110548327477384
+Average train loss: 0.00014096261023951228
+Average test loss: 0.0004944862365456564
 Epoch 253
 -------------------------------
-Average train loss: 0.0003037778529687785
-Average test loss: 0.00021358908686254705
+Average train loss: 0.00012662047476624138
+Average test loss: 0.0005995689779021112
 Epoch 254
 -------------------------------
-Average train loss: 0.00016023761098040267
-Average test loss: 0.0001497295062498389
+Average train loss: 0.00012900769463158212
+Average test loss: 0.0004194674755646182
 Epoch 255
 -------------------------------
-Average train loss: 0.00017046802720869893
-Average test loss: 0.00018386434385320172
+Average train loss: 0.00013653640853590333
+Average test loss: 0.0004039800925446408
 Epoch 256
 -------------------------------
-Average train loss: 0.0001574140609591268
-Average test loss: 0.00014292479629927714
+Average train loss: 0.0001689796891878359
+Average test loss: 0.0003909896913683042
 Epoch 257
 -------------------------------
-Average train loss: 0.00022534668394655455
-Average test loss: 0.00013674638362967277
+Average train loss: 0.00014319864712888374
+Average test loss: 0.0005003969999961555
 Epoch 258
 -------------------------------
-Average train loss: 0.0002814180548739387
-Average test loss: 0.00024797335936455056
+Average train loss: 0.000156531096145045
+Average test loss: 0.0005632754224019923
 Epoch 259
 -------------------------------
-Average train loss: 0.00029928439151262866
-Average test loss: 0.0003487226952399526
+Average train loss: 0.00018013616150710731
+Average test loss: 0.0006721515632567129
 Epoch 260
 -------------------------------
-Average train loss: 0.0006249532080255448
-Average test loss: 0.0005061882963803198
+Average train loss: 0.00019117882300633937
+Average test loss: 0.0011751990948271538
 Epoch 261
 -------------------------------
-Average train loss: 0.0006050202209735289
-Average test loss: 0.000574159190624154
+Average train loss: 0.00017598527425434442
+Average test loss: 0.0007219815327386771
 Epoch 262
 -------------------------------
-Average train loss: 0.0004453099361853674
-Average test loss: 0.0005116949822487575
+Average train loss: 0.00018016766654909588
+Average test loss: 0.0006103650625196419
 Epoch 263
 -------------------------------
-Average train loss: 0.00031762143960804677
-Average test loss: 0.00019200175613929917
+Average train loss: 0.0002889179062913172
+Average test loss: 0.0003582467117147254
 Epoch 264
 -------------------------------
-Average train loss: 0.00026532774412771685
-Average test loss: 0.0002655387714704765
+Average train loss: 0.00010555835979175754
+Average test loss: 0.0004408281633264518
 Epoch 265
 -------------------------------
-Average train loss: 0.0004554822904174216
-Average test loss: 0.0004629119170463777
+Average train loss: 0.00012200321303680539
+Average test loss: 0.0005279978442039075
 Epoch 266
 -------------------------------
-Average train loss: 0.00020335452194558456
-Average test loss: 0.00030666459809123935
+Average train loss: 0.0001784428459359333
+Average test loss: 0.0011383446315968676
 Epoch 267
 -------------------------------
-Average train loss: 0.0003079537354642525
-Average test loss: 0.00019728135001579567
+Average train loss: 0.0007093159381474834
+Average test loss: 0.0006443906770852793
 Epoch 268
 -------------------------------
-Average train loss: 0.00023660318765905686
-Average test loss: 0.00016928454819467982
+Average train loss: 0.00013135635032085702
+Average test loss: 0.0005490669282153249
 Epoch 269
 -------------------------------
-Average train loss: 0.0001787655256339349
-Average test loss: 0.00024287297960004902
+Average train loss: 0.00017650496258283965
+Average test loss: 0.0004975883972032794
 Epoch 270
 -------------------------------
-Average train loss: 0.00011916594376089051
-Average test loss: 0.00018571403104163307
+Average train loss: 0.00012286710873013362
+Average test loss: 0.0003988388447656429
 Epoch 271
 -------------------------------
-Average train loss: 0.00027360541163943706
-Average test loss: 0.00023636671020150452
+Average train loss: 0.00012846564990468324
+Average test loss: 0.00041702718174617203
 Epoch 272
 -------------------------------
-Average train loss: 0.00040938726015156136
-Average test loss: 0.00017656440312358818
+Average train loss: 0.00010678866747184656
+Average test loss: 0.0004407218366395682
 Epoch 273
 -------------------------------
-Average train loss: 0.000231426827958785
-Average test loss: 0.00019230989398368235
+Average train loss: 0.0001465279617696069
+Average test loss: 0.00048579770165296007
 Epoch 274
 -------------------------------
-Average train loss: 0.00018979055384988898
-Average test loss: 0.0001678235296692167
+Average train loss: 0.0002794902448658831
+Average test loss: 0.0008634093849520598
 Epoch 275
 -------------------------------
-Average train loss: 0.0003491730030509643
-Average test loss: 0.00033369392310435487
+Average train loss: 0.00028956102847587316
+Average test loss: 0.0007510984432883561
 Epoch 276
 -------------------------------
-Average train loss: 0.0003372444529668428
-Average test loss: 0.0003213812056596258
+Average train loss: 0.00021443004705361092
+Average test loss: 0.0004707540647359565
 Epoch 277
 -------------------------------
-Average train loss: 0.00043349927495000884
-Average test loss: 0.0002958076199450131
+Average train loss: 0.0001440378715051338
+Average test loss: 0.00041500472746390315
 Epoch 278
 -------------------------------
-Average train loss: 0.00037976342253386974
-Average test loss: 0.00018960890260392
+Average train loss: 0.0004361206988687627
+Average test loss: 0.0005126025228361998
 Epoch 279
 -------------------------------
-Average train loss: 0.00021687896020011977
-Average test loss: 0.0001510274565329642
+Average train loss: 0.0002236947302299086
+Average test loss: 0.0004733806313847059
 Epoch 280
 -------------------------------
-Average train loss: 0.0003264095028862357
-Average test loss: 0.00036375182597631853
+Average train loss: 0.00021418367192381992
+Average test loss: 0.0013545281586370298
 Epoch 281
 -------------------------------
-Average train loss: 0.0004410645838652272
-Average test loss: 0.0007364017448188471
+Average train loss: 0.0005361565676867031
+Average test loss: 0.0006104948364996485
 Epoch 282
 -------------------------------
-Average train loss: 0.00020063962998392526
-Average test loss: 0.000117973997216073
+Average train loss: 0.00019115848815999924
+Average test loss: 0.0003899585738378976
 Epoch 283
 -------------------------------
-Average train loss: 0.00021992283742292785
-Average test loss: 0.00020807480697320507
+Average train loss: 0.00014278846079832875
+Average test loss: 0.0005041853790836674
 Epoch 284
 -------------------------------
-Average train loss: 0.00040651064831763505
-Average test loss: 0.00011405344775994308
+Average train loss: 0.00024879265954950823
+Average test loss: 0.00047956187959893474
 Epoch 285
 -------------------------------
-Average train loss: 0.0001734893216053024
-Average test loss: 0.0001361403046757914
+Average train loss: 0.00028294935589656233
+Average test loss: 0.0005788695832182254
 Epoch 286
 -------------------------------
-Average train loss: 0.00015523250694968738
-Average test loss: 0.00012230240827193484
+Average train loss: 0.00014033800842298662
+Average test loss: 0.0003225330084595563
 Epoch 287
 -------------------------------
-Average train loss: 0.00023373070667730643
-Average test loss: 0.00024726070738064924
+Average train loss: 0.00011828652175609022
+Average test loss: 0.000401282895057063
 Epoch 288
 -------------------------------
-Average train loss: 0.00030184985953383146
-Average test loss: 0.0003004258864426187
+Average train loss: 0.00017133068351540714
+Average test loss: 0.0005241424951236695
 Epoch 289
 -------------------------------
-Average train loss: 0.00021377530065365137
-Average test loss: 0.0003089254335333992
+Average train loss: 0.0002892843738663942
+Average test loss: 0.0008932549390010536
 Epoch 290
 -------------------------------
-Average train loss: 0.00034337094170041384
-Average test loss: 0.0001271448449447884
+Average train loss: 0.0003167661087354645
+Average test loss: 0.0004944742478463533
 Epoch 291
 -------------------------------
-Average train loss: 0.0001771830035431776
-Average test loss: 0.0001580880135796698
+Average train loss: 0.00013909572939155624
+Average test loss: 0.00037569010601146147
 Epoch 292
 -------------------------------
-Average train loss: 0.0001976330895558931
-Average test loss: 0.00014494491655828564
+Average train loss: 0.00010419832382467575
+Average test loss: 0.00047056310618894974
 Epoch 293
 -------------------------------
-Average train loss: 0.00014327449578559027
-Average test loss: 0.00019496485297817605
+Average train loss: 0.00011874602816533297
+Average test loss: 0.0005173129985840726
 Epoch 294
 -------------------------------
-Average train loss: 0.00019571192693547347
-Average test loss: 0.0002185853788562651
+Average train loss: 0.0001224305974028539
+Average test loss: 0.000660488024420504
 Epoch 295
 -------------------------------
-Average train loss: 0.00036034729098901154
-Average test loss: 0.0001499791048575259
+Average train loss: 0.00015681343633332288
+Average test loss: 0.0005201886399715607
 Epoch 296
 -------------------------------
-Average train loss: 0.00043065442238003014
-Average test loss: 0.0003982752844292138
+Average train loss: 0.00012290657803532668
+Average test loss: 0.0005075393814227677
 Epoch 297
 -------------------------------
-Average train loss: 0.0009337698249146342
-Average test loss: 0.0003810733947570303
+Average train loss: 0.0001263771194498986
+Average test loss: 0.00028209272672289183
 Epoch 298
 -------------------------------
-Average train loss: 0.00030047260472201745
-Average test loss: 0.00039873250144799907
+Average train loss: 8.542312862118706e-05
+Average test loss: 0.0002640992294930454
 Epoch 299
 -------------------------------
-Average train loss: 0.00022840549645479767
-Average test loss: 0.00013961035126288022
+Average train loss: 9.743197268107906e-05
+Average test loss: 0.00026578774434580864
 Epoch 300
 -------------------------------
-Average train loss: 0.00015718106646090747
-Average test loss: 0.00015972075509905283
+Average train loss: 0.00021899849030887708
+Average test loss: 0.0005543460034199857
 Epoch 301
 -------------------------------
-Average train loss: 0.00024001958925509825
-Average test loss: 0.00021612506160246476
+Average train loss: 0.00012944369766046293
+Average test loss: 0.00035317936479779225
 Epoch 302
 -------------------------------
-Average train loss: 0.0002004337657126598
-Average test loss: 0.0001489483256591484
+Average train loss: 0.00012722769417450764
+Average test loss: 0.00043308882699680647
 Epoch 303
 -------------------------------
-Average train loss: 0.0002748099123709835
-Average test loss: 0.00028040791845082173
+Average train loss: 0.00015133492925087922
+Average test loss: 0.00045017564220220914
 Epoch 304
 -------------------------------
-Average train loss: 0.00019726824888493866
-Average test loss: 0.00010013246043984379
+Average train loss: 0.00028301298443693667
+Average test loss: 0.0005400469859263726
 Epoch 305
 -------------------------------
-Average train loss: 0.00016963929563644343
-Average test loss: 0.00020508754252140143
+Average train loss: 0.0004560109885642305
+Average test loss: 0.0004914814448316715
 Epoch 306
 -------------------------------
-Average train loss: 0.00013726977500482461
-Average test loss: 0.00010946765905828215
+Average train loss: 0.00020192927244352176
+Average test loss: 0.0003741568070836365
 Epoch 307
 -------------------------------
-Average train loss: 0.00031031230755615977
-Average test loss: 0.0006100134300400636
+Average train loss: 0.00034075972012942657
+Average test loss: 0.0004193672315783
 Epoch 308
 -------------------------------
-Average train loss: 0.0005109043026459404
-Average test loss: 0.0003166671355886917
+Average train loss: 0.0003581617157033179
+Average test loss: 0.0009702535213104316
 Epoch 309
 -------------------------------
-Average train loss: 0.0009317018452566117
-Average test loss: 0.0011626328923739493
+Average train loss: 0.0002177525380102452
+Average test loss: 0.0003727975459436753
 Epoch 310
 -------------------------------
-Average train loss: 0.0010535001032985747
-Average test loss: 0.0004012319612749187
+Average train loss: 8.25789975351654e-05
+Average test loss: 0.00044917804812679866
 Epoch 311
 -------------------------------
-Average train loss: 0.00045352397311944516
-Average test loss: 0.0003724754850346861
+Average train loss: 0.00013196156345657073
+Average test loss: 0.00047851737638536306
 Epoch 312
 -------------------------------
-Average train loss: 0.00025800576666370036
-Average test loss: 0.00039174790020167293
+Average train loss: 0.00016275008412776514
+Average test loss: 0.0004735070812915053
 Epoch 313
 -------------------------------
-Average train loss: 0.0002890749162179418
-Average test loss: 0.00018155662110075355
+Average train loss: 0.00013505261842510662
+Average test loss: 0.00040760715741531124
 Epoch 314
 -------------------------------
-Average train loss: 0.000228023175150156
-Average test loss: 0.0003865405493083277
+Average train loss: 7.789089489961043e-05
+Average test loss: 0.0004661526992484661
 Epoch 315
 -------------------------------
-Average train loss: 0.000324602973414585
-Average test loss: 0.00031698863728836713
+Average train loss: 0.000100306746608112
+Average test loss: 0.00040697269183250943
 Epoch 316
 -------------------------------
-Average train loss: 0.00014737611534656024
-Average test loss: 0.00017594043830675737
+Average train loss: 8.360144965990912e-05
+Average test loss: 0.000418073422874191
 Epoch 317
 -------------------------------
-Average train loss: 0.00016195035714190454
-Average test loss: 0.00017276475097917552
+Average train loss: 0.00012090836942661553
+Average test loss: 0.00027893108615119545
 Epoch 318
 -------------------------------
-Average train loss: 0.00017037018726114182
-Average test loss: 0.00014424004828989773
+Average train loss: 0.00021834612532984466
+Average test loss: 0.0004262858315736854
 Epoch 319
 -------------------------------
-Average train loss: 0.00015595108940033242
-Average test loss: 0.00013232999949000908
+Average train loss: 0.00039306181686697526
+Average test loss: 0.0009685970227500158
 Epoch 320
 -------------------------------
-Average train loss: 0.00020067236575414428
-Average test loss: 0.00020878002708611478
+Average train loss: 0.00043798611441161486
+Average test loss: 0.00088198043938194
 Epoch 321
 -------------------------------
-Average train loss: 0.00019256427040090785
-Average test loss: 0.0001028535615270292
+Average train loss: 0.00023009340686257928
+Average test loss: 0.00042791156946415346
 Epoch 322
 -------------------------------
-Average train loss: 0.0001557086783577688
-Average test loss: 0.00013012889030505903
+Average train loss: 0.00024162394081940873
+Average test loss: 0.000467625937225031
 Epoch 323
 -------------------------------
-Average train loss: 0.0001558254807605408
-Average test loss: 0.0002763226012965398
+Average train loss: 0.0002611514661111869
+Average test loss: 0.0005616410531469487
 Epoch 324
 -------------------------------
-Average train loss: 0.0001835507388750557
-Average test loss: 0.00019934725215924636
+Average train loss: 0.0003927346447017044
+Average test loss: 0.0006707149815546083
 Epoch 325
 -------------------------------
-Average train loss: 0.00014014599568326958
-Average test loss: 0.0001317773068356993
+Average train loss: 0.000331359374395106
+Average test loss: 0.0005082568490511871
 Epoch 326
 -------------------------------
-Average train loss: 0.0001367276739620138
-Average test loss: 0.00014826446048183634
+Average train loss: 0.00023789611994288863
+Average test loss: 0.00043383777873324495
 Epoch 327
 -------------------------------
-Average train loss: 0.00020372968152514658
-Average test loss: 0.00018781368063563214
+Average train loss: 0.00037371618440374733
+Average test loss: 0.00044216296269691417
 Epoch 328
 -------------------------------
-Average train loss: 0.00013059714052360505
-Average test loss: 0.00012889153887434595
+Average train loss: 0.00014058930406463333
+Average test loss: 0.00044413105933927
 Epoch 329
 -------------------------------
-Average train loss: 0.00016334943618858232
-Average test loss: 0.00020994626642537436
+Average train loss: 0.00011984236753050936
+Average test loss: 0.00029896719830243716
 Epoch 330
 -------------------------------
-Average train loss: 0.0001339878597354982
-Average test loss: 0.00011512182494958065
+Average train loss: 0.00014201020458131096
+Average test loss: 0.0003634859375389559
 Epoch 331
 -------------------------------
-Average train loss: 0.00016039227280998603
-Average test loss: 0.0001724488112293849
+Average train loss: 0.00018757661775453016
+Average test loss: 0.0006165986248691167
 Epoch 332
 -------------------------------
-Average train loss: 0.0004955458160839044
-Average test loss: 0.0008670437798303153
+Average train loss: 0.00014516459559672513
+Average test loss: 0.0004524594426454444
 Epoch 333
 -------------------------------
-Average train loss: 0.00031874427280854435
-Average test loss: 0.00021228342354463945
+Average train loss: 6.952186435228213e-05
+Average test loss: 0.00035648795892484486
 Epoch 334
 -------------------------------
-Average train loss: 0.0003220551463891752
-Average test loss: 0.00017750542610883713
+Average train loss: 6.146434316178784e-05
+Average test loss: 0.0003094883951624589
 Epoch 335
 -------------------------------
-Average train loss: 0.0003121440229006112
-Average test loss: 0.00044224472782973735
+Average train loss: 9.275188953324687e-05
+Average test loss: 0.00038959014325103326
 Epoch 336
 -------------------------------
-Average train loss: 0.0004195792888640426
-Average test loss: 0.000295520930584254
+Average train loss: 6.96223764680326e-05
+Average test loss: 0.0005797048465215734
 Epoch 337
 -------------------------------
-Average train loss: 0.0001747235377843026
-Average test loss: 0.0001244466641635102
+Average train loss: 9.269861446227879e-05
+Average test loss: 0.00046954047034627626
 Epoch 338
 -------------------------------
-Average train loss: 0.00025045420552487484
-Average test loss: 0.00015269339720751823
+Average train loss: 6.690691923722625e-05
+Average test loss: 0.0004671075252450204
 Epoch 339
 -------------------------------
-Average train loss: 0.00015899520920356736
-Average test loss: 0.0002719567564781755
+Average train loss: 0.00010649496281985194
+Average test loss: 0.0004625325506952192
 Epoch 340
 -------------------------------
-Average train loss: 0.00018409525277093052
-Average test loss: 0.00016950534440443983
+Average train loss: 0.0004056646063691005
+Average test loss: 0.00031784789046339156
 Epoch 341
 -------------------------------
-Average train loss: 0.00022812265589891467
-Average test loss: 0.00015499799077848105
+Average train loss: 0.00013041696845903061
+Average test loss: 0.0004435094368610797
 Epoch 342
 -------------------------------
-Average train loss: 0.00019337991470820272
-Average test loss: 0.0001878458767480749
+Average train loss: 0.0001768101735797245
+Average test loss: 0.0005312728899298236
 Epoch 343
 -------------------------------
-Average train loss: 0.00016644165065372364
-Average test loss: 0.00045874664127560597
+Average train loss: 0.00014213343121809884
+Average test loss: 0.0005482538212423346
 Epoch 344
 -------------------------------
-Average train loss: 0.00029580898117274044
-Average test loss: 0.00020039189205687893
+Average train loss: 0.00014565470031811854
+Average test loss: 0.00032848902316930307
 Epoch 345
 -------------------------------
-Average train loss: 0.0002959632630518172
-Average test loss: 0.00042628195452769954
+Average train loss: 0.0001808791168150492
+Average test loss: 0.0003774575702014512
 Epoch 346
 -------------------------------
-Average train loss: 0.0003848682116949931
-Average test loss: 0.00016185411160612212
+Average train loss: 0.00010646428680047393
+Average test loss: 0.00039396562247670123
 Epoch 347
 -------------------------------
-Average train loss: 0.0003587985143531114
-Average test loss: 0.0003937237654879157
+Average train loss: 7.988364523043856e-05
+Average test loss: 0.000378807563850257
 Epoch 348
 -------------------------------
-Average train loss: 0.0003142222942551598
-Average test loss: 0.00013918217466977824
+Average train loss: 8.206610931665636e-05
+Average test loss: 0.00036426561252613155
 Epoch 349
 -------------------------------
-Average train loss: 0.00017627459455979989
-Average test loss: 0.0001944375575736298
+Average train loss: 8.411461298237555e-05
+Average test loss: 0.00043615468478362473
 Epoch 350
 -------------------------------
-Average train loss: 0.00013071984925772996
-Average test loss: 0.00014835908846829886
+Average train loss: 7.327675346459728e-05
+Average test loss: 0.0003767319056870682
 Epoch 351
 -------------------------------
-Average train loss: 0.000246472429134883
-Average test loss: 0.000155086767335888
+Average train loss: 0.00021824444556841626
+Average test loss: 0.0003842741051422698
 Epoch 352
 -------------------------------
-Average train loss: 0.00011739313820726239
-Average test loss: 9.752230523320447e-05
+Average train loss: 0.00013639615528518334
+Average test loss: 0.0005194384346915675
 Epoch 353
 -------------------------------
-Average train loss: 0.0002925109299394535
-Average test loss: 0.000596716975061489
+Average train loss: 0.00015464208125195
+Average test loss: 0.0006024850299581885
 Epoch 354
 -------------------------------
-Average train loss: 0.0003308335933252238
-Average test loss: 0.00037576266497905763
+Average train loss: 0.00015410934574902057
+Average test loss: 0.0005650064766606582
 Epoch 355
 -------------------------------
-Average train loss: 0.00020033150023664347
-Average test loss: 0.00015321700422126533
+Average train loss: 0.00018190245929872618
+Average test loss: 0.0008466795053599137
 Epoch 356
 -------------------------------
-Average train loss: 0.00011076771086663939
-Average test loss: 0.00016640067458086248
+Average train loss: 0.0001665763846540358
+Average test loss: 0.00032305004216531027
 Epoch 357
 -------------------------------
-Average train loss: 0.0002085188553610351
-Average test loss: 0.000520462536119989
+Average train loss: 0.0001662001307704486
+Average test loss: 0.000853183662651905
 Epoch 358
 -------------------------------
-Average train loss: 0.0002142925605585333
-Average test loss: 0.00016732911327770644
+Average train loss: 0.00020130033968598582
+Average test loss: 0.00040149361926264
 Epoch 359
 -------------------------------
-Average train loss: 0.00016109755786601455
-Average test loss: 0.0003903145407093689
+Average train loss: 0.00013774171064142137
+Average test loss: 0.0002772665466181934
 Epoch 360
 -------------------------------
-Average train loss: 0.0001661138897179626
-Average test loss: 0.00016109989363550476
+Average train loss: 0.00011932073466596194
+Average test loss: 0.0007191968782405768
 Epoch 361
 -------------------------------
-Average train loss: 0.00016833960035000928
-Average test loss: 0.00016715314788078622
+Average train loss: 0.0001343708073545713
+Average test loss: 0.00043180269754624793
 Epoch 362
 -------------------------------
-Average train loss: 0.0001301581840380095
-Average test loss: 0.00010282426644282947
+Average train loss: 5.768875875219237e-05
+Average test loss: 0.00032721548840137463
 Epoch 363
 -------------------------------
-Average train loss: 0.00014738048863364384
-Average test loss: 0.00010134248233433547
+Average train loss: 0.00011388455095584504
+Average test loss: 0.0004278555674578196
 Epoch 364
 -------------------------------
-Average train loss: 0.00017009972216328607
-Average test loss: 0.00020141295889126404
+Average train loss: 0.00013202799833379687
+Average test loss: 0.0002613831919526482
 Epoch 365
 -------------------------------
-Average train loss: 0.0001591643356368877
-Average test loss: 0.00038860904792922417
+Average train loss: 0.00011265634719165974
+Average test loss: 0.0003146259467549888
 Epoch 366
 -------------------------------
-Average train loss: 0.00018363781899097376
-Average test loss: 0.0003033450796335403
+Average train loss: 0.0002103169698966667
+Average test loss: 0.0006539910557746355
 Epoch 367
 -------------------------------
-Average train loss: 0.00025422544233151713
-Average test loss: 0.00016707293772404746
+Average train loss: 0.0001913950348534854
+Average test loss: 0.00027718234923668206
 Epoch 368
 -------------------------------
-Average train loss: 0.00023096915785572491
-Average test loss: 0.00022136078353339274
+Average train loss: 8.791090833256021e-05
+Average test loss: 0.0003234292068685006
 Epoch 369
 -------------------------------
-Average train loss: 0.00018470068054739385
-Average test loss: 0.00013502775150949934
+Average train loss: 6.701561826048419e-05
+Average test loss: 0.00043321891696125803
 Epoch 370
 -------------------------------
-Average train loss: 0.00015690761458245106
-Average test loss: 0.0004193695536482015
+Average train loss: 0.00013255865371320397
+Average test loss: 0.0005958486498067421
 Epoch 371
 -------------------------------
-Average train loss: 0.0006576778940507211
-Average test loss: 0.00014288443292441246
+Average train loss: 0.00012784833139448893
+Average test loss: 0.00035939554592394937
 Epoch 372
 -------------------------------
-Average train loss: 0.00024603843718068674
-Average test loss: 0.00023555204929185232
+Average train loss: 0.00034434735294780694
+Average test loss: 0.0010692851667824601
 Epoch 373
 -------------------------------
-Average train loss: 0.00033554554946022106
-Average test loss: 0.0005405483617713409
+Average train loss: 0.00043302577920258046
+Average test loss: 0.0007544872101529368
 Epoch 374
 -------------------------------
-Average train loss: 0.0004665056497833575
-Average test loss: 0.0001439863538377852
+Average train loss: 0.0008705987653229386
+Average test loss: 0.0006272421409708581
 Epoch 375
 -------------------------------
-Average train loss: 0.00013041536112723406
-Average test loss: 0.0001373930915308717
+Average train loss: 0.00043821648636367173
+Average test loss: 0.0010857007748979544
 Epoch 376
 -------------------------------
-Average train loss: 0.00018974358281411696
-Average test loss: 0.0001523839756763274
+Average train loss: 0.00020890042185783386
+Average test loss: 0.00027150760953580696
 Epoch 377
 -------------------------------
-Average train loss: 0.000257276860793354
-Average test loss: 0.00011456777532917581
+Average train loss: 8.576756183174438e-05
+Average test loss: 0.0004256762414505439
 Epoch 378
 -------------------------------
-Average train loss: 0.00011907467422133777
-Average test loss: 9.340111656846213e-05
+Average train loss: 7.352365188125986e-05
+Average test loss: 0.00034157505641425293
 Epoch 379
 -------------------------------
-Average train loss: 0.00010922792498604394
-Average test loss: 0.0001846766286429816
+Average train loss: 6.360698287608102e-05
+Average test loss: 0.0005128878068977169
 Epoch 380
 -------------------------------
-Average train loss: 0.0002064408986188937
-Average test loss: 9.644529460014642e-05
+Average train loss: 5.2174559168634e-05
+Average test loss: 0.00036262659081590494
 Epoch 381
 -------------------------------
-Average train loss: 0.00012720180413452908
-Average test loss: 9.723964831209742e-05
+Average train loss: 5.465024005388841e-05
+Average test loss: 0.0002962003033774506
 Epoch 382
 -------------------------------
-Average train loss: 0.00023644347296794877
-Average test loss: 0.00010590807973390579
+Average train loss: 6.82313671677548e-05
+Average test loss: 0.00033287232145085
 Epoch 383
 -------------------------------
-Average train loss: 0.00023260841000592337
-Average test loss: 0.00017771702135048275
+Average train loss: 6.0903541452717036e-05
+Average test loss: 0.00045897665716308566
 Epoch 384
 -------------------------------
-Average train loss: 0.00015671215907786973
-Average test loss: 0.00013439173406888067
+Average train loss: 8.685088185302448e-05
+Average test loss: 0.00022963157763505087
 Epoch 385
 -------------------------------
-Average train loss: 0.00012713423755485563
-Average test loss: 0.0001282603687806321
+Average train loss: 6.620738007768522e-05
+Average test loss: 0.0004075954389658624
 Epoch 386
 -------------------------------
-Average train loss: 0.00010981495579471811
-Average test loss: 0.00010252412071817421
+Average train loss: 7.672205923881847e-05
+Average test loss: 0.000584013419159289
 Epoch 387
 -------------------------------
-Average train loss: 0.0001511296656099148
-Average test loss: 0.0002381124026474676
+Average train loss: 7.924452962470241e-05
+Average test loss: 0.0002869676100090146
 Epoch 388
 -------------------------------
-Average train loss: 0.000176462504605297
-Average test loss: 0.0005491712405013718
+Average train loss: 5.704151786630973e-05
+Average test loss: 0.0004577134843982224
 Epoch 389
 -------------------------------
-Average train loss: 0.00038672748167300596
-Average test loss: 0.0002656589702902628
+Average train loss: 6.417383498046548e-05
+Average test loss: 0.00035470665066636035
 Epoch 390
 -------------------------------
-Average train loss: 0.0003975132574851159
-Average test loss: 0.00015320957702767503
+Average train loss: 6.749135049176402e-05
+Average test loss: 0.0004097794590052217
 Epoch 391
 -------------------------------
-Average train loss: 0.0008434374445641879
-Average test loss: 0.0005810873616220695
+Average train loss: 7.584262843010947e-05
+Average test loss: 0.0007054868827773524
 Epoch 392
 -------------------------------
-Average train loss: 0.0004541015485301614
-Average test loss: 0.00037962720463318486
+Average train loss: 0.0002002843513037078
+Average test loss: 0.0005436579730095607
 Epoch 393
 -------------------------------
-Average train loss: 0.00030848134119878525
-Average test loss: 0.00019042090155250792
+Average train loss: 0.0002517678232106846
+Average test loss: 0.00035279284721972156
 Epoch 394
 -------------------------------
-Average train loss: 0.00031748846784466876
-Average test loss: 0.00033051750090505393
+Average train loss: 0.00016700554231647403
+Average test loss: 0.000457655790212032
 Epoch 395
 -------------------------------
-Average train loss: 0.00017691304467007285
-Average test loss: 0.00013850747719906003
+Average train loss: 0.0001120821794756921
+Average test loss: 0.0003824296166255538
 Epoch 396
 -------------------------------
-Average train loss: 0.0002400731846864801
-Average test loss: 0.00030769556386595856
+Average train loss: 7.99068390915636e-05
+Average test loss: 0.0007435080894668188
 Epoch 397
 -------------------------------
-Average train loss: 0.0002564050248474814
-Average test loss: 0.00010806403484561347
+Average train loss: 0.00018347021541558205
+Average test loss: 0.00033811372746380845
 Epoch 398
 -------------------------------
-Average train loss: 0.00017417096794815733
-Average test loss: 0.00014021138693871244
+Average train loss: 6.168506166432053e-05
+Average test loss: 0.00037940393251899095
 Epoch 399
 -------------------------------
-Average train loss: 0.00013889274996472522
-Average test loss: 0.00011149817042418622
+Average train loss: 8.052399469306693e-05
+Average test loss: 0.00031903517499033896
 Epoch 400
 -------------------------------
-Average train loss: 0.00016758135621785185
-Average test loss: 0.0005144433754529538
-Saving PyTorch Model State to models/base_model/base_model.pth.pth...
+Average train loss: 0.00014509209831885527
+Average test loss: 0.0003453471726970747
+Epoch 401
+-------------------------------
+Average train loss: 6.568882636202034e-05
+Average test loss: 0.0005182619040299739
+Epoch 402
+-------------------------------
+Average train loss: 0.00037768901165691204
+Average test loss: 0.00048510827972287577
+Epoch 403
+-------------------------------
+Average train loss: 0.00010748193439212628
+Average test loss: 0.000382744607382587
+Epoch 404
+-------------------------------
+Average train loss: 5.621623611659743e-05
+Average test loss: 0.0004072512383572757
+Epoch 405
+-------------------------------
+Average train loss: 5.3489349593291994e-05
+Average test loss: 0.0003089395260238754
+Epoch 406
+-------------------------------
+Average train loss: 6.126286985818297e-05
+Average test loss: 0.00030367255177614946
+Epoch 407
+-------------------------------
+Average train loss: 5.61044221103657e-05
+Average test loss: 0.0002390930333474119
+Epoch 408
+-------------------------------
+Average train loss: 4.7403332791873255e-05
+Average test loss: 0.00035470117706738947
+Epoch 409
+-------------------------------
+Average train loss: 6.882842833874747e-05
+Average test loss: 0.00041248712139869373
+Epoch 410
+-------------------------------
+Average train loss: 6.928763519681525e-05
+Average test loss: 0.0006818207413224238
+Epoch 411
+-------------------------------
+Average train loss: 0.00014730417169630527
+Average test loss: 0.0003099374069799004
+Epoch 412
+-------------------------------
+Average train loss: 7.045281759928912e-05
+Average test loss: 0.00038589705530154916
+Epoch 413
+-------------------------------
+Average train loss: 0.00019554092490579932
+Average test loss: 0.00040856959614237506
+Epoch 414
+-------------------------------
+Average train loss: 0.00016995247518934774
+Average test loss: 0.0008104017303724374
+Epoch 415
+-------------------------------
+Average train loss: 0.0001840346607787069
+Average test loss: 0.0004340106014361871
+Epoch 416
+-------------------------------
+Average train loss: 6.67535891989246e-05
+Average test loss: 0.0003273169817735574
+Epoch 417
+-------------------------------
+Average train loss: 0.00012010946811642498
+Average test loss: 0.00035141767044219056
+Epoch 418
+-------------------------------
+Average train loss: 9.553765390592162e-05
+Average test loss: 0.0003973871623332213
+Epoch 419
+-------------------------------
+Average train loss: 5.6557762291049586e-05
+Average test loss: 0.0002653054668501552
+Epoch 420
+-------------------------------
+Average train loss: 5.1596766206785104e-05
+Average test loss: 0.00048185720723787587
+Epoch 421
+-------------------------------
+Average train loss: 9.22584757063305e-05
+Average test loss: 0.0004888758537293013
+Epoch 422
+-------------------------------
+Average train loss: 0.00010351807621191256
+Average test loss: 0.0003942705412295514
+Epoch 423
+-------------------------------
+Average train loss: 8.41270545788575e-05
+Average test loss: 0.0003502263830991329
+Epoch 424
+-------------------------------
+Average train loss: 0.0001513137733854819
+Average test loss: 0.0007648690703458019
+Epoch 425
+-------------------------------
+Average train loss: 0.00040627492853673175
+Average test loss: 0.00032752606992809366
+Epoch 426
+-------------------------------
+Average train loss: 0.0001657317794888513
+Average test loss: 0.0005649720925638187
+Epoch 427
+-------------------------------
+Average train loss: 0.00012031028731144034
+Average test loss: 0.00036334047451548813
+Epoch 428
+-------------------------------
+Average train loss: 7.714658990153112e-05
+Average test loss: 0.00037120722949371805
+Epoch 429
+-------------------------------
+Average train loss: 0.00016938909626333044
+Average test loss: 0.0002792729584533455
+Epoch 430
+-------------------------------
+Average train loss: 6.711644789902493e-05
+Average test loss: 0.00033220405956464153
+Epoch 431
+-------------------------------
+Average train loss: 0.00015694857102062089
+Average test loss: 0.0004886744801686811
+Epoch 432
+-------------------------------
+Average train loss: 0.00020892138534691184
+Average test loss: 0.0003819195823910247
+Epoch 433
+-------------------------------
+Average train loss: 0.0001746557118894998
+Average test loss: 0.0004255733739617946
+Epoch 434
+-------------------------------
+Average train loss: 7.583958489703946e-05
+Average test loss: 0.00045700625300274363
+Epoch 435
+-------------------------------
+Average train loss: 6.091463546908926e-05
+Average test loss: 0.0003193426673533395
+Epoch 436
+-------------------------------
+Average train loss: 5.6535633993917146e-05
+Average test loss: 0.00041898348925834786
+Epoch 437
+-------------------------------
+Average train loss: 0.00021751991342171097
+Average test loss: 0.0004984893977442491
+Epoch 438
+-------------------------------
+Average train loss: 0.0007807551755104214
+Average test loss: 0.0014950903631480677
+Epoch 439
+-------------------------------
+Average train loss: 0.0010316279373364524
+Average test loss: 0.00037983403931970576
+Epoch 440
+-------------------------------
+Average train loss: 0.00014173902411130257
+Average test loss: 0.0003213785795586383
+Epoch 441
+-------------------------------
+Average train loss: 8.27511386887636e-05
+Average test loss: 0.0002755027443137286
+Epoch 442
+-------------------------------
+Average train loss: 6.16186505794758e-05
+Average test loss: 0.00031586371603355346
+Epoch 443
+-------------------------------
+Average train loss: 7.382324336504098e-05
+Average test loss: 0.0002561864073088925
+Epoch 444
+-------------------------------
+Average train loss: 4.1046378537430425e-05
+Average test loss: 0.0003874339059361124
+Epoch 445
+-------------------------------
+Average train loss: 4.728492574940901e-05
+Average test loss: 0.00039771519160629917
+Epoch 446
+-------------------------------
+Average train loss: 5.2721342726727016e-05
+Average test loss: 0.0003590411402650976
+Epoch 447
+-------------------------------
+Average train loss: 5.994757622829638e-05
+Average test loss: 0.0002725583721517718
+Epoch 448
+-------------------------------
+Average train loss: 5.320606695022434e-05
+Average test loss: 0.00028566145920194685
+Epoch 449
+-------------------------------
+Average train loss: 0.00010592634876957163
+Average test loss: 0.0003765724291692355
+Epoch 450
+-------------------------------
+Average train loss: 9.940050120349042e-05
+Average test loss: 0.00039127104433386454
+Epoch 451
+-------------------------------
+Average train loss: 8.416526194196194e-05
+Average test loss: 0.0003214054470715512
+Epoch 452
+-------------------------------
+Average train loss: 0.000249893248983426
+Average test loss: 0.0005563891733930047
+Epoch 453
+-------------------------------
+Average train loss: 0.00023105434695025906
+Average test loss: 0.00040997733386965204
+Epoch 454
+-------------------------------
+Average train loss: 9.018307158839889e-05
+Average test loss: 0.0003474176462207522
+Epoch 455
+-------------------------------
+Average train loss: 7.345677251578308e-05
+Average test loss: 0.00041383373900316656
+Epoch 456
+-------------------------------
+Average train loss: 6.145150313386693e-05
+Average test loss: 0.00032892965412299546
+Epoch 457
+-------------------------------
+Average train loss: 6.692938957712613e-05
+Average test loss: 0.0004438212656948183
+Epoch 458
+-------------------------------
+Average train loss: 8.448265129118226e-05
+Average test loss: 0.0002970738652428346
+Epoch 459
+-------------------------------
+Average train loss: 8.726489752007182e-05
+Average test loss: 0.0005684610431282115
+Epoch 460
+-------------------------------
+Average train loss: 5.0510677610873244e-05
+Average test loss: 0.0003391148805219148
+Epoch 461
+-------------------------------
+Average train loss: 0.00011170953053806443
+Average test loss: 0.0005055609009494739
+Epoch 462
+-------------------------------
+Average train loss: 0.00013802165834931658
+Average test loss: 0.00037012216281644735
+Epoch 463
+-------------------------------
+Average train loss: 0.00012128045593271963
+Average test loss: 0.00030343236617877016
+Epoch 464
+-------------------------------
+Average train loss: 9.343844030809123e-05
+Average test loss: 0.0002917239970494328
+Epoch 465
+-------------------------------
+Average train loss: 8.776491282333154e-05
+Average test loss: 0.0003651913159826238
+Epoch 466
+-------------------------------
+Average train loss: 0.00012269921906408855
+Average test loss: 0.0009258599186848317
+Epoch 467
+-------------------------------
+Average train loss: 0.0001402105635497719
+Average test loss: 0.0003308153453482581
+Epoch 468
+-------------------------------
+Average train loss: 6.264608200581278e-05
+Average test loss: 0.00040335097583010793
+Epoch 469
+-------------------------------
+Average train loss: 6.028834941389505e-05
+Average test loss: 0.00040447366648420157
+Epoch 470
+-------------------------------
+Average train loss: 5.2238034768379294e-05
+Average test loss: 0.0003565621653771294
+Epoch 471
+-------------------------------
+Average train loss: 3.762217733310535e-05
+Average test loss: 0.000281474255773771
+Epoch 472
+-------------------------------
+Average train loss: 6.101925326220225e-05
+Average test loss: 0.0004319273035175034
+Epoch 473
+-------------------------------
+Average train loss: 0.00016060802910942585
+Average test loss: 0.00048008405636729937
+Epoch 474
+-------------------------------
+Average train loss: 0.00010975713244988583
+Average test loss: 0.0003200953423012314
+Epoch 475
+-------------------------------
+Average train loss: 6.780862582672853e-05
+Average test loss: 0.0003704913875221142
+Epoch 476
+-------------------------------
+Average train loss: 5.381969287554966e-05
+Average test loss: 0.0003532223927322775
+Epoch 477
+-------------------------------
+Average train loss: 4.740263146231882e-05
+Average test loss: 0.000371594460115635
+Epoch 478
+-------------------------------
+Average train loss: 6.271515900152736e-05
+Average test loss: 0.00037849757999148484
+Epoch 479
+-------------------------------
+Average train loss: 7.079741983034182e-05
+Average test loss: 0.0004502770461840555
+Epoch 480
+-------------------------------
+Average train loss: 0.00010291895392583683
+Average test loss: 0.0004573683233632307
+Epoch 481
+-------------------------------
+Average train loss: 0.0009480312223604415
+Average test loss: 0.0017323350683519883
+Epoch 482
+-------------------------------
+Average train loss: 0.0010438680555671454
+Average test loss: 0.0042611714785120314
+Epoch 483
+-------------------------------
+Average train loss: 0.0012913050246424972
+Average test loss: 0.0007966421253513545
+Epoch 484
+-------------------------------
+Average train loss: 0.0001773520349524915
+Average test loss: 0.00039421071622720253
+Epoch 485
+-------------------------------
+Average train loss: 9.586593165295199e-05
+Average test loss: 0.00033622141823538447
+Epoch 486
+-------------------------------
+Average train loss: 0.0001047990962251788
+Average test loss: 0.00037219084333628416
+Epoch 487
+-------------------------------
+Average train loss: 6.791381514631212e-05
+Average test loss: 0.00024746733834035695
+Epoch 488
+-------------------------------
+Average train loss: 7.119739500922152e-05
+Average test loss: 0.00020801894217064337
+Epoch 489
+-------------------------------
+Average train loss: 6.0434704937506464e-05
+Average test loss: 0.0004413313519242885
+Epoch 490
+-------------------------------
+Average train loss: 9.279097379476298e-05
+Average test loss: 0.0004326047388271296
+Epoch 491
+-------------------------------
+Average train loss: 0.00011789390628109686
+Average test loss: 0.0004699538611540837
+Epoch 492
+-------------------------------
+Average train loss: 0.000114653827768052
+Average test loss: 0.0002541296146643747
+Epoch 493
+-------------------------------
+Average train loss: 0.00016996831807773561
+Average test loss: 0.00039803748482622074
+Epoch 494
+-------------------------------
+Average train loss: 0.0001273335816222243
+Average test loss: 0.00034594529798986126
+Epoch 495
+-------------------------------
+Average train loss: 0.0003057072471710853
+Average test loss: 0.00045866587814608853
+Epoch 496
+-------------------------------
+Average train loss: 7.708366858423688e-05
+Average test loss: 0.0002975253072301192
+Epoch 497
+-------------------------------
+Average train loss: 7.339470263104885e-05
+Average test loss: 0.0003245570489005851
+Epoch 498
+-------------------------------
+Average train loss: 5.44495225767605e-05
+Average test loss: 0.0003701499788024064
+Epoch 499
+-------------------------------
+Average train loss: 4.258772103639785e-05
+Average test loss: 0.00028488239747405587
+Epoch 500
+-------------------------------
+Average train loss: 2.939422043709783e-05
+Average test loss: 0.00038581051506168606
+Epoch 501
+-------------------------------
+Average train loss: 3.753755841898965e-05
+Average test loss: 0.000211174032301642
+Epoch 502
+-------------------------------
+Average train loss: 6.247888923098799e-05
+Average test loss: 0.00035195590213074217
+Epoch 503
+-------------------------------
+Average train loss: 3.051696447073482e-05
+Average test loss: 0.0004918149123633546
+Epoch 504
+-------------------------------
+Average train loss: 4.877582694462035e-05
+Average test loss: 0.00040282212596918853
+Epoch 505
+-------------------------------
+Average train loss: 3.0996797868283465e-05
+Average test loss: 0.00036910755027617725
+Epoch 506
+-------------------------------
+Average train loss: 3.670109414088074e-05
+Average test loss: 0.0002977566577361098
+Epoch 507
+-------------------------------
+Average train loss: 4.3482268811203536e-05
+Average test loss: 0.00031743196138579933
+Epoch 508
+-------------------------------
+Average train loss: 5.0074619648512455e-05
+Average test loss: 0.0003935973675522421
+Epoch 509
+-------------------------------
+Average train loss: 7.711115140409674e-05
+Average test loss: 0.00033112330129370093
+Epoch 510
+-------------------------------
+Average train loss: 0.0001355888407852035
+Average test loss: 0.0007079166493245534
+Epoch 511
+-------------------------------
+Average train loss: 0.0001075089046935318
+Average test loss: 0.00040371423736879867
+Epoch 512
+-------------------------------
+Average train loss: 0.00016791172354714944
+Average test loss: 0.000658318105187001
+Epoch 513
+-------------------------------
+Average train loss: 0.00011577849247260019
+Average test loss: 0.00024826125341600606
+Epoch 514
+-------------------------------
+Average train loss: 6.802517134929075e-05
+Average test loss: 0.0003727036528289318
+Epoch 515
+-------------------------------
+Average train loss: 0.00021785549863125196
+Average test loss: 0.0008760763781278261
+Epoch 516
+-------------------------------
+Average train loss: 0.0002054803559440188
+Average test loss: 0.0003281272719115285
+Epoch 517
+-------------------------------
+Average train loss: 4.863570073212031e-05
+Average test loss: 0.00021714692619363113
+Epoch 518
+-------------------------------
+Average train loss: 6.016204330080654e-05
+Average test loss: 0.00040707898317902746
+Epoch 519
+-------------------------------
+Average train loss: 4.0568856384197716e-05
+Average test loss: 0.0004156215831504336
+Epoch 520
+-------------------------------
+Average train loss: 4.536126787570538e-05
+Average test loss: 0.0004703820200770029
+Epoch 521
+-------------------------------
+Average train loss: 4.212452007777756e-05
+Average test loss: 0.0004022403923694843
+Epoch 522
+-------------------------------
+Average train loss: 6.14006161049474e-05
+Average test loss: 0.00039587379433214664
+Epoch 523
+-------------------------------
+Average train loss: 3.6202384071657436e-05
+Average test loss: 0.00040095254371408373
+Epoch 524
+-------------------------------
+Average train loss: 2.6353158245910892e-05
+Average test loss: 0.00024971910378163945
+Epoch 525
+-------------------------------
+Average train loss: 3.3911091086338275e-05
+Average test loss: 0.00024550956108474305
+Epoch 526
+-------------------------------
+Average train loss: 6.475604357547126e-05
+Average test loss: 0.00045676106154652577
+Epoch 527
+-------------------------------
+Average train loss: 4.203413816867396e-05
+Average test loss: 0.0003061930515936443
+Epoch 528
+-------------------------------
+Average train loss: 6.803542157285847e-05
+Average test loss: 0.00034233963274995664
+Epoch 529
+-------------------------------
+Average train loss: 0.00015926571351883466
+Average test loss: 0.0004214149999565312
+Epoch 530
+-------------------------------
+Average train loss: 8.937087950471323e-05
+Average test loss: 0.0005303798284980335
+Epoch 531
+-------------------------------
+Average train loss: 0.00019911913826945238
+Average test loss: 0.0004853582920207243
+Epoch 532
+-------------------------------
+Average train loss: 0.00010246646794257685
+Average test loss: 0.00030857657839078456
+Epoch 533
+-------------------------------
+Average train loss: 5.466360242280643e-05
+Average test loss: 0.00029437817907559553
+Epoch 534
+-------------------------------
+Average train loss: 4.2130718502448874e-05
+Average test loss: 0.00034468769652968537
+Epoch 535
+-------------------------------
+Average train loss: 3.6950890462321694e-05
+Average test loss: 0.0004142254204322983
+Epoch 536
+-------------------------------
+Average train loss: 0.0001082347180636134
+Average test loss: 0.0007177721750589886
+Epoch 537
+-------------------------------
+Average train loss: 0.00010763925558421761
+Average test loss: 0.00038435004535131156
+Epoch 538
+-------------------------------
+Average train loss: 7.608775835251436e-05
+Average test loss: 0.000261603132197966
+Epoch 539
+-------------------------------
+Average train loss: 5.2544931240845474e-05
+Average test loss: 0.0004196871699865109
+Epoch 540
+-------------------------------
+Average train loss: 8.906065675546416e-05
+Average test loss: 0.0005054366151203535
+Epoch 541
+-------------------------------
+Average train loss: 5.675338165019639e-05
+Average test loss: 0.0004946373665006831
+Epoch 542
+-------------------------------
+Average train loss: 5.971186954411678e-05
+Average test loss: 0.00036298861232353374
+Epoch 543
+-------------------------------
+Average train loss: 7.453883023117669e-05
+Average test loss: 0.0005078347707499883
+Epoch 544
+-------------------------------
+Average train loss: 0.00014602961295167915
+Average test loss: 0.000285684472016458
+Epoch 545
+-------------------------------
+Average train loss: 0.0002286596392514184
+Average test loss: 0.00048308072395489683
+Epoch 546
+-------------------------------
+Average train loss: 0.0001827783363114577
+Average test loss: 0.0007636661840868848
+Epoch 547
+-------------------------------
+Average train loss: 0.00039453733508707954
+Average test loss: 0.0004688490610403408
+Epoch 548
+-------------------------------
+Average train loss: 0.0003205565900134388
+Average test loss: 0.00041143334445743155
+Epoch 549
+-------------------------------
+Average train loss: 7.821671431884169e-05
+Average test loss: 0.000280155087239109
+Epoch 550
+-------------------------------
+Average train loss: 6.854981758806388e-05
+Average test loss: 0.0002067442110273987
+Epoch 551
+-------------------------------
+Average train loss: 5.77851505477156e-05
+Average test loss: 0.00037851297487837395
+Epoch 552
+-------------------------------
+Average train loss: 4.9423614618717694e-05
+Average test loss: 0.0003608097800419533
+Epoch 553
+-------------------------------
+Average train loss: 3.605024929129286e-05
+Average test loss: 0.0002915030948185761
+Epoch 554
+-------------------------------
+Average train loss: 3.133825997792883e-05
+Average test loss: 0.00032422684099791307
+Epoch 555
+-------------------------------
+Average train loss: 5.405151947343256e-05
+Average test loss: 0.0002356497196680201
+Epoch 556
+-------------------------------
+Average train loss: 4.2260413611074906e-05
+Average test loss: 0.0002518974059577366
+Epoch 557
+-------------------------------
+Average train loss: 7.271987189596984e-05
+Average test loss: 0.00026116104813159576
+Epoch 558
+-------------------------------
+Average train loss: 0.00020703868925920688
+Average test loss: 0.0004208837926853448
+Epoch 559
+-------------------------------
+Average train loss: 0.0001379840823210543
+Average test loss: 0.0004591300800841834
+Epoch 560
+-------------------------------
+Average train loss: 0.00011034247901989147
+Average test loss: 0.0003331313969933295
+Epoch 561
+-------------------------------
+Average train loss: 7.143113150959835e-05
+Average test loss: 0.0003325814094361184
+Epoch 562
+-------------------------------
+Average train loss: 0.00011997801411780528
+Average test loss: 0.0003019521848597963
+Epoch 563
+-------------------------------
+Average train loss: 0.000168587239459157
+Average test loss: 0.0003775719233090058
+Epoch 564
+-------------------------------
+Average train loss: 0.00024512449541362
+Average test loss: 0.0011180147329079254
+Epoch 565
+-------------------------------
+Average train loss: 0.00021286347779096105
+Average test loss: 0.000503264700195619
+Epoch 566
+-------------------------------
+Average train loss: 0.0002928670363326091
+Average test loss: 0.0011761875690094062
+Epoch 567
+-------------------------------
+Average train loss: 0.00022034867826732806
+Average test loss: 0.0009960666564958437
+Epoch 568
+-------------------------------
+Average train loss: 0.0002420311444438994
+Average test loss: 0.0004399091974067103
+Epoch 569
+-------------------------------
+Average train loss: 0.00017669954999291804
+Average test loss: 0.0004159409290878102
+Epoch 570
+-------------------------------
+Average train loss: 9.603984086425044e-05
+Average test loss: 0.00036277144889546823
+Epoch 571
+-------------------------------
+Average train loss: 5.504045439010952e-05
+Average test loss: 0.00035841997305396944
+Epoch 572
+-------------------------------
+Average train loss: 5.3959942451911044e-05
+Average test loss: 0.0004602776898536831
+Epoch 573
+-------------------------------
+Average train loss: 7.060904703394044e-05
+Average test loss: 0.0003067193818943841
+Epoch 574
+-------------------------------
+Average train loss: 9.713076688058208e-05
+Average test loss: 0.0004544472508963996
+Epoch 575
+-------------------------------
+Average train loss: 4.090768889000174e-05
+Average test loss: 0.0003454341245482543
+Epoch 576
+-------------------------------
+Average train loss: 2.7029779703298116e-05
+Average test loss: 0.0003387066036728876
+Epoch 577
+-------------------------------
+Average train loss: 3.063490916247247e-05
+Average test loss: 0.0003262145265970113
+Epoch 578
+-------------------------------
+Average train loss: 3.80114528525155e-05
+Average test loss: 0.0004103298540160592
+Epoch 579
+-------------------------------
+Average train loss: 7.343471348576713e-05
+Average test loss: 0.0003597818223559963
+Epoch 580
+-------------------------------
+Average train loss: 6.103951294790022e-05
+Average test loss: 0.00040515156121858
+Epoch 581
+-------------------------------
+Average train loss: 3.3896028107847086e-05
+Average test loss: 0.000386363741459458
+Epoch 582
+-------------------------------
+Average train loss: 2.8006567408738192e-05
+Average test loss: 0.00032336839441476125
+Epoch 583
+-------------------------------
+Average train loss: 1.9167228092555888e-05
+Average test loss: 0.0003340648295956531
+Epoch 584
+-------------------------------
+Average train loss: 2.1838771426700988e-05
+Average test loss: 0.0002377980438593243
+Epoch 585
+-------------------------------
+Average train loss: 2.4073431122815238e-05
+Average test loss: 0.000262696022608517
+Epoch 586
+-------------------------------
+Average train loss: 2.1686557556677143e-05
+Average test loss: 0.00031880491172030034
+Epoch 587
+-------------------------------
+Average train loss: 2.9684703949897085e-05
+Average test loss: 0.00029144712503434027
+Epoch 588
+-------------------------------
+Average train loss: 3.405838753678836e-05
+Average test loss: 0.0002258600652567111
+Epoch 589
+-------------------------------
+Average train loss: 0.0002157868283393327
+Average test loss: 0.0003523549218828391
+Epoch 590
+-------------------------------
+Average train loss: 7.976321292517241e-05
+Average test loss: 0.0004961565074544134
+Epoch 591
+-------------------------------
+Average train loss: 0.00018270442829816603
+Average test loss: 0.00045260779110581746
+Epoch 592
+-------------------------------
+Average train loss: 0.00020138368403422647
+Average test loss: 0.0005968523286615632
+Epoch 593
+-------------------------------
+Average train loss: 0.00026053209337987936
+Average test loss: 0.0006367401303058225
+Epoch 594
+-------------------------------
+Average train loss: 0.00030139304144540804
+Average test loss: 0.0004285055869591555
+Epoch 595
+-------------------------------
+Average train loss: 8.849731937516481e-05
+Average test loss: 0.0003262449588094439
+Epoch 596
+-------------------------------
+Average train loss: 5.5125445069279525e-05
+Average test loss: 0.0002967613129710246
+Epoch 597
+-------------------------------
+Average train loss: 3.637941383203725e-05
+Average test loss: 0.00023716765697047646
+Epoch 598
+-------------------------------
+Average train loss: 0.0002818288293929072
+Average test loss: 0.0007675642846152186
+Epoch 599
+-------------------------------
+Average train loss: 0.0005688362833461725
+Average test loss: 0.00036101877256961804
+Epoch 600
+-------------------------------
+Average train loss: 0.0005601432541152462
+Average test loss: 0.0005301647927678589
+Epoch 601
+-------------------------------
+Average train loss: 0.00010937328537693248
+Average test loss: 0.0003131582821619564
+Epoch 602
+-------------------------------
+Average train loss: 8.204575315176043e-05
+Average test loss: 0.00022050239100021178
+Epoch 603
+-------------------------------
+Average train loss: 8.141611360770184e-05
+Average test loss: 0.00033539451500733515
+Epoch 604
+-------------------------------
+Average train loss: 0.00013732594219618478
+Average test loss: 0.00028957234462723136
+Epoch 605
+-------------------------------
+Average train loss: 4.884401780145709e-05
+Average test loss: 0.00041150757793470154
+Epoch 606
+-------------------------------
+Average train loss: 4.9598119367146865e-05
+Average test loss: 0.00028938474341495227
+Epoch 607
+-------------------------------
+Average train loss: 3.946115954022389e-05
+Average test loss: 0.0003774706004021157
+Epoch 608
+-------------------------------
+Average train loss: 3.430877517530462e-05
+Average test loss: 0.00028220411851569746
+Epoch 609
+-------------------------------
+Average train loss: 5.115150841447758e-05
+Average test loss: 0.00039800434024073184
+Epoch 610
+-------------------------------
+Average train loss: 2.987440395372687e-05
+Average test loss: 0.0002547787568931069
+Epoch 611
+-------------------------------
+Average train loss: 2.0948599340044892e-05
+Average test loss: 0.00032650522604983834
+Epoch 612
+-------------------------------
+Average train loss: 3.3731169387465344e-05
+Average test loss: 0.00031508407015020827
+Epoch 613
+-------------------------------
+Average train loss: 5.131277517648414e-05
+Average test loss: 0.00026546723841290386
+Epoch 614
+-------------------------------
+Average train loss: 4.989547578588826e-05
+Average test loss: 0.00031764116803450245
+Epoch 615
+-------------------------------
+Average train loss: 9.836900913796853e-05
+Average test loss: 0.0007734825776424259
+Epoch 616
+-------------------------------
+Average train loss: 0.00031981079460820184
+Average test loss: 0.00026959694722401243
+Epoch 617
+-------------------------------
+Average train loss: 5.886454782739747e-05
+Average test loss: 0.0003474896262300068
+Epoch 618
+-------------------------------
+Average train loss: 7.898861549620051e-05
+Average test loss: 0.0003608316266244011
+Epoch 619
+-------------------------------
+Average train loss: 0.00010878764194785617
+Average test loss: 0.000416174645319448
+Epoch 620
+-------------------------------
+Average train loss: 6.952208867005538e-05
+Average test loss: 0.0003613138833316043
+Epoch 621
+-------------------------------
+Average train loss: 0.0007682450893480564
+Average test loss: 0.0008119259811272579
+Epoch 622
+-------------------------------
+Average train loss: 0.00024066820442385505
+Average test loss: 0.00035857895272783935
+Epoch 623
+-------------------------------
+Average train loss: 5.333508841431467e-05
+Average test loss: 0.0002617209580161476
+Epoch 624
+-------------------------------
+Average train loss: 2.986603481986094e-05
+Average test loss: 0.0003076261470726292
+Epoch 625
+-------------------------------
+Average train loss: 3.257038028095849e-05
+Average test loss: 0.0003651567385531962
+Epoch 626
+-------------------------------
+Average train loss: 2.2925015800865368e-05
+Average test loss: 0.0002539556153351441
+Epoch 627
+-------------------------------
+Average train loss: 2.771865161776077e-05
+Average test loss: 0.00033682495164352337
+Epoch 628
+-------------------------------
+Average train loss: 1.977251875359798e-05
+Average test loss: 0.00025069830943331387
+Epoch 629
+-------------------------------
+Average train loss: 3.1844659315538595e-05
+Average test loss: 0.00025303420885133425
+Epoch 630
+-------------------------------
+Average train loss: 3.881714175804518e-05
+Average test loss: 0.0003407842190686746
+Epoch 631
+-------------------------------
+Average train loss: 0.00012541057076305152
+Average test loss: 0.00036019018651651483
+Epoch 632
+-------------------------------
+Average train loss: 7.256245044118259e-05
+Average test loss: 0.00029824644194117615
+Epoch 633
+-------------------------------
+Average train loss: 3.152617995510809e-05
+Average test loss: 0.00035898563094503643
+Epoch 634
+-------------------------------
+Average train loss: 3.3358913569827564e-05
+Average test loss: 0.00025920428743120283
+Epoch 635
+-------------------------------
+Average train loss: 2.6862646409426814e-05
+Average test loss: 0.00039799217795786845
+Epoch 636
+-------------------------------
+Average train loss: 2.9252277927298563e-05
+Average test loss: 0.00030138911928848496
+Epoch 637
+-------------------------------
+Average train loss: 4.4779057643609124e-05
+Average test loss: 0.00023545948248023966
+Epoch 638
+-------------------------------
+Average train loss: 2.9607630203827284e-05
+Average test loss: 0.00024276113877671638
+Epoch 639
+-------------------------------
+Average train loss: 0.0001019821665249765
+Average test loss: 0.00036239458755257407
+Epoch 640
+-------------------------------
+Average train loss: 9.103060794586782e-05
+Average test loss: 0.00039874705128438236
+Epoch 641
+-------------------------------
+Average train loss: 3.911973151843995e-05
+Average test loss: 0.0003915809668667082
+Epoch 642
+-------------------------------
+Average train loss: 7.974994419782888e-05
+Average test loss: 0.0002787213847373745
+Epoch 643
+-------------------------------
+Average train loss: 5.778244601970073e-05
+Average test loss: 0.0004177932735599045
+Epoch 644
+-------------------------------
+Average train loss: 3.728097173734568e-05
+Average test loss: 0.0002444588857802695
+Epoch 645
+-------------------------------
+Average train loss: 4.641464933229145e-05
+Average test loss: 0.00043095507966687104
+Epoch 646
+-------------------------------
+Average train loss: 2.7196539558644873e-05
+Average test loss: 0.00045043398443210336
+Epoch 647
+-------------------------------
+Average train loss: 7.36109053104883e-05
+Average test loss: 0.00030864763955053477
+Epoch 648
+-------------------------------
+Average train loss: 8.386909314140212e-05
+Average test loss: 0.0004644088995909052
+Epoch 649
+-------------------------------
+Average train loss: 0.00012684050023381132
+Average test loss: 0.0002807864345543619
+Epoch 650
+-------------------------------
+Average train loss: 7.25520314881578e-05
+Average test loss: 0.00038051745338764576
+Epoch 651
+-------------------------------
+Average train loss: 0.00021647765388479456
+Average test loss: 0.00039938325893932154
+Epoch 652
+-------------------------------
+Average train loss: 0.0005207052247715182
+Average test loss: 0.0008458267132352505
+Epoch 653
+-------------------------------
+Average train loss: 0.0005889065901283175
+Average test loss: 0.000618010015127116
+Epoch 654
+-------------------------------
+Average train loss: 0.00013571353774750606
+Average test loss: 0.00034358091319778135
+Epoch 655
+-------------------------------
+Average train loss: 0.00014992843207437546
+Average test loss: 0.0004211266890966466
+Epoch 656
+-------------------------------
+Average train loss: 8.093353484582622e-05
+Average test loss: 0.0003963259098652218
+Epoch 657
+-------------------------------
+Average train loss: 9.224021872796585e-05
+Average test loss: 0.00028910315969759334
+Epoch 658
+-------------------------------
+Average train loss: 7.998252600373235e-05
+Average test loss: 0.00022817386447318962
+Epoch 659
+-------------------------------
+Average train loss: 6.091098493925529e-05
+Average test loss: 0.0003220860339102468
+Epoch 660
+-------------------------------
+Average train loss: 4.4478609488578514e-05
+Average test loss: 0.00041807036489314796
+Epoch 661
+-------------------------------
+Average train loss: 2.8361761524138272e-05
+Average test loss: 0.00041412665450479835
+Epoch 662
+-------------------------------
+Average train loss: 2.403150650934549e-05
+Average test loss: 0.00032243886796225397
+Epoch 663
+-------------------------------
+Average train loss: 2.3848750424804165e-05
+Average test loss: 0.0003153347601515374
+Epoch 664
+-------------------------------
+Average train loss: 1.549198377688299e-05
+Average test loss: 0.0002103767671672228
+Epoch 665
+-------------------------------
+Average train loss: 3.534737097652396e-05
+Average test loss: 0.0003381124136337478
+Epoch 666
+-------------------------------
+Average train loss: 5.569127701164689e-05
+Average test loss: 0.0003007504710694775
+Epoch 667
+-------------------------------
+Average train loss: 2.1080987098685e-05
+Average test loss: 0.0003252121490991807
+Epoch 668
+-------------------------------
+Average train loss: 3.058787515328731e-05
+Average test loss: 0.00026356736738567373
+Epoch 669
+-------------------------------
+Average train loss: 7.115653454093263e-05
+Average test loss: 0.0003315397147421858
+Epoch 670
+-------------------------------
+Average train loss: 5.599089759925846e-05
+Average test loss: 0.0003621621165491108
+Epoch 671
+-------------------------------
+Average train loss: 2.2532425209647044e-05
+Average test loss: 0.0002504692321443664
+Epoch 672
+-------------------------------
+Average train loss: 4.579950349580031e-05
+Average test loss: 0.0003070669814145991
+Epoch 673
+-------------------------------
+Average train loss: 4.69781037827488e-05
+Average test loss: 0.00038682776669572504
+Epoch 674
+-------------------------------
+Average train loss: 3.0315375079226213e-05
+Average test loss: 0.00025096563954970667
+Epoch 675
+-------------------------------
+Average train loss: 2.8920388358528727e-05
+Average test loss: 0.0002634473899628834
+Epoch 676
+-------------------------------
+Average train loss: 4.26010141018196e-05
+Average test loss: 0.00028057444952927265
+Epoch 677
+-------------------------------
+Average train loss: 2.3712541806162336e-05
+Average test loss: 0.0003989320289942303
+Epoch 678
+-------------------------------
+Average train loss: 2.1261884066916538e-05
+Average test loss: 0.0003529996465658769
+Epoch 679
+-------------------------------
+Average train loss: 2.0776246092282236e-05
+Average test loss: 0.0003466417006815651
+Epoch 680
+-------------------------------
+Average train loss: 2.0579394677042727e-05
+Average test loss: 0.0002353444620634296
+Epoch 681
+-------------------------------
+Average train loss: 2.738909355684882e-05
+Average test loss: 0.00044816242630726526
+Epoch 682
+-------------------------------
+Average train loss: 0.00011028604330931557
+Average test loss: 0.00030170205406778095
+Epoch 683
+-------------------------------
+Average train loss: 4.7448914338019676e-05
+Average test loss: 0.00034394053467882
+Epoch 684
+-------------------------------
+Average train loss: 0.0007063264663156588
+Average test loss: 0.001565608595098768
+Epoch 685
+-------------------------------
+Average train loss: 0.0009860462479991839
+Average test loss: 0.00043750229607602317
+Epoch 686
+-------------------------------
+Average train loss: 0.00030546348236384804
+Average test loss: 0.0002433607608379264
+Epoch 687
+-------------------------------
+Average train loss: 0.0001037918680231087
+Average test loss: 0.0003354143534254815
+Epoch 688
+-------------------------------
+Average train loss: 4.06873172687483e-05
+Average test loss: 0.0002778187273569139
+Epoch 689
+-------------------------------
+Average train loss: 2.3564458679175005e-05
+Average test loss: 0.00045910743106755296
+Epoch 690
+-------------------------------
+Average train loss: 1.8077953063766473e-05
+Average test loss: 0.00032565745017823895
+Epoch 691
+-------------------------------
+Average train loss: 1.9587816550483693e-05
+Average test loss: 0.0002679163745986963
+Epoch 692
+-------------------------------
+Average train loss: 1.885938414488919e-05
+Average test loss: 0.00022853950732886524
+Epoch 693
+-------------------------------
+Average train loss: 2.240892224108393e-05
+Average test loss: 0.0004778519131442798
+Epoch 694
+-------------------------------
+Average train loss: 2.1083709289086982e-05
+Average test loss: 0.0002978328536430906
+Epoch 695
+-------------------------------
+Average train loss: 1.7983264187932944e-05
+Average test loss: 0.0003102983381333096
+Epoch 696
+-------------------------------
+Average train loss: 2.9148928824724862e-05
+Average test loss: 0.00030577537940449214
+Epoch 697
+-------------------------------
+Average train loss: 1.857012710388517e-05
+Average test loss: 0.00029538887195355656
+Epoch 698
+-------------------------------
+Average train loss: 1.7349078843835743e-05
+Average test loss: 0.00038016552986976294
+Epoch 699
+-------------------------------
+Average train loss: 3.240423338866094e-05
+Average test loss: 0.0004156185168540105
+Epoch 700
+-------------------------------
+Average train loss: 2.3391833310597575e-05
+Average test loss: 0.0003205649076595104
+Epoch 701
+-------------------------------
+Average train loss: 2.425963437417522e-05
+Average test loss: 0.00029728293884545565
+Epoch 702
+-------------------------------
+Average train loss: 2.7027836767956615e-05
+Average test loss: 0.00024296705357431035
+Epoch 703
+-------------------------------
+Average train loss: 1.8023737065959722e-05
+Average test loss: 0.0003989895080199598
+Epoch 704
+-------------------------------
+Average train loss: 1.988067291676998e-05
+Average test loss: 0.0003649351274361834
+Epoch 705
+-------------------------------
+Average train loss: 3.068345686187968e-05
+Average test loss: 0.00047123671746313836
+Epoch 706
+-------------------------------
+Average train loss: 4.1123005976260176e-05
+Average test loss: 0.0003045934842832919
+Epoch 707
+-------------------------------
+Average train loss: 0.0001626009760366287
+Average test loss: 0.0005379149203820686
+Epoch 708
+-------------------------------
+Average train loss: 0.00012924183312861714
+Average test loss: 0.0002882138069253415
+Epoch 709
+-------------------------------
+Average train loss: 0.00012988475544261746
+Average test loss: 0.0004037340425254245
+Epoch 710
+-------------------------------
+Average train loss: 4.7348834777949377e-05
+Average test loss: 0.00027073000923597386
+Epoch 711
+-------------------------------
+Average train loss: 3.523081155435648e-05
+Average test loss: 0.0002933608879435009
+Epoch 712
+-------------------------------
+Average train loss: 4.8873905197979186e-05
+Average test loss: 0.0002696324372664094
+Epoch 713
+-------------------------------
+Average train loss: 0.00011038966571504716
+Average test loss: 0.0012421940503242826
+Epoch 714
+-------------------------------
+Average train loss: 0.00016337707871571182
+Average test loss: 0.0002643815740676863
+Epoch 715
+-------------------------------
+Average train loss: 7.745913841063157e-05
+Average test loss: 0.0003350136934646538
+Epoch 716
+-------------------------------
+Average train loss: 3.766466958040837e-05
+Average test loss: 0.00027145794592797756
+Epoch 717
+-------------------------------
+Average train loss: 5.756103058956796e-05
+Average test loss: 0.0002973925812901663
+Epoch 718
+-------------------------------
+Average train loss: 7.402143346553202e-05
+Average test loss: 0.00028026242424467843
+Epoch 719
+-------------------------------
+Average train loss: 0.00011135526459838729
+Average test loss: 0.0003801282437052578
+Epoch 720
+-------------------------------
+Average train loss: 6.59296133380849e-05
+Average test loss: 0.0004012622354951288
+Epoch 721
+-------------------------------
+Average train loss: 0.00010644341225997778
+Average test loss: 0.00038922005582467785
+Epoch 722
+-------------------------------
+Average train loss: 4.744748039229307e-05
+Average test loss: 0.0002778131768406768
+Epoch 723
+-------------------------------
+Average train loss: 2.4378135731240035e-05
+Average test loss: 0.00037494600941759666
+Epoch 724
+-------------------------------
+Average train loss: 8.427163971646224e-05
+Average test loss: 0.00048302534352322776
+Epoch 725
+-------------------------------
+Average train loss: 0.00010777412258903495
+Average test loss: 0.00034164442955183664
+Epoch 726
+-------------------------------
+Average train loss: 5.112236103741452e-05
+Average test loss: 0.00035116062333275167
+Epoch 727
+-------------------------------
+Average train loss: 3.272572103014681e-05
+Average test loss: 0.000316495743131132
+Epoch 728
+-------------------------------
+Average train loss: 5.303953497787006e-05
+Average test loss: 0.00037166025556091754
+Epoch 729
+-------------------------------
+Average train loss: 5.098541318147909e-05
+Average test loss: 0.00033159306414225806
+Epoch 730
+-------------------------------
+Average train loss: 3.107538686890621e-05
+Average test loss: 0.00031785420183691064
+Epoch 731
+-------------------------------
+Average train loss: 2.2400943544198525e-05
+Average test loss: 0.00040251338318090087
+Epoch 732
+-------------------------------
+Average train loss: 2.098132204991998e-05
+Average test loss: 0.0003545720600024132
+Epoch 733
+-------------------------------
+Average train loss: 1.624981017812388e-05
+Average test loss: 0.00034845180302259645
+Epoch 734
+-------------------------------
+Average train loss: 3.483449647319503e-05
+Average test loss: 0.00032149894728458354
+Epoch 735
+-------------------------------
+Average train loss: 6.282338159508072e-05
+Average test loss: 0.00047706772082684826
+Epoch 736
+-------------------------------
+Average train loss: 0.00010363422057707794
+Average test loss: 0.0004794725994413186
+Epoch 737
+-------------------------------
+Average train loss: 0.0003364728179440135
+Average test loss: 0.0003891442055256838
+Epoch 738
+-------------------------------
+Average train loss: 6.090250099077821e-05
+Average test loss: 0.0004823159085520144
+Epoch 739
+-------------------------------
+Average train loss: 9.475587379711215e-05
+Average test loss: 0.0005054175687421646
+Epoch 740
+-------------------------------
+Average train loss: 6.153692447696812e-05
+Average test loss: 0.0002556186425083849
+Epoch 741
+-------------------------------
+Average train loss: 5.1954184236819856e-05
+Average test loss: 0.0002955680538434535
+Epoch 742
+-------------------------------
+Average train loss: 2.3680489757680334e-05
+Average test loss: 0.0003737822646923762
+Epoch 743
+-------------------------------
+Average train loss: 0.000102274034434231
+Average test loss: 0.0004875526127372203
+Epoch 744
+-------------------------------
+Average train loss: 0.00015406773345603142
+Average test loss: 0.0007626899750903249
+Epoch 745
+-------------------------------
+Average train loss: 0.000354629237735935
+Average test loss: 0.000383967421449987
+Epoch 746
+-------------------------------
+Average train loss: 0.00010612000733090099
+Average test loss: 0.0004363520981444578
+Epoch 747
+-------------------------------
+Average train loss: 8.031894038140308e-05
+Average test loss: 0.0004147826402913779
+Epoch 748
+-------------------------------
+Average train loss: 7.726101313892286e-05
+Average test loss: 0.000698351114156789
+Epoch 749
+-------------------------------
+Average train loss: 4.776094789121999e-05
+Average test loss: 0.0003516495448171294
+Epoch 750
+-------------------------------
+Average train loss: 2.4541626953578088e-05
+Average test loss: 0.0003006780877642866
+Epoch 751
+-------------------------------
+Average train loss: 2.117004867614014e-05
+Average test loss: 0.00038324485545412505
+Epoch 752
+-------------------------------
+Average train loss: 0.00013315059361048042
+Average test loss: 0.0005109873537938776
+Epoch 753
+-------------------------------
+Average train loss: 0.0002702789342220058
+Average test loss: 0.00034645017253101936
+Epoch 754
+-------------------------------
+Average train loss: 8.30048655916471e-05
+Average test loss: 0.00048140440568594
+Epoch 755
+-------------------------------
+Average train loss: 3.209681404769071e-05
+Average test loss: 0.0003778466904935028
+Epoch 756
+-------------------------------
+Average train loss: 3.284719739895081e-05
+Average test loss: 0.0002356555944840823
+Epoch 757
+-------------------------------
+Average train loss: 0.00010354939375247341
+Average test loss: 0.000334409495865527
+Epoch 758
+-------------------------------
+Average train loss: 3.5907665369450116e-05
+Average test loss: 0.00022403824966334338
+Epoch 759
+-------------------------------
+Average train loss: 3.064388165512355e-05
+Average test loss: 0.0003235015402814107
+Epoch 760
+-------------------------------
+Average train loss: 4.157059443969047e-05
+Average test loss: 0.00031923342612572014
+Epoch 761
+-------------------------------
+Average train loss: 2.5464548052696045e-05
+Average test loss: 0.0002989745678080778
+Epoch 762
+-------------------------------
+Average train loss: 3.2567727503192144e-05
+Average test loss: 0.0002821083928990577
+Epoch 763
+-------------------------------
+Average train loss: 1.7668714426690713e-05
+Average test loss: 0.0002866083045124209
+Epoch 764
+-------------------------------
+Average train loss: 2.0423436944838612e-05
+Average test loss: 0.0003019044337893969
+Epoch 765
+-------------------------------
+Average train loss: 7.815644326910842e-05
+Average test loss: 0.00021365397281312783
+Epoch 766
+-------------------------------
+Average train loss: 7.511497758969199e-05
+Average test loss: 0.0002787414518284744
+Epoch 767
+-------------------------------
+Average train loss: 0.0001330636332568247
+Average test loss: 0.00047603892016923055
+Epoch 768
+-------------------------------
+Average train loss: 6.799261409469181e-05
+Average test loss: 0.0003870692806750802
+Epoch 769
+-------------------------------
+Average train loss: 4.426544201123761e-05
+Average test loss: 0.00035853452365180213
+Epoch 770
+-------------------------------
+Average train loss: 0.000521824038005434
+Average test loss: 0.00047521382761520466
+Epoch 771
+-------------------------------
+Average train loss: 0.00014557858215994202
+Average test loss: 0.0004124169354327023
+Epoch 772
+-------------------------------
+Average train loss: 4.657063997001387e-05
+Average test loss: 0.0002808112123083057
+Epoch 773
+-------------------------------
+Average train loss: 6.588268341147341e-05
+Average test loss: 0.0002721961437990623
+Epoch 774
+-------------------------------
+Average train loss: 9.56306674197549e-05
+Average test loss: 0.00048452465229534676
+Epoch 775
+-------------------------------
+Average train loss: 5.8977443623007274e-05
+Average test loss: 0.0003888316444187824
+Epoch 776
+-------------------------------
+Average train loss: 1.8757389370875898e-05
+Average test loss: 0.00025364456191060266
+Epoch 777
+-------------------------------
+Average train loss: 2.8947746395715514e-05
+Average test loss: 0.00031809311310228495
+Epoch 778
+-------------------------------
+Average train loss: 2.236796801298624e-05
+Average test loss: 0.0002931544420010011
+Epoch 779
+-------------------------------
+Average train loss: 2.079828826026642e-05
+Average test loss: 0.0003031590469098384
+Epoch 780
+-------------------------------
+Average train loss: 4.388325862237252e-05
+Average test loss: 0.0005344833552953787
+Epoch 781
+-------------------------------
+Average train loss: 7.165881839682698e-05
+Average test loss: 0.00033791531209966967
+Epoch 782
+-------------------------------
+Average train loss: 3.471043171884958e-05
+Average test loss: 0.00043100305317368893
+Epoch 783
+-------------------------------
+Average train loss: 3.2540719003009146e-05
+Average test loss: 0.0002404585767570617
+Epoch 784
+-------------------------------
+Average train loss: 4.944236687151715e-05
+Average test loss: 0.00040916115644254854
+Epoch 785
+-------------------------------
+Average train loss: 5.9178132069064305e-05
+Average test loss: 0.0004042779328301549
+Epoch 786
+-------------------------------
+Average train loss: 6.340925290714949e-05
+Average test loss: 0.0002926892837941913
+Epoch 787
+-------------------------------
+Average train loss: 0.00014128287824860308
+Average test loss: 0.0006476635213143059
+Epoch 788
+-------------------------------
+Average train loss: 0.0011119231744669378
+Average test loss: 0.0006946865552371102
+Epoch 789
+-------------------------------
+Average train loss: 0.0005510025512194261
+Average test loss: 0.0008577930524812213
+Epoch 790
+-------------------------------
+Average train loss: 0.00021242025075480343
+Average test loss: 0.0003479106858971396
+Epoch 791
+-------------------------------
+Average train loss: 0.0001567629880446475
+Average test loss: 0.0005918771660487567
+Epoch 792
+-------------------------------
+Average train loss: 0.00013904896452004322
+Average test loss: 0.00028154507578749744
+Epoch 793
+-------------------------------
+Average train loss: 6.534336593176704e-05
+Average test loss: 0.00044889537925233265
+Epoch 794
+-------------------------------
+Average train loss: 2.6992805433110335e-05
+Average test loss: 0.0004814525309484452
+Epoch 795
+-------------------------------
+Average train loss: 2.7250424136582296e-05
+Average test loss: 0.0002968481525645724
+Epoch 796
+-------------------------------
+Average train loss: 1.9592818789533338e-05
+Average test loss: 0.0004252256892089333
+Epoch 797
+-------------------------------
+Average train loss: 1.9461958308966133e-05
+Average test loss: 0.0004371895483927801
+Epoch 798
+-------------------------------
+Average train loss: 2.169377086829627e-05
+Average test loss: 0.00039498575746880045
+Epoch 799
+-------------------------------
+Average train loss: 5.260033438389655e-05
+Average test loss: 0.000460935798141041
+Epoch 800
+-------------------------------
+Average train loss: 8.483157318551094e-05
+Average test loss: 0.00037565013293975165
+Epoch 801
+-------------------------------
+Average train loss: 2.3769076651660726e-05
+Average test loss: 0.00028014727493947636
+Epoch 802
+-------------------------------
+Average train loss: 1.4481440339295658e-05
+Average test loss: 0.0003089438915984439
+Epoch 803
+-------------------------------
+Average train loss: 1.3456678025249858e-05
+Average test loss: 0.00030035395424679985
+Epoch 804
+-------------------------------
+Average train loss: 2.7046046270697843e-05
+Average test loss: 0.00044260761101863215
+Epoch 805
+-------------------------------
+Average train loss: 1.1731818831322017e-05
+Average test loss: 0.00035676527269450683
+Epoch 806
+-------------------------------
+Average train loss: 1.3634631432069e-05
+Average test loss: 0.00031806030061229
+Epoch 807
+-------------------------------
+Average train loss: 1.0821928535733605e-05
+Average test loss: 0.00024332484878998782
+Epoch 808
+-------------------------------
+Average train loss: 1.602302996616345e-05
+Average test loss: 0.00043886795174330473
+Epoch 809
+-------------------------------
+Average train loss: 2.1489057508006228e-05
+Average test loss: 0.00030071930918243846
+Epoch 810
+-------------------------------
+Average train loss: 3.848233078315388e-05
+Average test loss: 0.000496921204363129
+Epoch 811
+-------------------------------
+Average train loss: 3.7196912817307745e-05
+Average test loss: 0.0004603016547792192
+Epoch 812
+-------------------------------
+Average train loss: 1.717832921713125e-05
+Average test loss: 0.0004268105559666375
+Epoch 813
+-------------------------------
+Average train loss: 1.1781352404796054e-05
+Average test loss: 0.000405922119430865
+Epoch 814
+-------------------------------
+Average train loss: 2.675848103535827e-05
+Average test loss: 0.0002371286370492141
+Epoch 815
+-------------------------------
+Average train loss: 1.408688178344164e-05
+Average test loss: 0.00031957979912736585
+Epoch 816
+-------------------------------
+Average train loss: 2.131472834662418e-05
+Average test loss: 0.00035376316269061396
+Epoch 817
+-------------------------------
+Average train loss: 3.143373283819528e-05
+Average test loss: 0.00035842480428982526
+Epoch 818
+-------------------------------
+Average train loss: 1.7746376261129627e-05
+Average test loss: 0.0002854634803952649
+Epoch 819
+-------------------------------
+Average train loss: 0.0001675173385592643
+Average test loss: 0.00041363365848415663
+Epoch 820
+-------------------------------
+Average train loss: 0.00013258790626423432
+Average test loss: 0.00046096157166175544
+Epoch 821
+-------------------------------
+Average train loss: 5.7448428560746836e-05
+Average test loss: 0.0004553343668313963
+Epoch 822
+-------------------------------
+Average train loss: 0.00012508053630881478
+Average test loss: 0.0006525523993851883
+Epoch 823
+-------------------------------
+Average train loss: 9.41175980551634e-05
+Average test loss: 0.0002561630119868953
+Epoch 824
+-------------------------------
+Average train loss: 0.0006078777908987831
+Average test loss: 0.0021765258362782852
+Epoch 825
+-------------------------------
+Average train loss: 0.0012195286038331687
+Average test loss: 0.0006880836902252797
+Epoch 826
+-------------------------------
+Average train loss: 0.0002374949304794427
+Average test loss: 0.000683347083395347
+Epoch 827
+-------------------------------
+Average train loss: 0.00013037147582508623
+Average test loss: 0.0004729957810403513
+Epoch 828
+-------------------------------
+Average train loss: 0.00011477851163363084
+Average test loss: 0.0003813577953094084
+Epoch 829
+-------------------------------
+Average train loss: 0.00018231935100629926
+Average test loss: 0.0005234413713748966
+Epoch 830
+-------------------------------
+Average train loss: 0.00010909168027865234
+Average test loss: 0.0003464072568541659
+Epoch 831
+-------------------------------
+Average train loss: 3.359219277626835e-05
+Average test loss: 0.0003768621661168124
+Epoch 832
+-------------------------------
+Average train loss: 2.3941183535498567e-05
+Average test loss: 0.00036346789732176276
+Epoch 833
+-------------------------------
+Average train loss: 2.2045330406399445e-05
+Average test loss: 0.00027944243005809506
+Epoch 834
+-------------------------------
+Average train loss: 2.093859358865302e-05
+Average test loss: 0.0002471689138993887
+Epoch 835
+-------------------------------
+Average train loss: 1.9097676195087842e-05
+Average test loss: 0.00034593150277422477
+Epoch 836
+-------------------------------
+Average train loss: 1.7661738638707902e-05
+Average test loss: 0.0002391392335994169
+Epoch 837
+-------------------------------
+Average train loss: 1.3340712666831677e-05
+Average test loss: 0.0003759799105215019
+Epoch 838
+-------------------------------
+Average train loss: 1.4971079599490622e-05
+Average test loss: 0.0002554802257301552
+Epoch 839
+-------------------------------
+Average train loss: 1.8626797045726563e-05
+Average test loss: 0.00026228035650482137
+Epoch 840
+-------------------------------
+Average train loss: 1.3190534373279661e-05
+Average test loss: 0.0002633769410229953
+Epoch 841
+-------------------------------
+Average train loss: 1.3409602997853653e-05
+Average test loss: 0.0003162587839012433
+Epoch 842
+-------------------------------
+Average train loss: 1.8038558391708647e-05
+Average test loss: 0.00020236156602290327
+Epoch 843
+-------------------------------
+Average train loss: 2.013696341236937e-05
+Average test loss: 0.00039566954157115627
+Epoch 844
+-------------------------------
+Average train loss: 1.2082868943252834e-05
+Average test loss: 0.00036021929450466165
+Epoch 845
+-------------------------------
+Average train loss: 1.4308959307527403e-05
+Average test loss: 0.000415709287543515
+Epoch 846
+-------------------------------
+Average train loss: 1.6623460505797994e-05
+Average test loss: 0.00022865609207656235
+Epoch 847
+-------------------------------
+Average train loss: 1.87914240086684e-05
+Average test loss: 0.000342396304144391
+Epoch 848
+-------------------------------
+Average train loss: 5.063324311777251e-05
+Average test loss: 0.00038089031503269713
+Epoch 849
+-------------------------------
+Average train loss: 3.547989450453315e-05
+Average test loss: 0.00022938544342261075
+Epoch 850
+-------------------------------
+Average train loss: 6.215930889084121e-05
+Average test loss: 0.0004829939612786153
+Epoch 851
+-------------------------------
+Average train loss: 0.00014789924134674947
+Average test loss: 0.00023939129771731262
+Epoch 852
+-------------------------------
+Average train loss: 5.122402573761065e-05
+Average test loss: 0.00028896946709470024
+Epoch 853
+-------------------------------
+Average train loss: 3.346799681821721e-05
+Average test loss: 0.00047102920715198185
+Epoch 854
+-------------------------------
+Average train loss: 3.509131463943049e-05
+Average test loss: 0.00028316047142392823
+Epoch 855
+-------------------------------
+Average train loss: 2.78966861878871e-05
+Average test loss: 0.00030938689139605103
+Epoch 856
+-------------------------------
+Average train loss: 2.1846696945431177e-05
+Average test loss: 0.0003135438892059028
+Epoch 857
+-------------------------------
+Average train loss: 1.8551587818365078e-05
+Average test loss: 0.0003148888229458992
+Epoch 858
+-------------------------------
+Average train loss: 2.7354620142432397e-05
+Average test loss: 0.0003857650424054425
+Epoch 859
+-------------------------------
+Average train loss: 6.813117124693235e-05
+Average test loss: 0.000484299222340009
+Epoch 860
+-------------------------------
+Average train loss: 0.00024427854135865344
+Average test loss: 0.0003839620590692253
+Epoch 861
+-------------------------------
+Average train loss: 0.0005858629709109664
+Average test loss: 0.0006271257007028908
+Epoch 862
+-------------------------------
+Average train loss: 0.00030820030326140114
+Average test loss: 0.0005802060830839244
+Epoch 863
+-------------------------------
+Average train loss: 7.206305803265422e-05
+Average test loss: 0.00035507303047260005
+Epoch 864
+-------------------------------
+Average train loss: 3.1092478493519594e-05
+Average test loss: 0.0004568843058742849
+Epoch 865
+-------------------------------
+Average train loss: 1.688779237156268e-05
+Average test loss: 0.00043051721669533957
+Epoch 866
+-------------------------------
+Average train loss: 2.1852540812687947e-05
+Average test loss: 0.00039658430406624187
+Epoch 867
+-------------------------------
+Average train loss: 7.56380892926245e-05
+Average test loss: 0.0003159169344663886
+Epoch 868
+-------------------------------
+Average train loss: 2.483186821336858e-05
+Average test loss: 0.00024696656951813826
+Epoch 869
+-------------------------------
+Average train loss: 1.711052955215564e-05
+Average test loss: 0.0003226229424139352
+Epoch 870
+-------------------------------
+Average train loss: 2.2761753207305447e-05
+Average test loss: 0.00024645819835963527
+Epoch 871
+-------------------------------
+Average train loss: 3.654193546026363e-05
+Average test loss: 0.00040549554978497326
+Epoch 872
+-------------------------------
+Average train loss: 4.220407441607677e-05
+Average test loss: 0.00027017381840518543
+Epoch 873
+-------------------------------
+Average train loss: 1.660340169109986e-05
+Average test loss: 0.0004383872593669886
+Epoch 874
+-------------------------------
+Average train loss: 1.1742745300580282e-05
+Average test loss: 0.000223790282949007
+Epoch 875
+-------------------------------
+Average train loss: 2.3309570824494586e-05
+Average test loss: 0.00047601749039521176
+Epoch 876
+-------------------------------
+Average train loss: 3.5344975185580554e-05
+Average test loss: 0.000398639211198315
+Epoch 877
+-------------------------------
+Average train loss: 3.626888337748824e-05
+Average test loss: 0.00034812021684566777
+Epoch 878
+-------------------------------
+Average train loss: 2.9054102105874337e-05
+Average test loss: 0.000562672530317546
+Epoch 879
+-------------------------------
+Average train loss: 0.00012353168858680874
+Average test loss: 0.000308278135240211
+Epoch 880
+-------------------------------
+Average train loss: 6.53581060032593e-05
+Average test loss: 0.0003677682876254299
+Epoch 881
+-------------------------------
+Average train loss: 6.312057244940661e-05
+Average test loss: 0.0003702092362800613
+Epoch 882
+-------------------------------
+Average train loss: 5.113869367050938e-05
+Average test loss: 0.0003875349274104727
+Epoch 883
+-------------------------------
+Average train loss: 2.1772140426037366e-05
+Average test loss: 0.00024064584743298058
+Epoch 884
+-------------------------------
+Average train loss: 1.3166773442208068e-05
+Average test loss: 0.0003179988790569561
+Epoch 885
+-------------------------------
+Average train loss: 3.6801224305236246e-05
+Average test loss: 0.0005521996957083632
+Epoch 886
+-------------------------------
+Average train loss: 5.874128728464711e-05
+Average test loss: 0.0003874974603864497
+Epoch 887
+-------------------------------
+Average train loss: 0.00017413834706530906
+Average test loss: 0.0002755452338273504
+Epoch 888
+-------------------------------
+Average train loss: 6.743259036738891e-05
+Average test loss: 0.00028922519621638846
+Epoch 889
+-------------------------------
+Average train loss: 0.00024238184698333499
+Average test loss: 0.00045574183708855083
+Epoch 890
+-------------------------------
+Average train loss: 0.00048299531001248395
+Average test loss: 0.0003671484487962776
+Epoch 891
+-------------------------------
+Average train loss: 0.0005350996821653097
+Average test loss: 0.000630995528938781
+Epoch 892
+-------------------------------
+Average train loss: 0.00011650178937998134
+Average test loss: 0.0006882090819999576
+Epoch 893
+-------------------------------
+Average train loss: 0.00010838579139090143
+Average test loss: 0.000433883149526082
+Epoch 894
+-------------------------------
+Average train loss: 4.1733053876669146e-05
+Average test loss: 0.0003633774343013231
+Epoch 895
+-------------------------------
+Average train loss: 2.0102839334867896e-05
+Average test loss: 0.0002765604419567223
+Epoch 896
+-------------------------------
+Average train loss: 1.6023801090341295e-05
+Average test loss: 0.00036106561310589314
+Epoch 897
+-------------------------------
+Average train loss: 2.5131683505605905e-05
+Average test loss: 0.0003230751275883189
+Epoch 898
+-------------------------------
+Average train loss: 1.629885320653557e-05
+Average test loss: 0.00036687860431681784
+Epoch 899
+-------------------------------
+Average train loss: 1.4264466208260274e-05
+Average test loss: 0.00024024873917889117
+Epoch 900
+-------------------------------
+Average train loss: 1.624774042284116e-05
+Average test loss: 0.00035208301518910697
+Epoch 901
+-------------------------------
+Average train loss: 2.7589617093326525e-05
+Average test loss: 0.00027727818607153106
+Epoch 902
+-------------------------------
+Average train loss: 5.3250912969815545e-05
+Average test loss: 0.0004196182458794543
+Epoch 903
+-------------------------------
+Average train loss: 3.766221405385295e-05
+Average test loss: 0.00027756294626409987
+Epoch 904
+-------------------------------
+Average train loss: 2.1675722928193862e-05
+Average test loss: 0.0002671227432853941
+Epoch 905
+-------------------------------
+Average train loss: 2.2314067282422913e-05
+Average test loss: 0.00033905891801363656
+Epoch 906
+-------------------------------
+Average train loss: 1.5793358943483327e-05
+Average test loss: 0.0003448342363948801
+Epoch 907
+-------------------------------
+Average train loss: 1.3227641666162527e-05
+Average test loss: 0.00040427564817946404
+Epoch 908
+-------------------------------
+Average train loss: 5.502377211087151e-05
+Average test loss: 0.00044105583011904467
+Epoch 909
+-------------------------------
+Average train loss: 9.87822824390605e-05
+Average test loss: 0.0003667337420795645
+Epoch 910
+-------------------------------
+Average train loss: 6.327274466457311e-05
+Average test loss: 0.00030760164892334226
+Epoch 911
+-------------------------------
+Average train loss: 7.2180705901701e-05
+Average test loss: 0.0003887456218113324
+Epoch 912
+-------------------------------
+Average train loss: 2.1914041753916534e-05
+Average test loss: 0.0002891075564548373
+Epoch 913
+-------------------------------
+Average train loss: 1.5565588219033087e-05
+Average test loss: 0.0003973795475238668
+Epoch 914
+-------------------------------
+Average train loss: 0.00014672370923108247
+Average test loss: 0.0005362133420671203
+Epoch 915
+-------------------------------
+Average train loss: 8.892407560779248e-05
+Average test loss: 0.0002531854126053596
+Epoch 916
+-------------------------------
+Average train loss: 5.876090814126655e-05
+Average test loss: 0.0003105668448759908
+Epoch 917
+-------------------------------
+Average train loss: 4.626055480912328e-05
+Average test loss: 0.00030812279146630317
+Epoch 918
+-------------------------------
+Average train loss: 2.796722994389711e-05
+Average test loss: 0.0004009639555338903
+Epoch 919
+-------------------------------
+Average train loss: 3.535019153787289e-05
+Average test loss: 0.00043768481451219747
+Epoch 920
+-------------------------------
+Average train loss: 2.7796357207989787e-05
+Average test loss: 0.0003277802690198379
+Epoch 921
+-------------------------------
+Average train loss: 9.83543482652749e-05
+Average test loss: 0.0004152151938926961
+Epoch 922
+-------------------------------
+Average train loss: 0.00036277924082241955
+Average test loss: 0.00034877577127190307
+Epoch 923
+-------------------------------
+Average train loss: 0.0001294713473180309
+Average test loss: 0.0004264942461824311
+Epoch 924
+-------------------------------
+Average train loss: 8.279385867353994e-05
+Average test loss: 0.0002654122030695102
+Epoch 925
+-------------------------------
+Average train loss: 2.3556850246677642e-05
+Average test loss: 0.0003351431680909757
+Epoch 926
+-------------------------------
+Average train loss: 2.213324425611063e-05
+Average test loss: 0.0003289651212980971
+Epoch 927
+-------------------------------
+Average train loss: 1.454464396374533e-05
+Average test loss: 0.000365038907537902
+Epoch 928
+-------------------------------
+Average train loss: 5.305392081936589e-05
+Average test loss: 0.0003454169907074954
+Epoch 929
+-------------------------------
+Average train loss: 4.884356294496683e-05
+Average test loss: 0.0003165318027770679
+Epoch 930
+-------------------------------
+Average train loss: 1.8214757128589555e-05
+Average test loss: 0.0003220944241287985
+Epoch 931
+-------------------------------
+Average train loss: 3.875922546285437e-05
+Average test loss: 0.00031534039382157583
+Epoch 932
+-------------------------------
+Average train loss: 3.592666835174896e-05
+Average test loss: 0.00048659404274076223
+Epoch 933
+-------------------------------
+Average train loss: 3.566835697711213e-05
+Average test loss: 0.000308238053029137
+Epoch 934
+-------------------------------
+Average train loss: 2.35408606386045e-05
+Average test loss: 0.00028822311391455254
+Epoch 935
+-------------------------------
+Average train loss: 3.9696985950286035e-05
+Average test loss: 0.00045534491489109186
+Epoch 936
+-------------------------------
+Average train loss: 3.89287002326455e-05
+Average test loss: 0.0004031443677376956
+Epoch 937
+-------------------------------
+Average train loss: 1.4115959929767996e-05
+Average test loss: 0.0003316274918948433
+Epoch 938
+-------------------------------
+Average train loss: 1.489908554503927e-05
+Average test loss: 0.0002339203981266889
+Epoch 939
+-------------------------------
+Average train loss: 5.648173431836767e-05
+Average test loss: 0.0006460486131670352
+Epoch 940
+-------------------------------
+Average train loss: 5.431161145679653e-05
+Average test loss: 0.0002444504290386768
+Epoch 941
+-------------------------------
+Average train loss: 3.633529873695807e-05
+Average test loss: 0.000365706930876643
+Epoch 942
+-------------------------------
+Average train loss: 1.825124301831238e-05
+Average test loss: 0.0002703970156809581
+Epoch 943
+-------------------------------
+Average train loss: 3.645955144747859e-05
+Average test loss: 0.00035306758945807815
+Epoch 944
+-------------------------------
+Average train loss: 2.4568608569097706e-05
+Average test loss: 0.00032186641848446537
+Epoch 945
+-------------------------------
+Average train loss: 1.503363413576153e-05
+Average test loss: 0.0003293103821176503
+Epoch 946
+-------------------------------
+Average train loss: 1.8051077731797704e-05
+Average test loss: 0.000355366209987551
+Epoch 947
+-------------------------------
+Average train loss: 3.0541747364623006e-05
+Average test loss: 0.00043332163269431997
+Epoch 948
+-------------------------------
+Average train loss: 5.5481568197137676e-05
+Average test loss: 0.0004055233106815389
+Epoch 949
+-------------------------------
+Average train loss: 0.00016112016382976435
+Average test loss: 0.0007521973581918116
+Epoch 950
+-------------------------------
+Average train loss: 0.0006725936211296358
+Average test loss: 0.0006220008695631155
+Epoch 951
+-------------------------------
+Average train loss: 0.00024074658984318375
+Average test loss: 0.00036621578744546113
+Epoch 952
+-------------------------------
+Average train loss: 6.160851095046382e-05
+Average test loss: 0.0004927702663865473
+Epoch 953
+-------------------------------
+Average train loss: 0.00016051285158027895
+Average test loss: 0.0008989847680952932
+Epoch 954
+-------------------------------
+Average train loss: 0.0002851309199468233
+Average test loss: 0.00025560484833217094
+Epoch 955
+-------------------------------
+Average train loss: 5.566389419982443e-05
+Average test loss: 0.0003376489288971892
+Epoch 956
+-------------------------------
+Average train loss: 2.584653419035021e-05
+Average test loss: 0.0002953055913427046
+Epoch 957
+-------------------------------
+Average train loss: 1.4723491804033983e-05
+Average test loss: 0.00047321712710462246
+Epoch 958
+-------------------------------
+Average train loss: 1.4925478517398005e-05
+Average test loss: 0.0002566017189695101
+Epoch 959
+-------------------------------
+Average train loss: 1.858066396380309e-05
+Average test loss: 0.00035218449608821956
+Epoch 960
+-------------------------------
+Average train loss: 9.422820876352488e-06
+Average test loss: 0.0003248173992947808
+Epoch 961
+-------------------------------
+Average train loss: 9.388956241309643e-06
+Average test loss: 0.00022300995104680105
+Epoch 962
+-------------------------------
+Average train loss: 1.5167139517870964e-05
+Average test loss: 0.0003987822149481092
+Epoch 963
+-------------------------------
+Average train loss: 8.90569826879073e-06
+Average test loss: 0.0003794865499782775
+Epoch 964
+-------------------------------
+Average train loss: 1.2067730622220552e-05
+Average test loss: 0.00021265358788826103
+Epoch 965
+-------------------------------
+Average train loss: 9.15390432055574e-06
+Average test loss: 0.00023631216234727099
+Epoch 966
+-------------------------------
+Average train loss: 1.479958127674763e-05
+Average test loss: 0.0003732803597813472
+Epoch 967
+-------------------------------
+Average train loss: 1.0256843270326498e-05
+Average test loss: 0.00030849535791535994
+Epoch 968
+-------------------------------
+Average train loss: 1.8928244044218447e-05
+Average test loss: 0.0003307136087512065
+Epoch 969
+-------------------------------
+Average train loss: 4.3827381086884995e-05
+Average test loss: 0.0002397313219262287
+Epoch 970
+-------------------------------
+Average train loss: 6.689516671031015e-05
+Average test loss: 0.00035746618855877647
+Epoch 971
+-------------------------------
+Average train loss: 5.907928938540863e-05
+Average test loss: 0.0003188001220613452
+Epoch 972
+-------------------------------
+Average train loss: 7.406164117128355e-05
+Average test loss: 0.0006258029045836468
+Epoch 973
+-------------------------------
+Average train loss: 7.570702655357309e-05
+Average test loss: 0.0002769816367487822
+Epoch 974
+-------------------------------
+Average train loss: 7.298195801922702e-05
+Average test loss: 0.00044944788429087827
+Epoch 975
+-------------------------------
+Average train loss: 3.565057100786362e-05
+Average test loss: 0.00029890358980212895
+Epoch 976
+-------------------------------
+Average train loss: 9.559253914630971e-05
+Average test loss: 0.0002590624322432892
+Epoch 977
+-------------------------------
+Average train loss: 9.558576464769431e-05
+Average test loss: 0.00042040797208236266
+Epoch 978
+-------------------------------
+Average train loss: 0.00047795820915780496
+Average test loss: 0.002120401926471719
+Epoch 979
+-------------------------------
+Average train loss: 0.0006118064039037563
+Average test loss: 0.00043722819204309156
+Epoch 980
+-------------------------------
+Average train loss: 0.0004886198671010789
+Average test loss: 0.00043445557405773016
+Epoch 981
+-------------------------------
+Average train loss: 0.00014874015148961918
+Average test loss: 0.00042540694162848273
+Epoch 982
+-------------------------------
+Average train loss: 3.356402947247261e-05
+Average test loss: 0.0004266642759570719
+Epoch 983
+-------------------------------
+Average train loss: 1.704567476735974e-05
+Average test loss: 0.0004755125888290682
+Epoch 984
+-------------------------------
+Average train loss: 1.613799606275279e-05
+Average test loss: 0.0003465595842239314
+Epoch 985
+-------------------------------
+Average train loss: 2.1752151078544556e-05
+Average test loss: 0.00043923437728413513
+Epoch 986
+-------------------------------
+Average train loss: 1.5470746238861465e-05
+Average test loss: 0.0004580386116036347
+Epoch 987
+-------------------------------
+Average train loss: 9.70776034591836e-06
+Average test loss: 0.00041887425634610863
+Epoch 988
+-------------------------------
+Average train loss: 1.2867989844380646e-05
+Average test loss: 0.00018038723958722715
+Epoch 989
+-------------------------------
+Average train loss: 2.4194388915930177e-05
+Average test loss: 0.0004230167510935904
+Epoch 990
+-------------------------------
+Average train loss: 1.107723140194139e-05
+Average test loss: 0.00025994456206847517
+Epoch 991
+-------------------------------
+Average train loss: 1.6228928216150963e-05
+Average test loss: 0.00027469603810459375
+Epoch 992
+-------------------------------
+Average train loss: 1.5496684118261327e-05
+Average test loss: 0.00028485539327708205
+Epoch 993
+-------------------------------
+Average train loss: 1.4999433296907228e-05
+Average test loss: 0.00037779289206290353
+Epoch 994
+-------------------------------
+Average train loss: 1.1209565709577873e-05
+Average test loss: 0.0003446398685420198
+Epoch 995
+-------------------------------
+Average train loss: 8.69433453772217e-06
+Average test loss: 0.00021206400249086852
+Epoch 996
+-------------------------------
+Average train loss: 1.358908875772613e-05
+Average test loss: 0.00026174575655854175
+Epoch 997
+-------------------------------
+Average train loss: 8.655236706545111e-06
+Average test loss: 0.00027755625446193984
+Epoch 998
+-------------------------------
+Average train loss: 9.111481567742885e-06
+Average test loss: 0.00031690469976248484
+Epoch 999
+-------------------------------
+Average train loss: 7.489164509024704e-06
+Average test loss: 0.0002568575624276751
+Epoch 1000
+-------------------------------
+Average train loss: 9.227590098817017e-06
+Average test loss: 0.0005193032401231383
+Saving PyTorch Model State to models/base_model_2_0/base_model_2_0.pth.pth...
 Model Saved.
-Generating hyperparameter summary at models/base_model/hp_base_model.json...
+Generating hyperparameter summary at models/base_model_2_0/hp_base_model_2_0.json...
 Hyperparameter summary saved.
 
 * * * * * * * *
-PROCESS TIME: 2:15:34.520101
+PROCESS TIME: 5:27:48.213099
 * * * * * * * *
-Saving loss data to models/base_model/loss_base_model.npz...
+Saving loss data to models/base_model_2_0/loss_base_model_2_0.npz...
 Loss data saved.
-Saving loss plot to models/base_model/base_model_loss.png...
+Saving loss plot to models/base_model_2_0/base_model_2_0_loss.png...
 Loss plot saved.
 INFO:torch.distributed.elastic.agent.server.api:[default] worker group successfully finished. Waiting 300 seconds for other agents to finish.
 INFO:torch.distributed.elastic.agent.server.api:Local worker group finished (SUCCEEDED). Waiting 300 seconds for other agents to finish
 /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/distributed/elastic/utils/store.py:71: FutureWarning: This is an experimental API and will be changed in future.
   "This is an experimental API and will be changed in future.", FutureWarning
-INFO:torch.distributed.elastic.agent.server.api:Done waiting for other agents. Elapsed: 0.0007538795471191406 seconds
-{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 0, "group_rank": 0, "worker_id": "134387", "role": "default", "hostname": "gpu2010.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 8148, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [0], \"role_rank\": [0], \"role_world_size\": [4]}", "agent_restarts": 0}}
-{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 1, "group_rank": 0, "worker_id": "134388", "role": "default", "hostname": "gpu2010.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 8148, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [1], \"role_rank\": [1], \"role_world_size\": [4]}", "agent_restarts": 0}}
-{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 2, "group_rank": 0, "worker_id": "134389", "role": "default", "hostname": "gpu2010.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 8148, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [2], \"role_rank\": [2], \"role_world_size\": [4]}", "agent_restarts": 0}}
-{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 3, "group_rank": 0, "worker_id": "134390", "role": "default", "hostname": "gpu2010.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 8148, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [3], \"role_rank\": [3], \"role_world_size\": [4]}", "agent_restarts": 0}}
-{"name": "torchelastic.worker.status.SUCCEEDED", "source": "AGENT", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": null, "group_rank": 0, "worker_id": null, "role": "default", "hostname": "gpu2010.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 8148, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\"}", "agent_restarts": 0}}
+INFO:torch.distributed.elastic.agent.server.api:Done waiting for other agents. Elapsed: 0.0002117156982421875 seconds
+{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 0, "group_rank": 0, "worker_id": "7722", "role": "default", "hostname": "gpu2006.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 19679, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [0], \"role_rank\": [0], \"role_world_size\": [4]}", "agent_restarts": 0}}
+{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 1, "group_rank": 0, "worker_id": "7723", "role": "default", "hostname": "gpu2006.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 19679, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [1], \"role_rank\": [1], \"role_world_size\": [4]}", "agent_restarts": 0}}
+{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 2, "group_rank": 0, "worker_id": "7724", "role": "default", "hostname": "gpu2006.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 19679, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [2], \"role_rank\": [2], \"role_world_size\": [4]}", "agent_restarts": 0}}
+{"name": "torchelastic.worker.status.SUCCEEDED", "source": "WORKER", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": 3, "group_rank": 0, "worker_id": "7725", "role": "default", "hostname": "gpu2006.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 19679, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\", \"local_rank\": [3], \"role_rank\": [3], \"role_world_size\": [4]}", "agent_restarts": 0}}
+{"name": "torchelastic.worker.status.SUCCEEDED", "source": "AGENT", "timestamp": 0, "metadata": {"run_id": "none", "global_rank": null, "group_rank": 0, "worker_id": null, "role": "default", "hostname": "gpu2006.oscar.ccv.brown.edu", "state": "SUCCEEDED", "total_run_time": 19679, "rdzv_backend": "static", "raw_error": null, "metadata": "{\"group_world_size\": 1, \"entry_point\": \"python3\"}", "agent_restarts": 0}}
 *****************************************
 Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
 *****************************************
-Loading model state from models/base_model/base_model.pth
+Loading model state from models/base_model_2_0/base_model_2_0.pth
 Model loaded.
 Predicting on 200 samples...
 /gpfs/home/jsolt/FourierNN/torchenv/lib/python3.7/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /pytorch/c10/core/TensorImpl.h:1156.)
   return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
 (200, 2)
-Saving prediction to models/base_model/pred_base_model.npz...
+Saving prediction to models/base_model_2_0/pred_base_model_2_0.npz...
 Prediction saved.
 Plotting results for parameter: midpoint...
 Plotting results for parameter: duration...

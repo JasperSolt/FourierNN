@@ -37,18 +37,18 @@ Hyperparameters for the model. You should only have to edit this class between r
 class Model_Hyperparameters():
     # model metadata
     MODEL_ID = str(datetime.timestamp(datetime.now())).replace(".","")
-    MODEL_NAME = "base_model"
+    MODEL_NAME = "base_model_2_0"
     MODEL_DIR = "models/" + MODEL_NAME
     HP_JSON_FILENAME = "hp_" + MODEL_NAME + ".json"
     DATA_PATH = "../data/shared/LaPlanteSims/v10/t21_snapshots_nowedge.hdf5"
-    DESC = ""
+    DESC = "replace global average pool with global max pool."
 
     #Multithreading
     N_GPU = 4
     
     # training hyperparameters 
     BATCHSIZE = 8
-    EPOCHS = 400
+    EPOCHS = 1000
     TRAIN_PERCENT = 0.8 #fraction of dataset used in training
     INITIAL_LR = 0.0001 #static learning rate if LR_DECAY = False, or initial learning rate if LR_DECAY = True
     LR_DECAY = False
@@ -85,7 +85,7 @@ class Model_Hyperparameters():
       # batch_size x 64 x 64 x 64
       # pytorch doesn't have global pooling layers, so I made the kernel the
       # same dimensions as the input
-      ('global_avgpool', nn.AvgPool2d(64)),
+      ('global_maxpool', nn.MaxPool2d(64)),
       ('flat1', nn.Flatten()),
 
       # batch_size x 64 x 1 x 1
